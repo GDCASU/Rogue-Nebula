@@ -1,0 +1,18 @@
+{
+    "name": "PlayerControls",
+    "maps": [
+        {
+            "name": "Ship Controls",
+            "id": "99ea342b-5767-4900-b460-7580a3b161a3",
+            "actions": [],
+            "bindings": []
+        },
+        {
+            "name": "UI",
+            "id": "3223fde2-7285-44e8-ba08-5d07740d0ad3",
+            "actions": [],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": []
+}
