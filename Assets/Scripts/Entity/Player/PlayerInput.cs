@@ -12,6 +12,9 @@ public class PlayerInput : MonoBehaviour
     [Header("Player Movement Input")]
     [SerializeField] public Vector2 movementInput;
 
+    [Header("Player Shooting Input")]
+    [SerializeField] public bool shootInput;
+
     PlayerControls playerControls;
 
     private void Awake()    // Handle Singleton
@@ -45,6 +48,8 @@ public class PlayerInput : MonoBehaviour
 
             // Subscribe to input events
             playerControls.ShipControls.Move.performed += i => HandleMovementInput(i);
+            playerControls.ShipControls.Shoot.performed += i => HandleShootingInput(i);
+            playerControls.ShipControls.Shoot.canceled += i => HandleShootingInput(i);
         }
 
         playerControls.Enable();
@@ -53,6 +58,16 @@ public class PlayerInput : MonoBehaviour
     private void HandleMovementInput(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
+    }
+
+    private void HandleShootingInput(InputAction.CallbackContext context) 
+    {
+        if (context.performed)
+        {
+            shootInput = true;
+        }
+        else
+            shootInput = false;
     }
     private void OnApplicationFocus(bool focus)
     {

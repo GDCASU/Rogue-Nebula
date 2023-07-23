@@ -20,10 +20,15 @@ public class Shooter : MonoBehaviour
         if (currentWeapon != null) 
         {
             if (autoFire)
-            {
                 currentWeapon.Fire();
-            }
-            // else use hold to fire
+            else if (PlayerInput.instance.shootInput == true) // else use hold to fire
+                currentWeapon.Fire();
+
         }
+    }
+
+    private void SwapWeapon(int idx)
+    {
+        currentWeapon = weapons[idx];
     }
 }
