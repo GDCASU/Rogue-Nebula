@@ -26,7 +26,7 @@ public class PlayerInput : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
 
-        instance.enabled = true;    // MAY NEED TO DELETE THIS LINE IF A MENU SCENE IS CREATED AND HANDLE IT DIFF
+        instance.enabled = true; 
     }
 
     public void ToggleControls(bool toggle)     // Toggle the player controls with this method
@@ -39,14 +39,12 @@ public class PlayerInput : MonoBehaviour
 
     private void OnEnable()
     {
-        if (playerControls == null)     // Init Player Controls and subscribe to input events
+        if (playerControls == null) 
         {
             playerControls = new PlayerControls();
 
-            // SUBSCRIBE TO INPUT EVENTS
-            // Subscribe the HandleMovementInput() func to the input action Move; i represents the context
+            // Subscribe to input events
             playerControls.ShipControls.Move.performed += i => HandleMovementInput(i);
-            // Handle camera input
         }
 
         playerControls.Enable();
