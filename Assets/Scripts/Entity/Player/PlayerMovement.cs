@@ -6,10 +6,9 @@ using UnityEngine.EventSystems;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
-
     private Vector2 moveDirection;
-    public Vector2 currentVelocity;
 
+    // Components
     private Rigidbody rb;
 
     private void Awake()
@@ -19,15 +18,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        HandleMovement();
+        HandleMovement();   // Handle player velocity
     }
 
     private void HandleMovement()
     {
         moveDirection.x = PlayerInput.instance.movementInput.x;      // Get movement inputs for PlayerInput script
-        moveDirection.y = PlayerInput.instance.movementInput.y;
-        Vector3 tagetVelocity = moveDirection * moveSpeed;
+        moveDirection.y = PlayerInput.instance.movementInput.y;      // Get movement inputs for PlayerInput script
+        Vector3 velocity = moveDirection * moveSpeed;
 
-        rb.velocity = tagetVelocity;
+        rb.velocity = velocity;
     }
 }

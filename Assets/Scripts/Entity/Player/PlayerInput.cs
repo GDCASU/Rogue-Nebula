@@ -9,7 +9,7 @@ public class PlayerInput : MonoBehaviour
 {
     public static PlayerInput instance;
 
-    [Header("PlayerMovementInput")]
+    [Header("Player Movement Input")]
     [SerializeField] public Vector2 movementInput;
 
     PlayerControls playerControls;
