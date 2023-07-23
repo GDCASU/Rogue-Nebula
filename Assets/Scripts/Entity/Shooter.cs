@@ -23,7 +23,6 @@ public class Shooter : MonoBehaviour
                 currentWeapon.Fire();
             else if (PlayerInput.instance.shootInput == true) // else use hold to fire
                 currentWeapon.Fire();
-
         }
     }
 

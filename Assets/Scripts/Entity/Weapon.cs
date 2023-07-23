@@ -6,8 +6,9 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] protected GameObject ProjectilePrefab;
-    [SerializeField] protected float projectileSpeed;
-    [SerializeField] protected float baseFireRate;
+    [SerializeField] protected float projectileSpeed = 100f;
+    [SerializeField] protected float baseFireRate = 0.5f;
+    [SerializeField] protected float projectileLifetime = 5f;
 
     protected bool isFiring;
     // Components
