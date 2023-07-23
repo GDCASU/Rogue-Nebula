@@ -26,8 +26,129 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         {
             ""name"": ""Ship Controls"",
             ""id"": ""99ea342b-5767-4900-b460-7580a3b161a3"",
-            ""actions"": [],
-            ""bindings"": []
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""741e6806-e70b-4cc7-bfa0-ff31748842c7"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""b5b7a67a-0a97-4c12-aaa9-d9ea6aa37ad0"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""5eaea435-5a12-4581-b0b7-f8b8365fdf7a"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""35e8fd4f-effc-48b1-ae3e-e4078b80b9cc"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""3f3d1c59-70d8-40df-9a84-4af9158c9fb6"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""1491dba5-ae56-41d0-9476-ba3da6a03c9e"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Stick"",
+                    ""id"": ""299311c6-25c6-464f-945f-868128ea73ed"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""0513b239-9a90-40a9-8ae1-dde119905a96"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""9ea20181-4631-4abb-9e9b-ed7840a37bb4"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""6172fe42-d004-4704-9b88-2ed0ae81379c"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""37556a07-de84-41f5-9569-4bc0b80986bc"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         },
         {
             ""name"": ""UI"",
@@ -40,6 +161,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
 }");
         // Ship Controls
         m_ShipControls = asset.FindActionMap("Ship Controls", throwIfNotFound: true);
+        m_ShipControls_Move = m_ShipControls.FindAction("Move", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
     }
@@ -103,10 +225,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     // Ship Controls
     private readonly InputActionMap m_ShipControls;
     private List<IShipControlsActions> m_ShipControlsActionsCallbackInterfaces = new List<IShipControlsActions>();
+    private readonly InputAction m_ShipControls_Move;
     public struct ShipControlsActions
     {
         private @PlayerControls m_Wrapper;
         public ShipControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_ShipControls_Move;
         public InputActionMap Get() { return m_Wrapper.m_ShipControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -116,10 +240,16 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_ShipControlsActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_ShipControlsActionsCallbackInterfaces.Add(instance);
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
         }
 
         private void UnregisterCallbacks(IShipControlsActions instance)
         {
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
         }
 
         public void RemoveCallbacks(IShipControlsActions instance)
@@ -177,6 +307,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public UIActions @UI => new UIActions(this);
     public interface IShipControlsActions
     {
+        void OnMove(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
