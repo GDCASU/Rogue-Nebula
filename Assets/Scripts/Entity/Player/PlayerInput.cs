@@ -15,7 +15,7 @@ public class PlayerInput : MonoBehaviour
     [Header("Player Shooting Input")]
     [SerializeField] public bool shootInput;
 
-    PlayerControls playerControls;
+    private PlayerControls playerControls;
 
     private void Awake()    // Handle Singleton
     {
@@ -55,7 +55,7 @@ public class PlayerInput : MonoBehaviour
         playerControls.Enable();
 
     }
-    private void HandleMovementInput(InputAction.CallbackContext context)
+    private void HandleMovementInput(InputAction.CallbackContext context)   
     {
         movementInput = context.ReadValue<Vector2>();
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PrecisionPhotonRepeater : Weapon
 {
-    public override void Fire()
+    public override void Fire()     // Fires the weapon based on the fire rate
     {
         base.Fire();
         if (!isFiring)
