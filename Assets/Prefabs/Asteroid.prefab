@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8946191725158149478}
   - component: {fileID: 4338024552096684012}
   - component: {fileID: 7473608852332354795}
-  - component: {fileID: 5157375513513772093}
+  - component: {fileID: 4870884792632418637}
   m_Layer: 7
   m_Name: Asteroid
   m_TagString: Untagged
@@ -129,7 +129,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
---- !u!114 &5157375513513772093
+--- !u!114 &4870884792632418637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,6 +157,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6516590741793506316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3ae43c0494318f45acbe08b93705343, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a95abbf9a4682348bb97c21a382827e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
+  hitInvulnerabilityTime: 0

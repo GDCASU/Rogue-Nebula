@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 8382299690750163970}
   - component: {fileID: 1231750653526621842}
   m_Layer: 8
-  m_Name: Laser Projectile
-  m_TagString: Untagged
+  m_Name: Player Laser Projectile
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,3 +149,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  destroyAfterHitFactor: 1
+  hitFactor: 0
