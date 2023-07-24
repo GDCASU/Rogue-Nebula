@@ -8,8 +8,8 @@ public class Shooter : MonoBehaviour
     [SerializeField] private bool autoFire = false;             // Entity will auto fire their current gun
     [SerializeField] private Weapon currentWeapon = null;
     [SerializeField] private List<Weapon> weapons;              // Holds all the guns at a Entity's disposal
-    [SerializeField] private Vector2 currDirection = Vector2.up;        // Will be used for flipping an entity later
-
+    
+    private Vector2 currDirection = Vector2.up;        // Will be used for flipping an entity later
     private bool isPlayer;
 
     private void Start()
