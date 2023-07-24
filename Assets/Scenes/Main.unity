@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 3
+  m_AmbientIntensity: 3.5
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.18934919, g: 0.06949092, b: 0.3018868, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 369b9ebe3a62b904dbc19bd332b44086, type: 2}
@@ -1008,11 +1008,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3390445728154148096, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8258333701493600740, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 630727748804629765}
   m_SourcePrefab: {fileID: 100100000, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+--- !u!1 &630727748804629757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8258333701493600740, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+  m_PrefabInstance: {fileID: 630727748804629756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &630727748804629765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630727748804629757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe2b077e985b684b96ce20d0fa7e55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  hitInvulnerabilityTime: 1
 --- !u!1001 &2241779491230951239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1023,7 +1046,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1952447705271331946, guid: a21d6e017f2264f4687e201661ac1418, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.59
       objectReference: {fileID: 0}
     - target: {fileID: 1952447705271331946, guid: a21d6e017f2264f4687e201661ac1418, type: 3}
       propertyPath: m_LocalPosition.y
