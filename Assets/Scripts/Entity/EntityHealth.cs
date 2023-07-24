@@ -54,5 +54,4 @@ public class EntityHealth : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
 }
