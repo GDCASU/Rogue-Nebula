@@ -38,7 +38,7 @@ public class EntityHealth : MonoBehaviour
 
     public void MakeInvulnerable(float invTime)         // Called ANY time the Entity becomes invulnerable
     {
-        if (!invulnerable) {
+        if (invTime > 0 && !invulnerable) {
             StartCoroutine(InvulnerableCo(invTime));
         }
     }

@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    [Header("Shooter Properties")]
     [SerializeField] private bool autoFire = false;             // Entity will auto fire their current gun
     [SerializeField] private Weapon currentWeapon = null;
     [SerializeField] private List<Weapon> weapons;              // Holds all the guns at a Entity's disposal
+
+    [Header("Cooldowns")]
     [SerializeField] private float swapCooldown = 0;
     
     private Vector2 currDirection = Vector2.up;        // Will be used for flipping an entity later
@@ -35,7 +38,7 @@ public class Shooter : MonoBehaviour
 
     public void SwapWeapon(int idx)    // Weapon swap
     {
-        if (swapCooldown > 0)                           // If swap cooldown is required
+        if (isPlayer)                           // If swap cooldown is required
         {
             if (!isSwapping)                            // If not already swapping weapon
             {
