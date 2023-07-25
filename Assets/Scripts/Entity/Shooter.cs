@@ -8,9 +8,11 @@ public class Shooter : MonoBehaviour
     [SerializeField] private bool autoFire = false;             // Entity will auto fire their current gun
     [SerializeField] private Weapon currentWeapon = null;
     [SerializeField] private List<Weapon> weapons;              // Holds all the guns at a Entity's disposal
+    [SerializeField] private float swapCooldown = 0;
     
     private Vector2 currDirection = Vector2.up;        // Will be used for flipping an entity later
-    private bool isPlayer;
+    private bool isPlayer = false;
+    public bool isSwapping = false;
 
     private void Start()
     {
@@ -33,7 +35,22 @@ public class Shooter : MonoBehaviour
 
     public void SwapWeapon(int idx)    // Weapon swap
     {
-        // ADD COROUTINE FOR WEAPON SWAP DELAY LATER
-        currentWeapon = weapons[idx];
+        if (swapCooldown > 0)                           // If swap cooldown is required
+        {
+            if (!isSwapping)                            // If not already swapping weapon
+            {
+                StartCoroutine(SwapCo());
+                currentWeapon = weapons[idx];
+            }
+        }
+        else                                           // If no swap cooldown is required
+            currentWeapon = weapons[idx];
+    }
+
+    private IEnumerator SwapCo()
+    {
+        isSwapping = true;
+        yield return new WaitForSeconds(swapCooldown);
+        isSwapping = false;
     }
 }

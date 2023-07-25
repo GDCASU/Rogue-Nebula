@@ -1054,6 +1054,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1459453492786458248, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      propertyPath: swapCooldown
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459453492786458248, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: weapons.Array.data[0]
       value: 
       objectReference: {fileID: 725745737}
@@ -1105,6 +1109,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2896815112592752080, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      propertyPath: baseFireRate
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 8258333701493600740, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1152,6 +1160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bba5ef231db364fae7120bac837963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shooter: {fileID: 0}
+  health: {fileID: 0}
+  playerMovement: {fileID: 0}
 --- !u!1001 &2241779491230951239
 PrefabInstance:
   m_ObjectHideFlags: 0
