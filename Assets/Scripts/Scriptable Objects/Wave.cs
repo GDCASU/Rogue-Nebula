@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wave : MonoBehaviour
 {
-    [SerializeField] public WaveDifficulty difficulty = 0;  // Just for classification (SHOULD NOT BE USED)
+    [SerializeField] private WaveDifficulty difficulty = 0;  // Just for classification (SHOULD NOT BE USED)
 
     private int numberOfEnemies = 0;
     // private List<Enemy> enemyList;
