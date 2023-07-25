@@ -53,9 +53,10 @@ public class PlayerInput : MonoBehaviour
             playerControls.ShipControls.Move.performed += i => HandleMovementInput(i);
             playerControls.ShipControls.Shoot.performed += i => HandleShootingInput(i);
             playerControls.ShipControls.Shoot.canceled += i => HandleShootingInput(i);
-            playerControls.ShipControls.Swap_Weapon_1.performed += i => HandleWeaponSwap(i, 0);
-            playerControls.ShipControls.Swap_Weapon_2.performed += i => HandleWeaponSwap(i, 1);
-            playerControls.ShipControls.FireMode.performed += i => HandleFireMode(i);
+            playerControls.ShipControls.Swap_Weapon_1.performed += i => HandleWeaponSwapInput(i, 0);
+            playerControls.ShipControls.Swap_Weapon_2.performed += i => HandleWeaponSwapInput(i, 1);
+            playerControls.ShipControls.FireMode.performed += i => HandleFireModeInput(i);
+            playerControls.ShipControls.FlipPlayer.performed += i => HandleOrientationFlipInput();
         }
 
         playerControls.Enable();
@@ -74,17 +75,22 @@ public class PlayerInput : MonoBehaviour
             shootInput = false;
     }
 
-    private void HandleWeaponSwap(InputAction.CallbackContext context, int weaponIndex)
+    private void HandleWeaponSwapInput(InputAction.CallbackContext context, int weaponIndex)
     {
         player.shooter.SwapWeapon(weaponIndex);
     }
 
-    private void HandleFireMode(InputAction.CallbackContext context)
+    private void HandleFireModeInput(InputAction.CallbackContext context)
     {
         if (player.shooter.autoFire)
             player.shooter.autoFire = false;
         else
             player.shooter.autoFire = true;
+    }
+
+    private void HandleOrientationFlipInput()
+    {
+        player.FlipPlayerOrientation();
     }
 
     private void OnApplicationFocus(bool focus)

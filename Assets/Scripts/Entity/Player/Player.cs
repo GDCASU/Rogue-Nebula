@@ -15,4 +15,10 @@ public class Player : MonoBehaviour
         health = GetComponent<PlayerHealth>();
         playerMovement = GetComponent<PlayerMovement>();
     }
+
+    public void FlipPlayerOrientation()
+    {
+        Debug.Log("Player Flipped");
+        gameObject.transform.Rotate(Vector3.forward, 180f);
+    }
 }

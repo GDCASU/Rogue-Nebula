@@ -71,6 +71,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FlipPlayer"",
+                    ""type"": ""Button"",
+                    ""id"": ""73b879a6-73b7-40c7-b058-d59ba25e3e20"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -227,6 +236,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""FireMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5fe6315a-dcd8-424d-9580-e6b9db763ba6"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FlipPlayer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f58b995-da4a-4cf2-ac19-d1f9c32293fc"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FlipPlayer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -263,6 +294,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_ShipControls_Swap_Weapon_1 = m_ShipControls.FindAction("Swap_Weapon_1", throwIfNotFound: true);
         m_ShipControls_Swap_Weapon_2 = m_ShipControls.FindAction("Swap_Weapon_2", throwIfNotFound: true);
         m_ShipControls_FireMode = m_ShipControls.FindAction("FireMode", throwIfNotFound: true);
+        m_ShipControls_FlipPlayer = m_ShipControls.FindAction("FlipPlayer", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
     }
@@ -331,6 +363,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_ShipControls_Swap_Weapon_1;
     private readonly InputAction m_ShipControls_Swap_Weapon_2;
     private readonly InputAction m_ShipControls_FireMode;
+    private readonly InputAction m_ShipControls_FlipPlayer;
     public struct ShipControlsActions
     {
         private @PlayerControls m_Wrapper;
@@ -340,6 +373,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Swap_Weapon_1 => m_Wrapper.m_ShipControls_Swap_Weapon_1;
         public InputAction @Swap_Weapon_2 => m_Wrapper.m_ShipControls_Swap_Weapon_2;
         public InputAction @FireMode => m_Wrapper.m_ShipControls_FireMode;
+        public InputAction @FlipPlayer => m_Wrapper.m_ShipControls_FlipPlayer;
         public InputActionMap Get() { return m_Wrapper.m_ShipControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -364,6 +398,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @FireMode.started += instance.OnFireMode;
             @FireMode.performed += instance.OnFireMode;
             @FireMode.canceled += instance.OnFireMode;
+            @FlipPlayer.started += instance.OnFlipPlayer;
+            @FlipPlayer.performed += instance.OnFlipPlayer;
+            @FlipPlayer.canceled += instance.OnFlipPlayer;
         }
 
         private void UnregisterCallbacks(IShipControlsActions instance)
@@ -383,6 +420,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @FireMode.started -= instance.OnFireMode;
             @FireMode.performed -= instance.OnFireMode;
             @FireMode.canceled -= instance.OnFireMode;
+            @FlipPlayer.started -= instance.OnFlipPlayer;
+            @FlipPlayer.performed -= instance.OnFlipPlayer;
+            @FlipPlayer.canceled -= instance.OnFlipPlayer;
         }
 
         public void RemoveCallbacks(IShipControlsActions instance)
@@ -454,6 +494,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnSwap_Weapon_1(InputAction.CallbackContext context);
         void OnSwap_Weapon_2(InputAction.CallbackContext context);
         void OnFireMode(InputAction.CallbackContext context);
+        void OnFlipPlayer(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
