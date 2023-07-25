@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 4934230605295773998}
   - component: {fileID: 8618941445302828567}
   - component: {fileID: 1459453492786458248}
-  - component: {fileID: 3390445728154148096}
+  - component: {fileID: 5239517603694538822}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -201,7 +201,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 2896815112592752080}
   currDirection: {x: 0, y: 1}
---- !u!114 &3390445728154148096
+--- !u!114 &5239517603694538822
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8258333701493600740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feb3a23db83714b48963e51344ccdb03, type: 3}
+  m_Script: {fileID: 11500000, guid: dfe2b077e985b684b96ce20d0fa7e55b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
