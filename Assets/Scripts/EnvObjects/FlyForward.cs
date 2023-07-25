@@ -14,6 +14,11 @@ public class FlyForward : MonoBehaviour
 
     void Move()
     {
-        transform.Translate(transform.forward * Time.deltaTime * speed);
+        transform.Translate(Vector3.up * Time.deltaTime * speed);
+    }
+
+    public void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
     }
 }
