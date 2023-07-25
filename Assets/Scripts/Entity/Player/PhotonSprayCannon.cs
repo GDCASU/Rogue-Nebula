@@ -26,12 +26,12 @@ public class PhotonSprayCannon : Weapon
         Quaternion m_rotation = new Quaternion(m_direction.x, m_direction.y, m_direction.z, 1);
         Quaternion r_rotation = new Quaternion(r_direction.x, r_direction.y, r_direction.z, 1);
 
-        GameObject projInstance_l = Instantiate(ProjectilePrefab, transform.position, transform.rotation); // Instantiate projectiles at weapon's pos
-        GameObject projInstance_m = Instantiate(ProjectilePrefab, transform.position, transform.rotation);
-        GameObject projInstance_r = Instantiate(ProjectilePrefab, transform.position, transform.rotation);
+        GameObject projInstance_l = Instantiate(ProjectilePrefab, transform.position, l_rotation); // Instantiate projectiles at weapon's pos
+        GameObject projInstance_m = Instantiate(ProjectilePrefab, transform.position, m_rotation);
+        GameObject projInstance_r = Instantiate(ProjectilePrefab, transform.position, r_rotation);
         projInstance_l.transform.parent = transform;        // Parent to weapon obj
         projInstance_m.transform.parent = transform;        
-        projInstance_r.transform.parent = transform;        
+        projInstance_r.transform.parent = transform;
 
         Rigidbody rb_l = projInstance_l.GetComponent<Rigidbody>();
         Rigidbody rb_m = projInstance_m.GetComponent<Rigidbody>();

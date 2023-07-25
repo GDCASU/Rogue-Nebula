@@ -68,9 +68,7 @@ public class PlayerInput : MonoBehaviour
     private void HandleShootingInput(InputAction.CallbackContext context) 
     {
         if (context.performed)
-        {
             shootInput = true;
-        }
         else
             shootInput = false;
     }
