@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: WavePool_Easy
   m_EditorClassIdentifier: 
   waveDifficulty: 0
-  waves:
-  - {fileID: 11400000, guid: 6bbfaeeade4629744b502236f97dbf19, type: 2}
-  - {fileID: 11400000, guid: 699d6cd174acf6a40a3a4fb3b5f3d697, type: 2}
-  - {fileID: 11400000, guid: 2a6d7b6b73cca4c47bd9efde6d8e2996, type: 2}
-  varientChance: 10
+  waves: []
+  varientMedChance: 0
+  varientHardChance: 0

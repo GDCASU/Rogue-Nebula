@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba62a72d10eac8848b03f2d79ab92e9b, type: 3}
   m_Name: WavePool_Med
   m_EditorClassIdentifier: 
-  waveDifficulty: 0
+  waveDifficulty: 1
   waves: []
-  varientChance: 50
+  varientMedChance: 0
+  varientHardChance: 0

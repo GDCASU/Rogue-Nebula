@@ -14,6 +14,7 @@ public class WavePool : ScriptableObject
 
     public void SpawnNextWave()
     {
+        // CHECK IF WAVE SELECTED IS NULL TO PREVENT NULL REF EXC
         // SPAWN WAVE AT INDEX
         // spawn wave using RandomWaveSelect()
     }

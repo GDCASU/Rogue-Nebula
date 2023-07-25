@@ -7,9 +7,7 @@ public enum WaveDifficulty
 {
     easy = 0,
     medium = 1,
-    hard = 2,
-    veryHard = 3,
-    endless = 4
+    hard = 2
 }
 
 public class WaveManager : MonoBehaviour
@@ -17,10 +15,10 @@ public class WaveManager : MonoBehaviour
     public static WaveManager instance;
 
     [Header("Wave Pools")]
-    [SerializeField] private WavePool currentWavePool = null;
-    [SerializeField] private List<WavePool> wavePools = new List<WavePool>();
     [SerializeField] private int waveCounter = 0;
     [SerializeField] private int changePoolAfterWaves = 10;
+    [SerializeField] private WavePool currentWavePool = null;
+    [SerializeField] private List<WavePool> wavePools = new List<WavePool>();
 
     [Header("Difficulty")]
     [SerializeField] public WaveDifficulty currentDifficulty = 0;
@@ -51,7 +49,7 @@ public class WaveManager : MonoBehaviour
 
     public void SpawnWave()
     {
-        if (currentWavePool != null)
+        if (currentWavePool != null)        // Check that WavePool exists
             currentWavePool.SpawnNextWave();
     }
 
