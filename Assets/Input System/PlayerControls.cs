@@ -44,6 +44,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Swap_Weapon_1"",
+                    ""type"": ""Button"",
+                    ""id"": ""243dd16c-b16b-4c19-86d7-5d4f804b04e7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Swap_Weapon_2"",
+                    ""type"": ""Button"",
+                    ""id"": ""3a1deea5-d600-44c2-916b-35f6af22c615"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -134,6 +152,50 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e1ed25c9-409a-4ee1-ae9a-48858432acc7"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swap_Weapon_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1876ffe0-f102-4b23-9b28-fb7a565ce3e8"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swap_Weapon_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""709d04bd-54e3-4d63-a49d-c037f049d87a"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swap_Weapon_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""46740fa0-0af1-44af-b177-60c5cbbec05c"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swap_Weapon_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -167,6 +229,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_ShipControls = asset.FindActionMap("ShipControls", throwIfNotFound: true);
         m_ShipControls_Move = m_ShipControls.FindAction("Move", throwIfNotFound: true);
         m_ShipControls_Shoot = m_ShipControls.FindAction("Shoot", throwIfNotFound: true);
+        m_ShipControls_Swap_Weapon_1 = m_ShipControls.FindAction("Swap_Weapon_1", throwIfNotFound: true);
+        m_ShipControls_Swap_Weapon_2 = m_ShipControls.FindAction("Swap_Weapon_2", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
     }
@@ -232,12 +296,16 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<IShipControlsActions> m_ShipControlsActionsCallbackInterfaces = new List<IShipControlsActions>();
     private readonly InputAction m_ShipControls_Move;
     private readonly InputAction m_ShipControls_Shoot;
+    private readonly InputAction m_ShipControls_Swap_Weapon_1;
+    private readonly InputAction m_ShipControls_Swap_Weapon_2;
     public struct ShipControlsActions
     {
         private @PlayerControls m_Wrapper;
         public ShipControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_ShipControls_Move;
         public InputAction @Shoot => m_Wrapper.m_ShipControls_Shoot;
+        public InputAction @Swap_Weapon_1 => m_Wrapper.m_ShipControls_Swap_Weapon_1;
+        public InputAction @Swap_Weapon_2 => m_Wrapper.m_ShipControls_Swap_Weapon_2;
         public InputActionMap Get() { return m_Wrapper.m_ShipControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -253,6 +321,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
+            @Swap_Weapon_1.started += instance.OnSwap_Weapon_1;
+            @Swap_Weapon_1.performed += instance.OnSwap_Weapon_1;
+            @Swap_Weapon_1.canceled += instance.OnSwap_Weapon_1;
+            @Swap_Weapon_2.started += instance.OnSwap_Weapon_2;
+            @Swap_Weapon_2.performed += instance.OnSwap_Weapon_2;
+            @Swap_Weapon_2.canceled += instance.OnSwap_Weapon_2;
         }
 
         private void UnregisterCallbacks(IShipControlsActions instance)
@@ -263,6 +337,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
+            @Swap_Weapon_1.started -= instance.OnSwap_Weapon_1;
+            @Swap_Weapon_1.performed -= instance.OnSwap_Weapon_1;
+            @Swap_Weapon_1.canceled -= instance.OnSwap_Weapon_1;
+            @Swap_Weapon_2.started -= instance.OnSwap_Weapon_2;
+            @Swap_Weapon_2.performed -= instance.OnSwap_Weapon_2;
+            @Swap_Weapon_2.canceled -= instance.OnSwap_Weapon_2;
         }
 
         public void RemoveCallbacks(IShipControlsActions instance)
@@ -331,6 +411,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnSwap_Weapon_1(InputAction.CallbackContext context);
+        void OnSwap_Weapon_2(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
+    [SerializeField] public float moveSpeed;
     private Vector2 moveDirection;
 
     // Components
