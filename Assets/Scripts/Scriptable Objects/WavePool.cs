@@ -7,9 +7,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WavePool", menuName = "Wave Pool")]
 public class WavePool : ScriptableObject
 {
-    [SerializeField] public WaveDifficulty waveDifficulty = 0;         // Just for classification (NOT USED)
+    [SerializeField] public WaveDifficulty waveDifficulty = 0;        // Just for classification (SHOULD NOT BE USED)
     [SerializeField] public List<Wave> waves = new List<Wave>();
-    [SerializeField] public float varientChance = 0f;
+    [SerializeField] public float varientMedChance = 0f;        // Default if chances not hit will just be the base enemy (easy)
+    [SerializeField] public float varientHardChance = 0f;
 
     public void SpawnNextWave()
     {
