@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    const string PROJECTILE_CONTAINER = "Projectile Container";
+    public GameObject projectileContainer = null;
+
     [Header("Shooter Properties")]
     [SerializeField] public bool autoFire = false;             // Entity will auto fire their current gun
     [SerializeField] private Weapon currentWeapon = null;
@@ -19,6 +22,8 @@ public class Shooter : MonoBehaviour
 
     private void Start()
     {
+        CreateProjectileParent();
+
         currentWeapon = weapons[0];     // Set current weapon to default
 
         if (gameObject.tag == "Player")       // Check if entity is Player (can use hold-to-fire
@@ -33,6 +38,15 @@ public class Shooter : MonoBehaviour
                 currentWeapon.Fire();
             else if (isPlayer && PlayerInput.instance.shootInput == true) // hold-to-fire case
                 currentWeapon.Fire();
+        }
+    }
+
+    public void CreateProjectileParent()
+    {
+        projectileContainer = GameObject.Find(PROJECTILE_CONTAINER);
+        if (!projectileContainer)
+        {
+            projectileContainer = new GameObject(PROJECTILE_CONTAINER);
         }
     }
 

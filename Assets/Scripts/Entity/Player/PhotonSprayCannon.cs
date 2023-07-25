@@ -29,9 +29,9 @@ public class PhotonSprayCannon : Weapon
         GameObject projInstance_l = Instantiate(ProjectilePrefab, transform.position, l_rotation); // Instantiate projectiles at weapon's pos
         GameObject projInstance_m = Instantiate(ProjectilePrefab, transform.position, m_rotation);
         GameObject projInstance_r = Instantiate(ProjectilePrefab, transform.position, r_rotation);
-        projInstance_l.transform.parent = transform;        // Parent to weapon obj
-        projInstance_m.transform.parent = transform;        
-        projInstance_r.transform.parent = transform;
+        projInstance_l.transform.parent = shooter.projectileContainer.transform;        // Parent to weapon obj
+        projInstance_m.transform.parent = shooter.projectileContainer.transform;        
+        projInstance_r.transform.parent = shooter.projectileContainer.transform;
 
         Rigidbody rb_l = projInstance_l.GetComponent<Rigidbody>();
         Rigidbody rb_m = projInstance_m.GetComponent<Rigidbody>();
