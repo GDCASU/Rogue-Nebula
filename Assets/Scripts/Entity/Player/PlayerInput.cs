@@ -55,6 +55,7 @@ public class PlayerInput : MonoBehaviour
             playerControls.ShipControls.Shoot.canceled += i => HandleShootingInput(i);
             playerControls.ShipControls.Swap_Weapon_1.performed += i => HandleWeaponSwap(i, 0);
             playerControls.ShipControls.Swap_Weapon_2.performed += i => HandleWeaponSwap(i, 1);
+            playerControls.ShipControls.FireMode.performed += i => HandleFireMode(i);
         }
 
         playerControls.Enable();
@@ -76,6 +77,14 @@ public class PlayerInput : MonoBehaviour
     private void HandleWeaponSwap(InputAction.CallbackContext context, int weaponIndex)
     {
         player.shooter.SwapWeapon(weaponIndex);
+    }
+
+    private void HandleFireMode(InputAction.CallbackContext context)
+    {
+        if (player.shooter.autoFire)
+            player.shooter.autoFire = false;
+        else
+            player.shooter.autoFire = true;
     }
 
     private void OnApplicationFocus(bool focus)

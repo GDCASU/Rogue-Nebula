@@ -6,7 +6,7 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     [Header("Shooter Properties")]
-    [SerializeField] private bool autoFire = false;             // Entity will auto fire their current gun
+    [SerializeField] public bool autoFire = false;             // Entity will auto fire their current gun
     [SerializeField] private Weapon currentWeapon = null;
     [SerializeField] private List<Weapon> weapons;              // Holds all the guns at a Entity's disposal
 

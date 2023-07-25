@@ -62,6 +62,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FireMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""2dc7fa24-2021-4680-8496-225209668086"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -196,6 +205,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Swap_Weapon_2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7cb8a162-66d4-450a-ab9a-01ff8c2f251d"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12221c06-58f1-4ca6-9a70-8011f4842699"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -231,6 +262,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_ShipControls_Shoot = m_ShipControls.FindAction("Shoot", throwIfNotFound: true);
         m_ShipControls_Swap_Weapon_1 = m_ShipControls.FindAction("Swap_Weapon_1", throwIfNotFound: true);
         m_ShipControls_Swap_Weapon_2 = m_ShipControls.FindAction("Swap_Weapon_2", throwIfNotFound: true);
+        m_ShipControls_FireMode = m_ShipControls.FindAction("FireMode", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
     }
@@ -298,6 +330,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_ShipControls_Shoot;
     private readonly InputAction m_ShipControls_Swap_Weapon_1;
     private readonly InputAction m_ShipControls_Swap_Weapon_2;
+    private readonly InputAction m_ShipControls_FireMode;
     public struct ShipControlsActions
     {
         private @PlayerControls m_Wrapper;
@@ -306,6 +339,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Shoot => m_Wrapper.m_ShipControls_Shoot;
         public InputAction @Swap_Weapon_1 => m_Wrapper.m_ShipControls_Swap_Weapon_1;
         public InputAction @Swap_Weapon_2 => m_Wrapper.m_ShipControls_Swap_Weapon_2;
+        public InputAction @FireMode => m_Wrapper.m_ShipControls_FireMode;
         public InputActionMap Get() { return m_Wrapper.m_ShipControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -327,6 +361,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Swap_Weapon_2.started += instance.OnSwap_Weapon_2;
             @Swap_Weapon_2.performed += instance.OnSwap_Weapon_2;
             @Swap_Weapon_2.canceled += instance.OnSwap_Weapon_2;
+            @FireMode.started += instance.OnFireMode;
+            @FireMode.performed += instance.OnFireMode;
+            @FireMode.canceled += instance.OnFireMode;
         }
 
         private void UnregisterCallbacks(IShipControlsActions instance)
@@ -343,6 +380,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Swap_Weapon_2.started -= instance.OnSwap_Weapon_2;
             @Swap_Weapon_2.performed -= instance.OnSwap_Weapon_2;
             @Swap_Weapon_2.canceled -= instance.OnSwap_Weapon_2;
+            @FireMode.started -= instance.OnFireMode;
+            @FireMode.performed -= instance.OnFireMode;
+            @FireMode.canceled -= instance.OnFireMode;
         }
 
         public void RemoveCallbacks(IShipControlsActions instance)
@@ -413,6 +453,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnShoot(InputAction.CallbackContext context);
         void OnSwap_Weapon_1(InputAction.CallbackContext context);
         void OnSwap_Weapon_2(InputAction.CallbackContext context);
+        void OnFireMode(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
