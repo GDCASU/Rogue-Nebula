@@ -163,7 +163,7 @@ Transform:
   m_GameObject: {fileID: 10040465}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.23081657, y: 1.6576945, z: 6.2430925}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1056,11 +1056,11 @@ PrefabInstance:
     - target: {fileID: 1459453492786458248, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: weapons.Array.data[0]
       value: 
-      objectReference: {fileID: 1942862961}
+      objectReference: {fileID: 725745737}
     - target: {fileID: 1459453492786458248, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: weapons.Array.data[1]
       value: 
-      objectReference: {fileID: 725745737}
+      objectReference: {fileID: 1942862961}
     - target: {fileID: 1467359064680188308, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: hitInvulnerabilityTime
       value: 1
@@ -1109,11 +1109,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1467359064680188308, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8258333701493600740, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 630727748804629766}
+    - targetCorrespondingSourceObject: {fileID: 8258333701493600740, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 630727748804629765}
   m_SourcePrefab: {fileID: 100100000, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+--- !u!1 &630727748804629757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8258333701493600740, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+  m_PrefabInstance: {fileID: 630727748804629756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &630727748804629765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630727748804629757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe2b077e985b684b96ce20d0fa7e55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  hitInvulnerabilityTime: 1
+--- !u!114 &630727748804629766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630727748804629757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bba5ef231db364fae7120bac837963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2241779491230951239
 PrefabInstance:
   m_ObjectHideFlags: 0

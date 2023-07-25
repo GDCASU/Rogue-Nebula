@@ -31,7 +31,7 @@ public class Shooter : MonoBehaviour
         }
     }
 
-    private void SwapWeapon(int idx)    // Weapon swap
+    public void SwapWeapon(int idx)    // Weapon swap
     {
         // ADD COROUTINE FOR WEAPON SWAP DELAY LATER
         currentWeapon = weapons[idx];
