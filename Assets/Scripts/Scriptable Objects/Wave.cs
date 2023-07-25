@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Wave", menuName = "Waves/Wave")]
-public class Wave : ScriptableObject
+public class Wave : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int numberOfEnemies = 0;
+    // private List<Enemy> enemyList;
+    
+    private void Start()
     {
-        
+        // numberOfEnemies = enemyList.count;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void EndOfWave()
     {
-        
+        WaveManager.instance.UpdateWaveCounter();
     }
 }
