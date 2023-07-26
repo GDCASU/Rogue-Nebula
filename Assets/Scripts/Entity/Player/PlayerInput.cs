@@ -57,6 +57,8 @@ public class PlayerInput : MonoBehaviour
             playerControls.ShipControls.Swap_Weapon_2.performed += i => HandleWeaponSwapInput(i, 1);
             playerControls.ShipControls.FireMode.performed += i => HandleFireModeInput(i);
             playerControls.ShipControls.FlipPlayer.performed += i => HandleOrientationFlipInput();
+            playerControls.ShipControls.Evade.performed += i => HandleEvade();
+            playerControls.ShipControls.BubbleShield.performed += i => HandleBubbleShield();
         }
 
         playerControls.Enable();
@@ -91,6 +93,16 @@ public class PlayerInput : MonoBehaviour
     private void HandleOrientationFlipInput()
     {
         player.FlipPlayerOrientation();
+    }
+
+    private void HandleEvade()
+    {
+        player.evade.Execute();
+    }
+
+    private void HandleBubbleShield()
+    {
+        player.shieldBubble.Execute();
     }
 
     private void OnApplicationFocus(bool focus)

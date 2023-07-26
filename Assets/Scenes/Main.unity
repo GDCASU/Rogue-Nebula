@@ -1086,7 +1086,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1459453492786458248, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: swapCooldown
-      value: 0.8
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1459453492786458248, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: weapons.Array.data[0]
@@ -1159,6 +1159,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8258333701493600740, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       insertIndex: 5
       addedObject: {fileID: 630727748804629765}
+    - targetCorrespondingSourceObject: {fileID: 8258333701493600740, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 630727748804629774}
+    - targetCorrespondingSourceObject: {fileID: 8258333701493600740, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 630727748804629773}
   m_SourcePrefab: {fileID: 100100000, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
 --- !u!1 &630727748804629757 stripped
 GameObject:
@@ -1194,6 +1200,34 @@ MonoBehaviour:
   shooter: {fileID: 0}
   health: {fileID: 0}
   playerMovement: {fileID: 0}
+  evade: {fileID: 0}
+  shieldBubble: {fileID: 0}
+--- !u!114 &630727748804629773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630727748804629757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e233d1424b701d4cb05f70daf493f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityCooldown: 5
+--- !u!114 &630727748804629774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630727748804629757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eace6b786763df24bbae859e4cb63539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityCooldown: 1.5
 --- !u!1001 &2241779491230951239
 PrefabInstance:
   m_ObjectHideFlags: 0

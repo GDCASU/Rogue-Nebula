@@ -80,6 +80,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Evade"",
+                    ""type"": ""Button"",
+                    ""id"": ""94fc87ba-f78c-4d9e-9902-136f9629cbe5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BubbleShield"",
+                    ""type"": ""Button"",
+                    ""id"": ""cd785dde-dd91-4c27-9d11-cb7304491f62"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -258,6 +276,50 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""FlipPlayer"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1ed986c-87a1-4589-ac76-58ebf5c98301"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Evade"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4663f11f-8371-4dd2-bd9b-7624b396d462"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Evade"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d0e6687-b1dd-47d3-9710-29bee105fbc9"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BubbleShield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f8fa7349-bfa5-4fcd-ab4d-23d0a3580648"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BubbleShield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -295,6 +357,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_ShipControls_Swap_Weapon_2 = m_ShipControls.FindAction("Swap_Weapon_2", throwIfNotFound: true);
         m_ShipControls_FireMode = m_ShipControls.FindAction("FireMode", throwIfNotFound: true);
         m_ShipControls_FlipPlayer = m_ShipControls.FindAction("FlipPlayer", throwIfNotFound: true);
+        m_ShipControls_Evade = m_ShipControls.FindAction("Evade", throwIfNotFound: true);
+        m_ShipControls_BubbleShield = m_ShipControls.FindAction("BubbleShield", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
     }
@@ -364,6 +428,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_ShipControls_Swap_Weapon_2;
     private readonly InputAction m_ShipControls_FireMode;
     private readonly InputAction m_ShipControls_FlipPlayer;
+    private readonly InputAction m_ShipControls_Evade;
+    private readonly InputAction m_ShipControls_BubbleShield;
     public struct ShipControlsActions
     {
         private @PlayerControls m_Wrapper;
@@ -374,6 +440,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Swap_Weapon_2 => m_Wrapper.m_ShipControls_Swap_Weapon_2;
         public InputAction @FireMode => m_Wrapper.m_ShipControls_FireMode;
         public InputAction @FlipPlayer => m_Wrapper.m_ShipControls_FlipPlayer;
+        public InputAction @Evade => m_Wrapper.m_ShipControls_Evade;
+        public InputAction @BubbleShield => m_Wrapper.m_ShipControls_BubbleShield;
         public InputActionMap Get() { return m_Wrapper.m_ShipControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -401,6 +469,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @FlipPlayer.started += instance.OnFlipPlayer;
             @FlipPlayer.performed += instance.OnFlipPlayer;
             @FlipPlayer.canceled += instance.OnFlipPlayer;
+            @Evade.started += instance.OnEvade;
+            @Evade.performed += instance.OnEvade;
+            @Evade.canceled += instance.OnEvade;
+            @BubbleShield.started += instance.OnBubbleShield;
+            @BubbleShield.performed += instance.OnBubbleShield;
+            @BubbleShield.canceled += instance.OnBubbleShield;
         }
 
         private void UnregisterCallbacks(IShipControlsActions instance)
@@ -423,6 +497,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @FlipPlayer.started -= instance.OnFlipPlayer;
             @FlipPlayer.performed -= instance.OnFlipPlayer;
             @FlipPlayer.canceled -= instance.OnFlipPlayer;
+            @Evade.started -= instance.OnEvade;
+            @Evade.performed -= instance.OnEvade;
+            @Evade.canceled -= instance.OnEvade;
+            @BubbleShield.started -= instance.OnBubbleShield;
+            @BubbleShield.performed -= instance.OnBubbleShield;
+            @BubbleShield.canceled -= instance.OnBubbleShield;
         }
 
         public void RemoveCallbacks(IShipControlsActions instance)
@@ -495,6 +575,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnSwap_Weapon_2(InputAction.CallbackContext context);
         void OnFireMode(InputAction.CallbackContext context);
         void OnFlipPlayer(InputAction.CallbackContext context);
+        void OnEvade(InputAction.CallbackContext context);
+        void OnBubbleShield(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     const string PROJECTILE_CONTAINER = "Projectile Container";
-    public GameObject projectileContainer = null;
+    [HideInInspector] public GameObject projectileContainer = null;
 
     [Header("Shooter Properties")]
     [SerializeField] public bool autoFire = false;             // Entity will auto fire their current gun

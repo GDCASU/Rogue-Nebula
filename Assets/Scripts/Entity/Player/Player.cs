@@ -8,17 +8,21 @@ public class Player : MonoBehaviour
     [HideInInspector] public Shooter shooter;
     [HideInInspector] public PlayerHealth health;
     [HideInInspector] public PlayerMovement playerMovement;
+    [HideInInspector] public Evade evade;
+    [HideInInspector] public ShieldBubble shieldBubble;
 
     private void Awake()
     {
         shooter = GetComponent<Shooter>();
         health = GetComponent<PlayerHealth>();
         playerMovement = GetComponent<PlayerMovement>();
+        evade = GetComponent<Evade>();
+        shieldBubble = GetComponent<ShieldBubble>();
+
     }
 
     public void FlipPlayerOrientation()
     {
-        Debug.Log("Player Flipped");
         gameObject.transform.Rotate(Vector3.forward, 180f);
     }
 }
