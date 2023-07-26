@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [Header("Basic Properties")]
     [SerializeField] protected GameObject ProjectilePrefab;
     [SerializeField] protected float projectileSpeed = 100f;
     [SerializeField] protected float baseFireRate = 0.5f;

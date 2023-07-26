@@ -44,6 +44,60 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Swap_Weapon_1"",
+                    ""type"": ""Button"",
+                    ""id"": ""243dd16c-b16b-4c19-86d7-5d4f804b04e7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Swap_Weapon_2"",
+                    ""type"": ""Button"",
+                    ""id"": ""3a1deea5-d600-44c2-916b-35f6af22c615"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FireMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""2dc7fa24-2021-4680-8496-225209668086"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FlipPlayer"",
+                    ""type"": ""Button"",
+                    ""id"": ""73b879a6-73b7-40c7-b058-d59ba25e3e20"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Evade"",
+                    ""type"": ""Button"",
+                    ""id"": ""94fc87ba-f78c-4d9e-9902-136f9629cbe5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BubbleShield"",
+                    ""type"": ""Button"",
+                    ""id"": ""cd785dde-dd91-4c27-9d11-cb7304491f62"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -134,6 +188,138 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e1ed25c9-409a-4ee1-ae9a-48858432acc7"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swap_Weapon_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1876ffe0-f102-4b23-9b28-fb7a565ce3e8"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swap_Weapon_1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""709d04bd-54e3-4d63-a49d-c037f049d87a"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swap_Weapon_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""46740fa0-0af1-44af-b177-60c5cbbec05c"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Swap_Weapon_2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7cb8a162-66d4-450a-ab9a-01ff8c2f251d"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12221c06-58f1-4ca6-9a70-8011f4842699"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FireMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5fe6315a-dcd8-424d-9580-e6b9db763ba6"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FlipPlayer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f58b995-da4a-4cf2-ac19-d1f9c32293fc"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FlipPlayer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1ed986c-87a1-4589-ac76-58ebf5c98301"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Evade"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4663f11f-8371-4dd2-bd9b-7624b396d462"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Evade"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d0e6687-b1dd-47d3-9710-29bee105fbc9"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BubbleShield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f8fa7349-bfa5-4fcd-ab4d-23d0a3580648"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BubbleShield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -167,6 +353,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_ShipControls = asset.FindActionMap("ShipControls", throwIfNotFound: true);
         m_ShipControls_Move = m_ShipControls.FindAction("Move", throwIfNotFound: true);
         m_ShipControls_Shoot = m_ShipControls.FindAction("Shoot", throwIfNotFound: true);
+        m_ShipControls_Swap_Weapon_1 = m_ShipControls.FindAction("Swap_Weapon_1", throwIfNotFound: true);
+        m_ShipControls_Swap_Weapon_2 = m_ShipControls.FindAction("Swap_Weapon_2", throwIfNotFound: true);
+        m_ShipControls_FireMode = m_ShipControls.FindAction("FireMode", throwIfNotFound: true);
+        m_ShipControls_FlipPlayer = m_ShipControls.FindAction("FlipPlayer", throwIfNotFound: true);
+        m_ShipControls_Evade = m_ShipControls.FindAction("Evade", throwIfNotFound: true);
+        m_ShipControls_BubbleShield = m_ShipControls.FindAction("BubbleShield", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
     }
@@ -232,12 +424,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<IShipControlsActions> m_ShipControlsActionsCallbackInterfaces = new List<IShipControlsActions>();
     private readonly InputAction m_ShipControls_Move;
     private readonly InputAction m_ShipControls_Shoot;
+    private readonly InputAction m_ShipControls_Swap_Weapon_1;
+    private readonly InputAction m_ShipControls_Swap_Weapon_2;
+    private readonly InputAction m_ShipControls_FireMode;
+    private readonly InputAction m_ShipControls_FlipPlayer;
+    private readonly InputAction m_ShipControls_Evade;
+    private readonly InputAction m_ShipControls_BubbleShield;
     public struct ShipControlsActions
     {
         private @PlayerControls m_Wrapper;
         public ShipControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_ShipControls_Move;
         public InputAction @Shoot => m_Wrapper.m_ShipControls_Shoot;
+        public InputAction @Swap_Weapon_1 => m_Wrapper.m_ShipControls_Swap_Weapon_1;
+        public InputAction @Swap_Weapon_2 => m_Wrapper.m_ShipControls_Swap_Weapon_2;
+        public InputAction @FireMode => m_Wrapper.m_ShipControls_FireMode;
+        public InputAction @FlipPlayer => m_Wrapper.m_ShipControls_FlipPlayer;
+        public InputAction @Evade => m_Wrapper.m_ShipControls_Evade;
+        public InputAction @BubbleShield => m_Wrapper.m_ShipControls_BubbleShield;
         public InputActionMap Get() { return m_Wrapper.m_ShipControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -253,6 +457,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
+            @Swap_Weapon_1.started += instance.OnSwap_Weapon_1;
+            @Swap_Weapon_1.performed += instance.OnSwap_Weapon_1;
+            @Swap_Weapon_1.canceled += instance.OnSwap_Weapon_1;
+            @Swap_Weapon_2.started += instance.OnSwap_Weapon_2;
+            @Swap_Weapon_2.performed += instance.OnSwap_Weapon_2;
+            @Swap_Weapon_2.canceled += instance.OnSwap_Weapon_2;
+            @FireMode.started += instance.OnFireMode;
+            @FireMode.performed += instance.OnFireMode;
+            @FireMode.canceled += instance.OnFireMode;
+            @FlipPlayer.started += instance.OnFlipPlayer;
+            @FlipPlayer.performed += instance.OnFlipPlayer;
+            @FlipPlayer.canceled += instance.OnFlipPlayer;
+            @Evade.started += instance.OnEvade;
+            @Evade.performed += instance.OnEvade;
+            @Evade.canceled += instance.OnEvade;
+            @BubbleShield.started += instance.OnBubbleShield;
+            @BubbleShield.performed += instance.OnBubbleShield;
+            @BubbleShield.canceled += instance.OnBubbleShield;
         }
 
         private void UnregisterCallbacks(IShipControlsActions instance)
@@ -263,6 +485,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
+            @Swap_Weapon_1.started -= instance.OnSwap_Weapon_1;
+            @Swap_Weapon_1.performed -= instance.OnSwap_Weapon_1;
+            @Swap_Weapon_1.canceled -= instance.OnSwap_Weapon_1;
+            @Swap_Weapon_2.started -= instance.OnSwap_Weapon_2;
+            @Swap_Weapon_2.performed -= instance.OnSwap_Weapon_2;
+            @Swap_Weapon_2.canceled -= instance.OnSwap_Weapon_2;
+            @FireMode.started -= instance.OnFireMode;
+            @FireMode.performed -= instance.OnFireMode;
+            @FireMode.canceled -= instance.OnFireMode;
+            @FlipPlayer.started -= instance.OnFlipPlayer;
+            @FlipPlayer.performed -= instance.OnFlipPlayer;
+            @FlipPlayer.canceled -= instance.OnFlipPlayer;
+            @Evade.started -= instance.OnEvade;
+            @Evade.performed -= instance.OnEvade;
+            @Evade.canceled -= instance.OnEvade;
+            @BubbleShield.started -= instance.OnBubbleShield;
+            @BubbleShield.performed -= instance.OnBubbleShield;
+            @BubbleShield.canceled -= instance.OnBubbleShield;
         }
 
         public void RemoveCallbacks(IShipControlsActions instance)
@@ -331,6 +571,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnSwap_Weapon_1(InputAction.CallbackContext context);
+        void OnSwap_Weapon_2(InputAction.CallbackContext context);
+        void OnFireMode(InputAction.CallbackContext context);
+        void OnFlipPlayer(InputAction.CallbackContext context);
+        void OnEvade(InputAction.CallbackContext context);
+        void OnBubbleShield(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

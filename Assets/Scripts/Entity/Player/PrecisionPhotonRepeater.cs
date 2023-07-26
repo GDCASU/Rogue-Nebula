@@ -15,7 +15,7 @@ public class PrecisionPhotonRepeater : Weapon
     {
         isFiring = true;
         GameObject projInstance = Instantiate(ProjectilePrefab, transform.position, transform.rotation); // Instantiate projectile @ player's pos
-        projInstance.transform.parent = transform;
+        projInstance.transform.parent = shooter.projectileContainer.transform;      // Parent to weapon obj
         Rigidbody rb = projInstance.GetComponent<Rigidbody>();
         if (rb != null && shooter != null)
             rb.velocity = transform.up * projectileSpeed;

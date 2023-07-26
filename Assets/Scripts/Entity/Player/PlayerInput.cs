@@ -16,6 +16,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] public bool shootInput;
 
     private PlayerControls playerControls;
+    private Player player;
 
     private void Awake()    // Handle Singleton
     {
@@ -23,6 +24,8 @@ public class PlayerInput : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+
+        player = FindObjectOfType<Player>();
     }
 
     private void Start()
@@ -50,6 +53,12 @@ public class PlayerInput : MonoBehaviour
             playerControls.ShipControls.Move.performed += i => HandleMovementInput(i);
             playerControls.ShipControls.Shoot.performed += i => HandleShootingInput(i);
             playerControls.ShipControls.Shoot.canceled += i => HandleShootingInput(i);
+            playerControls.ShipControls.Swap_Weapon_1.performed += i => HandleWeaponSwapInput(i, 0);
+            playerControls.ShipControls.Swap_Weapon_2.performed += i => HandleWeaponSwapInput(i, 1);
+            playerControls.ShipControls.FireMode.performed += i => HandleFireModeInput(i);
+            playerControls.ShipControls.FlipPlayer.performed += i => HandleOrientationFlipInput();
+            playerControls.ShipControls.Evade.performed += i => HandleEvade();
+            playerControls.ShipControls.BubbleShield.performed += i => HandleBubbleShield();
         }
 
         playerControls.Enable();
@@ -63,12 +72,39 @@ public class PlayerInput : MonoBehaviour
     private void HandleShootingInput(InputAction.CallbackContext context) 
     {
         if (context.performed)
-        {
             shootInput = true;
-        }
         else
             shootInput = false;
     }
+
+    private void HandleWeaponSwapInput(InputAction.CallbackContext context, int weaponIndex)
+    {
+        player.shooter.SwapWeapon(weaponIndex);
+    }
+
+    private void HandleFireModeInput(InputAction.CallbackContext context)
+    {
+        if (player.shooter.autoFire)
+            player.shooter.autoFire = false;
+        else
+            player.shooter.autoFire = true;
+    }
+
+    private void HandleOrientationFlipInput()
+    {
+        player.FlipPlayerOrientation();
+    }
+
+    private void HandleEvade()
+    {
+        player.evade.Execute();
+    }
+
+    private void HandleBubbleShield()
+    {
+        player.shieldBubble.Execute();
+    }
+
     private void OnApplicationFocus(bool focus)
     {
         if (enabled)
