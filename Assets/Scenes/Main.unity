@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.00078973843, g: 0.0041236747, b: 0.019925684, a: 1}
+  m_IndirectSpecularColor: {r: 0.0007755157, g: 0.004131224, b: 0.019962013, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -739,13 +739,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589651c10b10df24489596b75b65ccc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveCounter: 0
+  changePoolAfterWaves: 10
   currentWavePool: {fileID: 0}
   wavePools:
   - {fileID: 11400000, guid: e81307543ade203498aa867c76386085, type: 2}
   - {fileID: 11400000, guid: 3f75855ef6ef5d14e93a1c24d0a58f73, type: 2}
   - {fileID: 11400000, guid: 0a7022d4a60e6a243a399177a7d36d7a, type: 2}
-  waveCounter: 0
-  changePoolAfterWaves: 10
   currentDifficulty: 0
 --- !u!4 &1094572458
 Transform:
@@ -1108,6 +1108,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2046150831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2046150832}
+  m_Layer: 0
+  m_Name: Projectile Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2046150832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046150831}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &630727748804629756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1249,6 +1280,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 963194228}
   - {fileID: 705507995}
+  - {fileID: 2046150832}
   - {fileID: 1581125495}
   - {fileID: 630727748804629756}
   - {fileID: 2038125882}

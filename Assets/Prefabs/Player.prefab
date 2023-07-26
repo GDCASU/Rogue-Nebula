@@ -109,9 +109,12 @@ GameObject:
   - component: {fileID: 4011325139316907679}
   - component: {fileID: 4548999485338568517}
   - component: {fileID: 4934230605295773998}
+  - component: {fileID: 2496770904811157991}
+  - component: {fileID: 4879682861470761101}
   - component: {fileID: 8618941445302828567}
   - component: {fileID: 1459453492786458248}
-  - component: {fileID: 1467359064680188308}
+  - component: {fileID: 7408167100557788677}
+  - component: {fileID: 5957536812182232154}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -221,6 +224,37 @@ MonoBehaviour:
   m_DefaultActionMap: ShipControls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2496770904811157991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258333701493600740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bba5ef231db364fae7120bac837963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shooter: {fileID: 0}
+  health: {fileID: 0}
+  playerMovement: {fileID: 0}
+  evade: {fileID: 0}
+  shieldBubble: {fileID: 0}
+--- !u!114 &4879682861470761101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258333701493600740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe2b077e985b684b96ce20d0fa7e55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  hitInvulnerabilityTime: 1
 --- !u!114 &8618941445302828567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,12 +280,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6205da0cb745404459a0dba1ebda6c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileContainer: {fileID: 0}
   autoFire: 1
   currentWeapon: {fileID: 0}
   weapons:
   - {fileID: 2896815112592752080}
   - {fileID: 1548227823955757622}
---- !u!114 &1467359064680188308
+  swapCooldown: 0
+  isSwapping: 0
+--- !u!114 &7408167100557788677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,11 +297,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 8258333701493600740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a27e4a0b6b15c4a86cbe564d843d04, type: 3}
+  m_Script: {fileID: 11500000, guid: eace6b786763df24bbae859e4cb63539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  hitInvulnerabilityTime: 0.5
+  abilityCooldown: 1.5
+--- !u!114 &5957536812182232154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258333701493600740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e233d1424b701d4cb05f70daf493f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityCooldown: 5
 --- !u!1 &8311836434264758333
 GameObject:
   m_ObjectHideFlags: 0
