@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public PlayerHealth health;
     [HideInInspector] public PlayerMovement playerMovement;
     [HideInInspector] public Evade evade;
-    [HideInInspector] public ShieldBubble shieldBubble;
+    [HideInInspector] public BubbleShield shieldBubble;
 
     private void Awake()
     {
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
         health = GetComponent<PlayerHealth>();
         playerMovement = GetComponent<PlayerMovement>();
         evade = GetComponent<Evade>();
-        shieldBubble = GetComponent<ShieldBubble>();
+        shieldBubble = GetComponent<BubbleShield>();
 
     }
 
