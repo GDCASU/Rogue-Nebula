@@ -43,6 +43,11 @@ public class EntityHealth : MonoBehaviour
         }
     }
 
+    public void ToggleInvulnerable(bool toggle)         // Called ANY time the Entity becomes invulnerable
+    {
+        invulnerable = toggle;
+    }
+
     private IEnumerator InvulnerableCo(float invTime)
     {
         invulnerable = true;

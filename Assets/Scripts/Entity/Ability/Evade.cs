@@ -27,11 +27,11 @@ public class Evade : Ability
 
     private IEnumerator EvadeCo()
     {
-        if (healthComponent != null)
-            healthComponent.MakeInvulnerable(invulnerabilityTime);
+        healthComponent.ToggleInvulnerable(true);
         Vector2 force = PlayerInput.instance.movementInput * evadeSpeedMultiplier;
         rbComponent.AddForce(force, ForceMode.Impulse);
         yield return new WaitForSeconds(evadeTime);
         rbComponent.velocity = Vector2.zero;
+        healthComponent.ToggleInvulnerable(false);
     }
 }

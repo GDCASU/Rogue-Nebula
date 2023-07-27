@@ -10,7 +10,7 @@ public class Ability : MonoBehaviour
     protected Rigidbody rbComponent;
     protected EntityHealth healthComponent;
 
-    private void Start()
+    private void Awake()
     {
         healthComponent = GetComponent<EntityHealth>();
         rbComponent = GetComponent<Rigidbody>();

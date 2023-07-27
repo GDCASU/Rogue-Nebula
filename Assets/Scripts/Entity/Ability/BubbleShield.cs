@@ -36,8 +36,10 @@ public class BubbleShield : Ability
 
     private IEnumerator ShieldCo()
     {
+        healthComponent.ToggleInvulnerable(true);
         bubbleShield.SetActive(true);
         yield return new WaitForSeconds(bubbleLifetime);
         bubbleShield.SetActive(false);
+        healthComponent.ToggleInvulnerable(false);
     }
 }
