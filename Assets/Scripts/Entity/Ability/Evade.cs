@@ -7,7 +7,6 @@ using UnityEngine;
 public class Evade : Ability
 {
     [Header("Evade")]
-    [SerializeField] private float evadeSpeedDistance = 2f;
     [SerializeField] private float evadeTime = 0f;
     [SerializeField] private float forceMult = 0f;
     [SerializeField] private AnimationCurve velocityCurve;

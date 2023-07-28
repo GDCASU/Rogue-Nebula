@@ -1070,6 +1070,10 @@ PrefabInstance:
       propertyPath: forceMult
       value: 1200
       objectReference: {fileID: 0}
+    - target: {fileID: 1459453492786458248, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      propertyPath: swapCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2587102654433962431, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
