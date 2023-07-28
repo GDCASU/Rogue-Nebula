@@ -6,12 +6,15 @@ public class Ability : MonoBehaviour
 {
     [SerializeField] private float abilityCooldown = 0f;
     private bool abilityOnCooldown = false;
+
     // Components
+    protected Player playerComponent;
     protected Rigidbody rbComponent;
     protected EntityHealth healthComponent;
 
     private void Awake()
     {
+        playerComponent = GetComponent<Player>();
         healthComponent = GetComponent<EntityHealth>();
         rbComponent = GetComponent<Rigidbody>();
     }

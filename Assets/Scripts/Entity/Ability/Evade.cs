@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
@@ -28,10 +29,13 @@ public class Evade : Ability
     private IEnumerator EvadeCo()
     {
         healthComponent.ToggleInvulnerable(true);
-        Vector2 force = PlayerInput.instance.movementInput * evadeSpeedMultiplier;
-        rbComponent.AddForce(force, ForceMode.Impulse);
+        playerComponent.GetMovement().HaltMovementandInput();
+
+        //Vector2 direction = PlayerInput.instance.movementInput;
+
         yield return new WaitForSeconds(evadeTime);
-        rbComponent.velocity = Vector2.zero;
+        //rbComponent.velocity = Vector2.zero;
+        playerComponent.GetMovement().StartMovement();
         healthComponent.ToggleInvulnerable(false);
     }
 }
