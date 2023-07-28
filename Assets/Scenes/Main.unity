@@ -1064,11 +1064,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 245893161033548480, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: evadeTime
-      value: 1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 245893161033548480, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: forceMult
-      value: 700
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 2587102654433962431, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: m_LocalPosition.x
