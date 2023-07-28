@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         evade = GetComponent<Evade>();
         shieldBubble = GetComponent<BubbleShield>();
-
     }
 
     public Shooter GetShooter()

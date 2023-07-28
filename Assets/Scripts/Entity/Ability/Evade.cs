@@ -7,9 +7,12 @@ using UnityEngine;
 public class Evade : Ability
 {
     [Header("Evade")]
-    [SerializeField] private float evadeSpeedMultiplier = 2f;
-    [SerializeField] private float evadeTime = 1f;
-    [SerializeField] private float invulnerabilityTime = 1f;
+    [SerializeField] private float evadeSpeedDistance = 2f;
+    [SerializeField] private float evadeTime = 0f;
+    [SerializeField] private float forceMult = 0f;
+    [SerializeField] private AnimationCurve velocityCurve;
+
+    private float elapsedTime;
 
     public override bool Execute()
     {
@@ -31,10 +34,11 @@ public class Evade : Ability
         healthComponent.ToggleInvulnerable(true);
         playerComponent.GetMovement().HaltMovementandInput();
 
-        //Vector2 direction = PlayerInput.instance.movementInput;
+        Vector2 direction = PlayerInput.instance.movementInput;
+        rbComponent.AddForce(direction * forceMult);
 
         yield return new WaitForSeconds(evadeTime);
-        //rbComponent.velocity = Vector2.zero;
+        rbComponent.velocity = Vector2.zero;
         playerComponent.GetMovement().StartMovement();
         healthComponent.ToggleInvulnerable(false);
     }

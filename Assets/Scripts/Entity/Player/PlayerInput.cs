@@ -67,6 +67,7 @@ public class PlayerInput : MonoBehaviour
     private void HandleMovementInput(InputAction.CallbackContext context)   
     {
         movementInput = context.ReadValue<Vector2>();
+        movementInput.Normalize();
     }
 
     private void HandleShootingInput(InputAction.CallbackContext context) 
