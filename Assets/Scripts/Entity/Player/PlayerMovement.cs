@@ -16,13 +16,13 @@ public class PlayerMovement : MonoBehaviour
     // Components
     private Player player;
     private Rigidbody rb;
-    private Animator animator;
+    private Animator anim;
 
     private void Awake()
     {
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         canMove = true;
     }
 
@@ -70,15 +70,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleAnimation(bool toggle, Vector2 movementInput)
     {
-        if (animator == null)
+        if (anim == null)
             return;
         
         if (!player.playerFlipped)
-            animator.SetFloat(MOVEMENT_ANIM_FLOAT, movementInput.x);    // If player is not flipped
+            anim.SetFloat(MOVEMENT_ANIM_FLOAT, movementInput.x);    // If player is not flipped
         else 
-            animator.SetFloat(MOVEMENT_ANIM_FLOAT, -movementInput.x);   // Otherwise
+            anim.SetFloat(MOVEMENT_ANIM_FLOAT, -movementInput.x);   // Otherwise
 
-            animator.SetBool(MOVEMENT_ANIM_BOOL, toggle);
+            anim.SetBool(MOVEMENT_ANIM_BOOL, toggle);
         
     }
 }
