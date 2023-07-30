@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     [HideInInspector] public Evade evade;
     [HideInInspector] public BubbleShield shieldBubble;
 
+    [SerializeField] public bool playerFlipped;
+
     private void Awake()
     {
         shooter = GetComponent<Shooter>();
@@ -54,5 +56,6 @@ public class Player : MonoBehaviour
     public void FlipPlayerOrientation()
     {
         gameObject.transform.Rotate(Vector3.forward, 180f);
+        playerFlipped = playerFlipped ? false : true;
     }
 }
