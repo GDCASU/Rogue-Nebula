@@ -20,8 +20,5 @@ public class Weapon : MonoBehaviour
         shooter = GetComponentInParent<Shooter>();
     }
 
-    public virtual void Fire()
-    {
-
-    }
+    public virtual void Fire() { }
 }
