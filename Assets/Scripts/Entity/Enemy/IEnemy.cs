@@ -10,8 +10,7 @@ public abstract class IEnemy : MonoBehaviour
 
     [SerializeField] protected GameObject ammoPrefab;
     [SerializeField] protected Transform ammoSpawnPoint;
-
-    [SerializeField] protected EnemyHealth health;
+    
     [SerializeField] protected float speed = 1f;
 
     // STATE CONTROL
