@@ -18,7 +18,7 @@ public class Shooter : MonoBehaviour
     
     private Vector2 currDirection = Vector2.up;        // Will be used for flipping an entity later
     private bool isPlayer = false;
-    public bool isSwapping = false;
+    private bool isSwapping = false;
 
     private void Start()
     {
