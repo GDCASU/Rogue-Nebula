@@ -13,9 +13,6 @@ public class Evade : Ability
     [Header("Evade")]
     [SerializeField] private float evadeTime = 0f;
     [SerializeField] private float forceMult = 0f;
-    [SerializeField] private AnimationCurve velocityCurve;
-
-    private float elapsedTime;
 
     // Components
     private Animator anim;
