@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Ability : MonoBehaviour
 {
+    [Header("Unity Events")]
+    [SerializeField] public UnityEvent<float> onAbilityCooldown;
+
+    [Header("Ability Cooldown")]
     [SerializeField] private float abilityCooldown = 0f;
     private bool abilityOnCooldown = false;
 
@@ -23,6 +28,7 @@ public class Ability : MonoBehaviour
     {
         if (abilityCooldown > 0 && abilityOnCooldown)
             return true;
+        onAbilityCooldown?.Invoke(abilityCooldown);
         StartCoroutine(CooldownCo());
         return false;
     }

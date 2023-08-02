@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0a8a6279ebc24724ebea037fbf33122d
+guid: 6bb05e1213f5caf4188939047f7c4ec1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI HealthBar_0
+      name: UI Abilities_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 32
-        width: 205
-        height: 37
+        x: 0
+        y: 0
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92fc36f44d364e74186cf1d3042676ba
-      internalID: -1236270436
+      spriteID: 95db1d671e6ab6642a52b6d37b8023c1
+      internalID: 147727881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI HealthBar_1
+      name: UI Abilities_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 40
         y: 0
-        width: 32
-        height: 32
+        width: 40
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,29 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 163fcb76a7250f048b7d7bba35210b78
-      internalID: 697481252
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI HealthBar_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7277f3524ce99614eb62c5ee78c63df5
-      internalID: -2031778514
+      spriteID: 7257f356ca2f58d4a8c948d8a9897825
+      internalID: 237301879
       vertices: []
       indices: 
       edges: []
@@ -201,7 +180,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2bc8e8ee7b53e4643ac5279c22280444
+    spriteID: dee63fbe5868cd54980f374c85780ef4
     internalID: 0
     vertices: []
     indices: 
@@ -209,9 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI HealthBar_0: -1236270436
-      UI HealthBar_1: 697481252
-      UI HealthBar_2: -2031778514
+      UI Abilities_0: 147727881
+      UI Abilities_1: 237301879
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
