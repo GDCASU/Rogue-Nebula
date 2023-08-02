@@ -26,7 +26,7 @@ public class EntityHealth : MonoBehaviour
         }
     }
 
-    private void TakeDamage(int damage)         // Change health value with damage passed in; wait for invTime
+    public virtual void TakeDamage(int damage)         // Change health value with damage passed in; wait for invTime
     {
         MakeInvulnerable(hitInvulnerabilityTime);
         health -= damage;
@@ -36,14 +36,19 @@ public class EntityHealth : MonoBehaviour
         }
     }
 
-    public void MakeInvulnerable(float invTime)         // Called ANY time the Entity becomes invulnerable
+    public virtual void Heal(int amount)
+    {
+        health += amount;
+    }
+
+    public virtual void MakeInvulnerable(float invTime)         // Called ANY time the Entity becomes invulnerable
     {
         if (invTime > 0 && !invulnerable) {
             StartCoroutine(InvulnerableCo(invTime));
         }
     }
 
-    public void ToggleInvulnerable(bool toggle)         // Called ANY time the Entity becomes invulnerable
+    public virtual void ToggleInvulnerable(bool toggle)         // Called ANY time the Entity becomes invulnerable
     {
         invulnerable = toggle;
     }

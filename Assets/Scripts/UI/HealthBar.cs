@@ -7,6 +7,12 @@ public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Image[] subBars;
 
+    private void Start()       // USE THE LINES BELOW IF USING A HARD CODED EVENT SYSTEM
+    {
+        //PlayerHealth.onPlayerHurt += DecrementHealth;
+        //PlayerHealth.onPlayerHeal += IncrementHealth;
+    }
+
     public void DecrementHealth(int amount)
     {
         int i = subBars.Length - 1;
