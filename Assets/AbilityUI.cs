@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class AbilityUI : MonoBehaviour
 {
+    public Image bubbleShieldImage;
+    public Image evadeImage;
+
     public Image bubbleShieldCDImage;
     public Image evadeCDImage;
 
