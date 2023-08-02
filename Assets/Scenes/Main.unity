@@ -1535,7 +1535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 801411955964828666, guid: 597804ac26c22f34888f4585e10fa529, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4241723833597045381, guid: 597804ac26c22f34888f4585e10fa529, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1799,14 +1799,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
-      propertyPath: onPlayerHeal.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
-      propertyPath: onPlayerHurt.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: onPlayerHeal.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1532598398}
@@ -1814,38 +1806,6 @@ PrefabInstance:
       propertyPath: onPlayerHurt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1532598398}
-    - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
-      propertyPath: onPlayerHeal.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
-      propertyPath: onPlayerHurt.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
-      propertyPath: onPlayerHeal.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: IncrementHealth
-      objectReference: {fileID: 0}
-    - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
-      propertyPath: onPlayerHurt.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DecrementHealth
-      objectReference: {fileID: 0}
-    - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
-      propertyPath: onPlayerHeal.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HealthBar, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
-      propertyPath: onPlayerHurt.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HealthBar, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
-      propertyPath: onPlayerHeal.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
-      propertyPath: onPlayerHurt.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2587102654433962431, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1885,18 +1845,6 @@ PrefabInstance:
     - target: {fileID: 2587102654433962431, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3166298290085714147, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3166298290085714147, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3166298290085714147, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8258333701493600740, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: m_Name
