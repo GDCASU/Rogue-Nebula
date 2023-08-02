@@ -11,18 +11,18 @@ public class PlayerHealth : EntityHealth
     //public static event Action<int> onPlayerHurt;
     //public static event Action<int> onPlayerHeal;
 
-    public UnityEvent<int> onPlayerHurt;
-    public UnityEvent<int> onPlayerHeal;
+    public UnityEvent<int> onPlayerHurt;        // Unity event for the Player Health UI
+    public UnityEvent<int> onPlayerHeal;        // Unity event for the Player Health UI
 
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        onPlayerHurt?.Invoke(damage);
+        onPlayerHurt?.Invoke(damage);       // Update UI
     }
 
     public override void Heal(int amount)
     {
         base.Heal(amount);
-        onPlayerHeal?.Invoke(amount);
+        onPlayerHeal?.Invoke(amount);       // Update UI
     }
 }

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ScoreKeeper : MonoBehaviour
 {
-    [SerializeField] TMP_Text textbox;
-    
+    // [SerializeField] TMP_Text textbox;       UNUSED
+    public UnityEvent<int> onScoreUpdated;      // Unity event for Score Text UI
+
     private int score = 0;
 
     public int GetScore()
@@ -18,6 +20,7 @@ public class ScoreKeeper : MonoBehaviour
     {
         score += amount;                    // Update score
 
-        textbox.text = score.ToString();    // Show new score
+        onScoreUpdated?.Invoke(score);         // Update UI
+        //textbox.text = score.ToString();   UNUSED // Show new score
     }
 }
