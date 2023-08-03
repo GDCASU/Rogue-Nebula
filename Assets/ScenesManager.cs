@@ -27,11 +27,7 @@ public class ScenesManager : MonoBehaviour
 
     private void Start()        // Don't Destroy object on loading a new scene
     {
-        DontDestroyOnLoad(gameObject);
-
         instance.enabled = true;
-
-        PlayerHealth.onPlayerDeath += LoadGameOver;
     }
 
     public void LoadScene(Scene scene)      // Loads a scene at an index

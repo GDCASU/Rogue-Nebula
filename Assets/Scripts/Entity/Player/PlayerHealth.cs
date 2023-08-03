@@ -15,7 +15,7 @@ public class PlayerHealth : EntityHealth
     [Header("Unity Events")]
     [SerializeField] public UnityEvent<int> onPlayerHurt;        // Unity event for the Player Health UI
     [SerializeField] public UnityEvent<int> onPlayerHeal;        // Unity event for the Player Health UI
-    [SerializeField] public static Action onPlayerDeath;
+    [SerializeField] public UnityEvent onPlayerDeath;
 
     public override void TakeDamage(int damage)
     {
