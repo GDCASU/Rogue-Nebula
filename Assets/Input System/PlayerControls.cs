@@ -98,6 +98,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""9f5c90a5-74b0-4da5-ad2b-19380071bf24"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -320,6 +329,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""BubbleShield"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3193f18-333e-4e32-932d-d46bb804a9ce"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4d0669a7-9cdf-43e8-ab6d-e9aae51904fc"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -359,6 +390,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_ShipControls_FlipPlayer = m_ShipControls.FindAction("FlipPlayer", throwIfNotFound: true);
         m_ShipControls_Evade = m_ShipControls.FindAction("Evade", throwIfNotFound: true);
         m_ShipControls_BubbleShield = m_ShipControls.FindAction("BubbleShield", throwIfNotFound: true);
+        m_ShipControls_Pause = m_ShipControls.FindAction("Pause", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
     }
@@ -430,6 +462,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_ShipControls_FlipPlayer;
     private readonly InputAction m_ShipControls_Evade;
     private readonly InputAction m_ShipControls_BubbleShield;
+    private readonly InputAction m_ShipControls_Pause;
     public struct ShipControlsActions
     {
         private @PlayerControls m_Wrapper;
@@ -442,6 +475,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @FlipPlayer => m_Wrapper.m_ShipControls_FlipPlayer;
         public InputAction @Evade => m_Wrapper.m_ShipControls_Evade;
         public InputAction @BubbleShield => m_Wrapper.m_ShipControls_BubbleShield;
+        public InputAction @Pause => m_Wrapper.m_ShipControls_Pause;
         public InputActionMap Get() { return m_Wrapper.m_ShipControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -475,6 +509,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @BubbleShield.started += instance.OnBubbleShield;
             @BubbleShield.performed += instance.OnBubbleShield;
             @BubbleShield.canceled += instance.OnBubbleShield;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IShipControlsActions instance)
@@ -503,6 +540,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @BubbleShield.started -= instance.OnBubbleShield;
             @BubbleShield.performed -= instance.OnBubbleShield;
             @BubbleShield.canceled -= instance.OnBubbleShield;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IShipControlsActions instance)
@@ -577,6 +617,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnFlipPlayer(InputAction.CallbackContext context);
         void OnEvade(InputAction.CallbackContext context);
         void OnBubbleShield(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

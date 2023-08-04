@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class PlayerInput : MonoBehaviour
 
     [Header("Player Shooting Input")]
     [SerializeField] public bool shootInput;
+
+    [Header("Events")]
+    [SerializeField] public UnityEvent onPause;
 
     private PlayerControls playerControls;
     private Player player;
@@ -57,8 +61,9 @@ public class PlayerInput : MonoBehaviour
             playerControls.ShipControls.Swap_Weapon_2.performed += i => HandleWeaponSwapInput(i, 1);
             playerControls.ShipControls.FireMode.performed += i => HandleFireModeInput(i);
             playerControls.ShipControls.FlipPlayer.performed += i => HandleOrientationFlipInput();
-            playerControls.ShipControls.Evade.performed += i => HandleEvade();
-            playerControls.ShipControls.BubbleShield.performed += i => HandleBubbleShield();
+            playerControls.ShipControls.Evade.performed += i => HandleEvadeInput();
+            playerControls.ShipControls.BubbleShield.performed += i => HandleBubbleShieldInput();
+            playerControls.ShipControls.Pause.performed += i => HandlePauseInput();
         }
 
         playerControls.Enable();
@@ -96,14 +101,19 @@ public class PlayerInput : MonoBehaviour
         player.FlipPlayerOrientation();
     }
 
-    private void HandleEvade()
+    private void HandleEvadeInput()
     {
         player.evade.Execute();
     }
 
-    private void HandleBubbleShield()
+    private void HandleBubbleShieldInput()
     {
         player.shieldBubble.Execute();
+    }
+
+    private void HandlePauseInput()
+    {
+        onPause?.Invoke();      // STOP GAME | OPEN PAUSE MENU
     }
 
     private void OnApplicationFocus(bool focus)
