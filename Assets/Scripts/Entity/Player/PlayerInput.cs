@@ -34,8 +34,6 @@ public class PlayerInput : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
-
         instance.enabled = true; 
     }
 
