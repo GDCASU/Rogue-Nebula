@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public class PauseGame : MonoBehaviour
 {
     private bool gamePaused = false;
 
     public void TogglePauseGame()       // Pauses actual game; does not bring up pause menu
     {
         if (!gamePaused)
-            PauseGame();
+            Pause();
         else
-            ResumeGame();
+            Resume();
     }
 
-    private void PauseGame()
+    private void Pause()
     {
         gamePaused = true;
         Time.timeScale = 0f;
     }
 
-    private void ResumeGame()
+    private void Resume()
     {
         gamePaused = false;
         Time.timeScale = 1f;
