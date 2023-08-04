@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class MenuUI : MonoBehaviour
 {
-    [SerializeField] public GameObject leaderboardUI;
-    [SerializeField] public GameObject optionsUI;
+    [SerializeField] private GameObject leaderboardUI;
+    [SerializeField] private GameObject optionsUI;
 
     private void Start()
     {
