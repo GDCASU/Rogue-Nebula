@@ -7,6 +7,7 @@ public class GameUI : MonoBehaviour
 {
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject optionsUI;
+    [SerializeField] private GameObject leaderboardUI;
 
     private void Start()
     {
@@ -26,9 +27,22 @@ public class GameUI : MonoBehaviour
                 pauseUI.SetActive(false);
                 if (optionsUI.activeSelf)       // Disable options menu if pause menu is closed
                     ToggleOptionseUI();
+                if (leaderboardUI.activeSelf)
+                    ToggleLeaderboardUI();
             }
             else                        // If pause menu is closed then open
                 pauseUI.SetActive(true);
+        }
+    }
+
+    public void ToggleLeaderboardUI()
+    {
+        if (leaderboardUI != null)
+        {
+            if (leaderboardUI.activeSelf)           // If options menu is opened then close
+                leaderboardUI.SetActive(false);
+            else
+                leaderboardUI.SetActive(true);      // If options menu is closed then open
         }
     }
 
