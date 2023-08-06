@@ -25,13 +25,17 @@ public class GameUI : MonoBehaviour
             if (pauseUI.activeSelf)     // If pause menu is opened then close
             {
                 pauseUI.SetActive(false);
+                AudioManager.instance.PauseMenuResonance(false);
                 if (optionsUI.activeSelf)       // Disable options menu if pause menu is closed
                     ToggleOptionseUI();
                 if (leaderboardUI.activeSelf)
                     ToggleLeaderboardUI();
             }
             else                        // If pause menu is closed then open
+            {
                 pauseUI.SetActive(true);
+                AudioManager.instance.PauseMenuResonance(true);
+            }
         }
     }
 

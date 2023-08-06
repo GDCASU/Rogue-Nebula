@@ -18,9 +18,15 @@ public class GameOverUI : MonoBehaviour
         if (leaderboardUI != null)
         {
             if (leaderboardUI.activeSelf)
+            {
                 leaderboardUI.SetActive(false);
+                AudioManager.instance.PauseMenuResonance(false);
+            }
             else
+            {
                 leaderboardUI.SetActive(true);
+                AudioManager.instance.PauseMenuResonance(true);
+            }
         }
     }
 }

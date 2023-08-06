@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5944971813726081842}
   - component: {fileID: 8664528529223867170}
+  - component: {fileID: 3852848995399063842}
   m_Layer: 0
   m_Name: Music Source
   m_TagString: Untagged
@@ -46,7 +47,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -128,6 +129,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!165 &3852848995399063842
+AudioHighPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4616191277293916276}
+  m_Enabled: 1
+  m_CutoffFrequency: 1500
+  m_HighpassResonanceQ: 3
 --- !u!1 &5849876637573651114
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,3 +315,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicSource: {fileID: 8664528529223867170}
   _sfxSource: {fileID: 2590084185552944026}
+  _menuMusic: {fileID: 8300000, guid: 813985a8971cce945af19c121991df24, type: 3}
+  _gameMusic: {fileID: 8300000, guid: 36096e95419b50f45adc85fdf2494349, type: 3}
+  _gameOverMusic: {fileID: 8300000, guid: 813985a8971cce945af19c121991df24, type: 3}

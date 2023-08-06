@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class MenuUI : MonoBehaviour
 {
@@ -26,9 +27,15 @@ public class MenuUI : MonoBehaviour
         if (leaderboardUI != null)
         {
             if (leaderboardUI.activeSelf)
+            {
                 leaderboardUI.SetActive(false);
-            else 
+                AudioManager.instance.PauseMenuResonance(false);
+            }
+            else
+            {
                 leaderboardUI.SetActive(true);
+                AudioManager.instance.PauseMenuResonance(true);
+            }
         }
     }
     public void ToggleOptionsUI()
@@ -38,10 +45,16 @@ public class MenuUI : MonoBehaviour
 
         if (optionsUI != null)
         {
-            if (optionsUI.activeSelf)
+            if (optionsUI.activeSelf)       // Close Options
+            {
                 optionsUI.SetActive(false);
-            else
+                AudioManager.instance.PauseMenuResonance(false);
+            }
+            else                            // Open Options
+            {
                 optionsUI.SetActive(true);
+                AudioManager.instance.PauseMenuResonance(true);
+            }
         }
     }
 }
