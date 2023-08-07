@@ -60,7 +60,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &5030130763748280842
 MonoBehaviour:
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 2920595380680433828}
   - component: {fileID: 551216443694836987}
   m_Layer: 5
-  m_Name: Background Panel
+  m_Name: Leaderboard Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -569,7 +569,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuUI, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
         m_MethodName: ToggleLeaderboardUI
         m_Mode: 1
         m_Arguments:

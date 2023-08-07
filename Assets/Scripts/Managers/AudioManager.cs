@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum Music
 {
@@ -45,10 +47,15 @@ public class AudioManager : MonoBehaviour
             _sfxSource.PlayOneShot(clip);
     }
 
+    public void ChangeSFXVolume(float value)
+    {
+        _sfxSource.volume = value;
+    }
+
     public void PlayMusic(Music track)
     {
         //if (_musicSource.isPlaying)
-           // StopMusicTrack();
+        // StopMusicTrack();
 
         _musicSource.pitch = 1;
         if (_musicSource != null)
@@ -69,11 +76,6 @@ public class AudioManager : MonoBehaviour
                     break;
             }
         }
-    }
-
-    public void ChangeSFXVolume(float value)
-    {
-        _sfxSource.volume = value;
     }
 
     public void ChangeMusicVolume(float value)

@@ -7,8 +7,12 @@ using UnityEngine.UIElements;
 
 public class MenuUI : MonoBehaviour
 {
+    [Header("UI Popouts")]
     [SerializeField] private GameObject leaderboardUI;
     [SerializeField] private GameObject optionsUI;
+
+    [Header("Sounds")]
+    [SerializeField] private AudioClip selectionSound;
 
     private void Start()
     {
@@ -56,5 +60,11 @@ public class MenuUI : MonoBehaviour
                 AudioManager.instance.PauseMenuResonance(true);
             }
         }
+    }
+
+    public void PlaySelectionSound()
+    {
+        if (selectionSound != null)
+            AudioManager.instance.PlaySFX(selectionSound);
     }
 }

@@ -5,17 +5,19 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class GameUI : MonoBehaviour
 {
+    [Header("UI Popouts")]
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject optionsUI;
     [SerializeField] private GameObject leaderboardUI;
+
+    [Header("Sounds")]
+    [SerializeField] private AudioClip selectionSound;
 
     private void Start()
     {
         // Making sure the pause menu is not accidently set active when we load the scene
         if (pauseUI.activeSelf)
-        {
             pauseUI.SetActive(false);
-        }
     }
 
     public void TogglePauseUI()
@@ -59,5 +61,11 @@ public class GameUI : MonoBehaviour
             else
                 optionsUI.SetActive(true);      // If options menu is closed then open
         }
+    }
+
+    public void PlaySelectionSound()
+    {
+        if (selectionSound != null)
+            AudioManager.instance.PlaySFX(selectionSound);
     }
 }

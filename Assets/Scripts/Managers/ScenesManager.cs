@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+using System;
 
 public enum Scenes     // Scenes should be in this order in the Project Settings
 {
@@ -28,6 +30,7 @@ public class ScenesManager : MonoBehaviour
     private void Start()        // Don't Destroy object on loading a new scene
     {
         instance.enabled = true;
+        AudioManager.instance.PauseMenuResonance(false);
         playSceneMusic();
     }
 
@@ -55,8 +58,8 @@ public class ScenesManager : MonoBehaviour
     public void LoadNextScene()     // Loads the next scene by the projects buildIndex
     {
         //if (SceneManager.GetSceneAt(SceneManager.GetActiveScene().buildIndex + 1) != null)
-        SceneManager.LoadScene(GetActiveSceneIndex() + 1);
         playSceneMusic();
+        SceneManager.LoadScene(GetActiveSceneIndex() + 1);
     }
 
     public void EndGame()

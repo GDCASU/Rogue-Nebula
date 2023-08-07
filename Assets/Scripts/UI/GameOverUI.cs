@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class GameOverUI : MonoBehaviour
 {
+    [Header("UI Popouts")]
     [SerializeField] private GameObject leaderboardUI;
+
+    [Header("Sounds")]
+    [SerializeField] private AudioClip selectionSound;
 
     private void Start()
     {
@@ -28,5 +32,11 @@ public class GameOverUI : MonoBehaviour
                 AudioManager.instance.PauseMenuResonance(true);
             }
         }
+    }
+
+    public void PlaySelectionSound()
+    {
+        if (selectionSound != null)
+            AudioManager.instance.PlaySFX(selectionSound);
     }
 }
