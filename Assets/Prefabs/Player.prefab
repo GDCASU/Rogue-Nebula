@@ -134,7 +134,7 @@ MonoBehaviour:
   projectileSpeed: 100
   baseFireRate: 0.15
   projectileLifetime: 5
-  fireSound: {fileID: 8300000, guid: aed7f61ecea371147b9a76fa28beac1f, type: 3}
+  fireSound: {fileID: 0}
 --- !u!1 &8179744711205680325
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   projectileSpeed: 100
   baseFireRate: 0.5
   projectileLifetime: 1
-  fireSound: {fileID: 8300000, guid: aed7f61ecea371147b9a76fa28beac1f, type: 3}
+  fireSound: {fileID: 0}
   spreadAngle: 25
 --- !u!1 &8258333701493600740
 GameObject:

@@ -10,12 +10,12 @@ public class EnemyHealth : EntityHealth
 
     private void Start()
     {
-        scoreKeeper = GameObject.Find("Score Keeper").GetComponent<ScoreKeeper>();
+        //scoreKeeper = GameObject.Find("Score Keeper").GetComponent<ScoreKeeper>();
     }
 
     protected override void Death()
     {
-        scoreKeeper.AddScore(score);
+        //scoreKeeper.AddScore(score);
 
         base.Death();
     }
