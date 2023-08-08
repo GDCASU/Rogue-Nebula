@@ -134,6 +134,7 @@ MonoBehaviour:
   projectileSpeed: 100
   baseFireRate: 0.15
   projectileLifetime: 5
+  fireSound: {fileID: 8300000, guid: aed7f61ecea371147b9a76fa28beac1f, type: 3}
 --- !u!1 &8179744711205680325
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +183,7 @@ MonoBehaviour:
   projectileSpeed: 100
   baseFireRate: 0.5
   projectileLifetime: 1
+  fireSound: {fileID: 8300000, guid: aed7f61ecea371147b9a76fa28beac1f, type: 3}
   spreadAngle: 25
 --- !u!1 &8258333701493600740
 GameObject:
@@ -365,6 +367,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   hitInvulnerabilityTime: 1
+  takeDamageSound: {fileID: 8300000, guid: 3c2dce86822e5b44cb8567b1d6c47929, type: 3}
+  deathSound: {fileID: 8300000, guid: 4b25987785dfc6b4fade53ce95836ba1, type: 3}
   onPlayerHurt:
     m_PersistentCalls:
       m_Calls:
@@ -387,6 +391,21 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
         m_MethodName: IncrementHealth
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPlayerDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
+        m_MethodName: LoadGameOver
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -439,7 +458,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eace6b786763df24bbae859e4cb63539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAbilityCooldown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AbilityUI, Assembly-CSharp
+        m_MethodName: StartEvadeCooldown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   abilityCooldown: 1.2
+  abilityStartupSound: {fileID: 0}
+  abilityEndSound: {fileID: 0}
   evadeTime: 0.3
   forceMult: 1200
 --- !u!114 &4333146535378505663
@@ -454,7 +490,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e233d1424b701d4cb05f70daf493f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAbilityCooldown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AbilityUI, Assembly-CSharp
+        m_MethodName: StartBubbleShieldCooldown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   abilityCooldown: 15
+  abilityStartupSound: {fileID: 8300000, guid: dede83e9fd6494643a250397d124eaf6, type: 3}
+  abilityEndSound: {fileID: 0}
   bubbleShield: {fileID: 3414054529342862319}
   bubbleLifetime: 2.5
 --- !u!1001 &825767530187894175

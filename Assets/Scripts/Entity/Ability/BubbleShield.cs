@@ -42,5 +42,6 @@ public class BubbleShield : Ability
         yield return new WaitForSeconds(bubbleLifetime);
         bubbleShield.SetActive(false);
         healthComponent.ToggleInvulnerable(false);
+        AudioManager.instance.PlaySFX(abilityEndSound);
     }
 }
