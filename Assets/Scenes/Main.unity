@@ -2886,6 +2886,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555946544}
   m_CullTransparentMesh: 1
+--- !u!1 &1602579375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8179744711205680325, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+  m_PrefabInstance: {fileID: 630727748804629756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &1602579378
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602579375}
+  m_Enabled: 1
 --- !u!1 &1629614739
 GameObject:
   m_ObjectHideFlags: 0
@@ -4046,6 +4059,18 @@ PrefabInstance:
       propertyPath: onAbilityCooldown.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1548227823955757622, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: aed7f61ecea371147b9a76fa28beac1f, type: 3}
+    - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4b25987785dfc6b4fade53ce95836ba1, type: 3}
+    - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      propertyPath: takeDamageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c2dce86822e5b44cb8567b1d6c47929, type: 3}
     - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: onPlayerDeath.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -4122,6 +4147,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2896815112592752080, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: aed7f61ecea371147b9a76fa28beac1f, type: 3}
+    - target: {fileID: 4333146535378505663, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      propertyPath: abilityStartupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: dede83e9fd6494643a250397d124eaf6, type: 3}
     - target: {fileID: 4333146535378505663, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: onAbilityCooldown.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -4153,7 +4186,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8179744711205680325, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1602579378}
   m_SourcePrefab: {fileID: 100100000, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
 --- !u!224 &659178314259600303
 RectTransform:
@@ -4242,6 +4278,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4870884792632418637, guid: a21d6e017f2264f4687e201661ac1418, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2dc89d86512680840a1fa6425113e449, type: 3}
+    - target: {fileID: 4870884792632418637, guid: a21d6e017f2264f4687e201661ac1418, type: 3}
+      propertyPath: takeDamageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c2dce86822e5b44cb8567b1d6c47929, type: 3}
     - target: {fileID: 6516590741793506316, guid: a21d6e017f2264f4687e201661ac1418, type: 3}
       propertyPath: m_Name
       value: Asteroid

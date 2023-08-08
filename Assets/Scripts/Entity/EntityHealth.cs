@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class EntityHealth : MonoBehaviour
 {
+    [Header("Values")]
     [SerializeField] public int health = 5;
     [SerializeField] private float hitInvulnerabilityTime = 0f;
+
+    [Header("Sounds")]
+    [SerializeField] protected AudioClip takeDamageSound;
+    [SerializeField] protected AudioClip deathSound;
 
     private bool invulnerable = false;      // Used anytime the Entity is invunerable to attacks (hits, shield, evade, etc.)
 
@@ -30,6 +35,7 @@ public class EntityHealth : MonoBehaviour
     {
         MakeInvulnerable(hitInvulnerabilityTime);
         health -= damage;
+        AudioManager.instance.PlaySFX(takeDamageSound);
         if (health <= 0)
         {
             Death();
@@ -62,6 +68,7 @@ public class EntityHealth : MonoBehaviour
 
     protected virtual void Death()
     {
+        AudioManager.instance.PlaySFX(deathSound);
         Destroy(gameObject);
     }
 }
