@@ -4062,7 +4062,7 @@ PrefabInstance:
     - target: {fileID: 1548227823955757622, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: fireSound
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: aed7f61ecea371147b9a76fa28beac1f, type: 3}
     - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: deathSound
       value: 
@@ -4150,7 +4150,7 @@ PrefabInstance:
     - target: {fileID: 2896815112592752080, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: fireSound
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: aed7f61ecea371147b9a76fa28beac1f, type: 3}
     - target: {fileID: 4333146535378505663, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: abilityStartupSound
       value: 
