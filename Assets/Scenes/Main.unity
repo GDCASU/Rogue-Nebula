@@ -4027,9 +4027,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 245893161033548480, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      propertyPath: abilityStartupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a03aef4d33fc724999277f4d3f14dbf, type: 3}
+    - target: {fileID: 245893161033548480, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: onAbilityCooldown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1226631510}
+    - target: {fileID: 1548227823955757622, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1907926807014486211, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: onPlayerHeal.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4081,6 +4089,10 @@ PrefabInstance:
     - target: {fileID: 2587102654433962431, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896815112592752080, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
+      propertyPath: fireSound
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4333146535378505663, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: onAbilityCooldown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
