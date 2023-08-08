@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 public class MenuUI : MonoBehaviour
 {
     [Header("UI Popouts")]
+    [SerializeField] private GameObject startUI;
     [SerializeField] private GameObject leaderboardUI;
     [SerializeField] private GameObject optionsUI;
 
@@ -17,15 +18,39 @@ public class MenuUI : MonoBehaviour
     private void Start()
     {
         // Making sure the leaderboard menu is not accidently set active when we load the scene
+        if (startUI.activeSelf)
+            startUI.SetActive(false);
         if (leaderboardUI.activeSelf)
             leaderboardUI.SetActive(false);
         if (optionsUI.activeSelf)
             optionsUI.SetActive(false);
     }
 
+    public void ToggleStartUI()
+    {
+        if (leaderboardUI.activeSelf)
+            return;
+        if (optionsUI.activeSelf)
+            return;
+
+        if (startUI != null)
+        {
+            if (startUI.activeSelf)
+            {
+                startUI.SetActive(false);
+            }
+            else
+            {
+                startUI.SetActive(true);
+            }
+        }
+    }
+
     public void ToggleLeaderboardUI()
     {
         if (optionsUI.activeSelf)
+            return;
+        if (startUI.activeSelf)
             return;
 
         if (leaderboardUI != null)
@@ -42,9 +67,12 @@ public class MenuUI : MonoBehaviour
             }
         }
     }
+
     public void ToggleOptionsUI()
     {
         if (leaderboardUI.activeSelf)
+            return;
+        if (startUI.activeSelf)
             return;
 
         if (optionsUI != null)
