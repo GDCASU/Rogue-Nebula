@@ -11,6 +11,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected float baseFireRate = 0.5f;
     [SerializeField] protected float projectileLifetime = 5f;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip fireSound;
+
     protected bool isFiring;
     // Components
     protected Shooter shooter;
@@ -20,5 +23,8 @@ public class Weapon : MonoBehaviour
         shooter = GetComponentInParent<Shooter>();
     }
 
-    public virtual void Fire() { }
+    public virtual void Fire() 
+    {
+        AudioManager.instance.PlaySFX(fireSound);
+    }
 }

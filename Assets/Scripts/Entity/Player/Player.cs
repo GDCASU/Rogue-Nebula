@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public Evade evade;
     [HideInInspector] public BubbleShield shieldBubble;
 
-    [SerializeField] public bool playerFlipped;
+    [HideInInspector] public bool playerFlipped;
 
     private void Awake()
     {
