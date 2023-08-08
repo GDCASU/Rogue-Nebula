@@ -4,151 +4,93 @@ using UnityEngine;
 
 public class HomingEnemy : IEnemy
 {
-    /*
-     * Possible States:
-     *      RotateToMove
-     *      RotateToFire
-     *      SetDistanceToMove
-     *      Rotating
-     *      Moving
-     *      Firing
-     */
-    string State = "RotateToFire";
-    int fromRotate = 0;     // State control for after "Rotating" - 0 goes to "Firing" while 1 goes to "SetDistanceToMove"
+    float direction = 0;
 
-    float direction = 0;    // Used during "Rotating", where the ship will rotate while direction is not 0
-    float distance = 0;     // Used during "Moving", where the ship moves a certain distance
+    [SerializeField] float timeBetweenFiring = 1f;
+    float stopwatch = 0f;
+    float stopwatchMove = 0f;
+    float stopwatchRotate = 0f;
 
-    [SerializeField] float minMoveDist = 0f;
-    [SerializeField] float maxMoveDist = 1f;
+    Vector3 lastDestination;
+    Vector3 destination;
+    float totalDistance = -1f;
 
-    [SerializeField] float rotSpeed = 1f;
+    protected override void Start()
+    {
+        base.Start();
+    }
 
-    [SerializeField] bool debug = false;
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
 
-    private void Update()
+        if (moveDown) return;
+
+        // Rotation
+        stopwatchRotate += Time.deltaTime;
+        if (stopwatchRotate >= 0.1f)
+        {
+            stopwatchRotate = 0f;
+            RotateShip(playerTransform.position);
+        }
+
+        Move();
+    }
+
+    private void LateUpdate()
     {
         if (moveDown) return;   // Wait until done moving down.
 
-        if (debug) DebugState(); 
+        stopwatch += Time.deltaTime;
 
-        if (State == "Firing") Fire();
-        else Move();
-    }
-
-    #region Movement
-
-    // Handles state control for movement
-    protected override void Move()
-    {
-        switch (State)
+        // Shoot
+        if(stopwatch >= timeBetweenFiring)
         {
-            case "RotateToMove":
-                RotateToMove();
+            stopwatch -= timeBetweenFiring;
 
-                break;
-            case "RotateToFire":
-                RotateToFire();
-
-                break;
-            case "SetDistanceToMove":
-                SetDistance();
-
-                break;
-            case "Rotating":
-                Rotating();
-
-                break;
-            case "Moving":
-                Moving();
-
-                break;
+            Fire();
         }
-    }
-
-    // Rotate to a random position
-    void RotateToMove()
-    {
-        direction = Random.Range(-180, 180);
-
-        State = "Rotating";
     }
 
     // Find angle that'll make the ship look at the player
-    void RotateToFire()
+    void RotateShip(Vector3 goal)
     {
-        Vector3 vecDirection = (playerTransform.position - transform.position).normalized;
-        Vector3 curDirection = transform.rotation.eulerAngles;
-        direction = Quaternion.Angle(Quaternion.Euler(vecDirection), Quaternion.Euler(curDirection));
+        Vector3 orientation = -transform.up.normalized;
+        Vector3 goalOrientation = (goal - transform.position).normalized;
 
-        Instantiate(ammoPrefab, transform.position, Quaternion.Euler(vecDirection));
-        Instantiate(ammoPrefab, transform.position, Quaternion.Euler(curDirection));
-        Debug.Log(direction);
+        Vector2 orientation2d = new Vector2(orientation.x, orientation.y);
+        Vector2 goalOrientation2d = new Vector2(goalOrientation.x, goalOrientation.y);
 
-        State = "Rotating";
+        float dotProduct = Vector2.Dot(goalOrientation2d, orientation2d);
+        float magsMultiplied = orientation2d.magnitude * goalOrientation2d.magnitude;
+
+        direction = (Mathf.Acos(dotProduct / magsMultiplied) * 180 / Mathf.PI);
+        transform.Rotate(Vector3.back, direction);
+
+        RaycastHit hit;
+        if (!Physics.Raycast(transform.position, -transform.up, out hit)) transform.Rotate(Vector3.back, 180);
     }
 
-    // Sets distance to move
-    void SetDistance()
+    protected override void Move()
     {
-        distance = Random.Range(minMoveDist, maxMoveDist);
+        if (totalDistance == -1f) SetDestination();
+        if (transform.position == destination) SetDestination();
 
-        State = "Moving";
+        stopwatchMove += Time.deltaTime;
+        float percentage = (speed * stopwatchMove) / totalDistance;
+
+        transform.position = Vector3.Lerp(lastDestination, destination, percentage);
     }
 
-    // Rotates the ship slightly
-    void Rotating()
+    void SetDestination()
     {
-        // Done Rotating
-        if (direction == 0)
-        {
-            // Check where state needs to be after rotating
-            if (fromRotate == 0) State = "Firing";
-            else if (fromRotate == 1) State = "SetDistanceToMove";
+        float randX = Random.Range(0f, 1f);
+        float randY = Random.Range(0f, 1f);
+        float camZPos = Camera.main.WorldToViewportPoint(transform.position).z;
 
-            fromRotate = (fromRotate + 1) % 2;  // Make sure next Rotating has the proper fromRotate
-            return;
-        }
-
-        // Find amount to rotate by this frame
-        float rotationAmount = Mathf.Sign(direction) * Time.deltaTime * rotSpeed;
-        if (Mathf.Abs(rotationAmount) > Mathf.Abs(direction)) rotationAmount = direction;
-
-        transform.Rotate(transform.forward, rotationAmount);
-        direction -= rotationAmount;
-    }
-
-    // Moves the ship slightly
-    void Moving()
-    {
-        float toMove = speed * Time.deltaTime;
-
-        if (toMove > distance)
-        {
-            // Done Moving
-            transform.Translate(Vector3.up * -distance);
-            distance = 0;
-
-            State = "RotateToFire";
-            return;
-        }
-
-        transform.Translate(Vector3.up * -toMove);
-        distance -= toMove;
-    }
-
-    #endregion
-
-    protected override void Fire()
-    {
-        base.Fire();
-
-        State = "RotateToMove";
-    }
-
-    void DebugState()
-    {
-        if (State.Contains("Rotate")) Debug.Log(State);
-        else if (State.Contains("Set")) Debug.Log(State);
+        lastDestination = transform.position;
+        destination = Camera.main.ViewportToWorldPoint(new Vector3(randX, randY, camZPos));
+        stopwatchMove = 0f;
+        totalDistance = (lastDestination - destination).magnitude;
     }
 }

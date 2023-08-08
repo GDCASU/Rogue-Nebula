@@ -24,7 +24,7 @@ public abstract class IEnemy : MonoBehaviour
         moveDown = !enemyRenderer.isVisible;
     }
 
-    protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (moveDown) EnterPlayfield();
     }
