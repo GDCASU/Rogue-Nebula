@@ -38,7 +38,7 @@ public class ScenesManager : MonoBehaviour
     {
         //if (SceneManager.GetSceneAt(((int)Scene.MainMenu)) != null)
             SceneManager.LoadScene(Scenes.MainMenu.ToString());
-        ScoreKeeper.instance.PrintHighScores();         // FOR DEBUGGING 
+        //ScoreKeeper.instance.PrintHighScores();         // FOR DEBUGGING 
         playSceneMusic();
     }
 
