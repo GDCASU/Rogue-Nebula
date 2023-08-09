@@ -90,6 +90,11 @@ public class MenuUI : MonoBehaviour
         }
     }
 
+    public void GrabNameFromInputField(string name)
+    {
+        ScoreKeeper.instance.SetName(name);
+    }
+
     public void PlaySelectionSound()
     {
         if (selectionSound != null)

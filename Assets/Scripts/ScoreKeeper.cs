@@ -16,8 +16,8 @@ public class ScoreKeeper : MonoBehaviour
     [SerializeField] private HighScores HighScores;      // Scriptable Object that holds all highscores of the session
 
     // Player Info
-    private string _name = "Anonymous";
-    private int _score = 0;
+    [SerializeField] private string _name = "Anonymous";
+    [SerializeField] private int _score = 0;
 
     private void Awake()        // Handle Singleton
     {
