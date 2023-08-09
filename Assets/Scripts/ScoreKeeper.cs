@@ -35,7 +35,7 @@ public class ScoreKeeper : MonoBehaviour
         ResetScore();
 
         if (_highscores == null)
-            _highscores = new HighScores();
+            _highscores = ScriptableObject.CreateInstance<HighScores>();
     }
 
     public void SetName(string name)
