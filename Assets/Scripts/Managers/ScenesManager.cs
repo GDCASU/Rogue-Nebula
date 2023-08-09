@@ -38,6 +38,7 @@ public class ScenesManager : MonoBehaviour
     {
         //if (SceneManager.GetSceneAt(((int)Scene.MainMenu)) != null)
             SceneManager.LoadScene(Scenes.MainMenu.ToString());
+        ScoreKeeper.instance.PrintHighScores();         // FOR DEBUGGING 
         playSceneMusic();
     }
 
@@ -45,6 +46,7 @@ public class ScenesManager : MonoBehaviour
     {
         //if (SceneManager.GetSceneAt(((int)Scene.Main)) != null)
         SceneManager.LoadScene(Scenes.Main.ToString());
+        ScoreKeeper.instance?.ResetScore();         // Reset the current score to 0
         playSceneMusic();
     }
 
@@ -52,6 +54,7 @@ public class ScenesManager : MonoBehaviour
     {
         //if (SceneManager.GetSceneAt(((int)Scene.MainMenu)) != null)
         SceneManager.LoadScene(Scenes.GameOver.ToString());
+        ScoreKeeper.instance?.AddHighScore();       // Add the highscore to the highscore's array if applicable
         playSceneMusic();
     }
 

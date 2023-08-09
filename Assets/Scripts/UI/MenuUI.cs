@@ -100,4 +100,9 @@ public class MenuUI : MonoBehaviour
         if (selectionSound != null)
             AudioManager.instance.PlaySFX(selectionSound);
     }
+
+    public void LoadHighScores()
+    {
+        ScoreKeeper.instance.PrintHighScores();
+    }
 }

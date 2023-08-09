@@ -6,16 +6,16 @@ public class EnemyHealth : EntityHealth
 {
     [SerializeField] int score = 100;
 
-    ScoreKeeper scoreKeeper;
+    private ScoreKeeper scoreKeeper;
 
     private void Start()
     {
-        //scoreKeeper = GameObject.Find("Score Keeper").GetComponent<ScoreKeeper>();
+        scoreKeeper = ScoreKeeper.instance;
     }
 
     protected override void Death()
     {
-        //scoreKeeper.AddScore(score);
+        scoreKeeper.AddScore(score);
 
         base.Death();
     }

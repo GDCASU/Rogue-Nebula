@@ -13,7 +13,7 @@ public class ScoreKeeper : MonoBehaviour
     public Action<int> onScoreUpdated;      // Unity event for Score Text UI
 
     [Header("Data Container")]
-    [SerializeField] private HighScores HighScores;      // Scriptable Object that holds all highscores of the session
+    [SerializeField] private HighScores _highscores;      // Scriptable Object that holds all highscores of the session
 
     // Player Info
     [SerializeField] private string _name = "Anonymous";
@@ -34,8 +34,8 @@ public class ScoreKeeper : MonoBehaviour
     {
         ResetScore();
 
-        if (HighScores == null)
-            HighScores = new HighScores();
+        if (_highscores == null)
+            _highscores = new HighScores();
     }
 
     public void SetName(string name)
@@ -65,16 +65,16 @@ public class ScoreKeeper : MonoBehaviour
 
     public void AddHighScore()          // Potentially add a new high score if it beats one of the ten highest scores
     {
-        if (HighScores == null)
+        if (this._highscores == null)
             return;
 
         HighScore possibleHighScore;
         possibleHighScore.name = _name;
         possibleHighScore.score = _score;
 
-        HighScore[] highscores = HighScores.highScores;
+        HighScore[] highscores = _highscores.highScores;
         HighScore temp1 = possibleHighScore, temp2;
-        for (int i = 0; i < highscores.Length - 1; i++)     // Loop to insert the newest high score
+        for (int i = 0; i < highscores.Length; i++)     // Loop to insert the newest high score
         {
             if (temp1.score > highscores[i].score)          // whatever score ends up in temp1 is thrown away at end
             {
@@ -82,6 +82,14 @@ public class ScoreKeeper : MonoBehaviour
                 highscores[i] = temp1;
                 temp1 = temp2;
             }
+        }
+    }
+
+    public void PrintHighScores()
+    {
+        foreach (HighScore score in _highscores.highScores)
+        {
+            Debug.Log(score.name + " " +  score.score);
         }
     }
 }

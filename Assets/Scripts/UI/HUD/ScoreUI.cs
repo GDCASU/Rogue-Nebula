@@ -14,7 +14,6 @@ public class ScoreUI : MonoBehaviour
     }
     public void UpdateScore(int score)
     {
-        Debug.Log("here");
         scoreText.text = score.ToString();
     }
 }
