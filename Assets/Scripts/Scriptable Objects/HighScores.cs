@@ -12,5 +12,5 @@ public struct HighScore
 [CreateAssetMenu(fileName = "HighScores", menuName = "High Scores")]
 public class HighScores : ScriptableObject
 {
-    [SerializeField] public HighScore[] highScores = new HighScore[10];
+    [SerializeField] public HighScore[] data = new HighScore[10];
 }

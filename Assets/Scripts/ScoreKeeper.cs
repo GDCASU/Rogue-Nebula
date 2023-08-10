@@ -13,7 +13,7 @@ public class ScoreKeeper : MonoBehaviour
     public Action<int> onScoreUpdated;      // Unity event for Score Text UI
 
     [Header("Data Container")]
-    [SerializeField] private HighScores _highscores;      // Scriptable Object that holds all highscores of the session
+    [SerializeField] public HighScores highScores;      // Scriptable Object that holds all highscores of the session
 
     // Player Info
     [SerializeField] private string _name = "Anonymous";
@@ -34,8 +34,8 @@ public class ScoreKeeper : MonoBehaviour
     {
         ResetScore();
 
-        if (_highscores == null)
-            _highscores = ScriptableObject.CreateInstance<HighScores>();
+        if (highScores == null)
+            highScores = ScriptableObject.CreateInstance<HighScores>();     // New Highscore dataContainer if none exists
     }
 
     public void SetName(string name)
@@ -65,14 +65,14 @@ public class ScoreKeeper : MonoBehaviour
 
     public void AddHighScore()          // Potentially add a new high score if it beats one of the ten highest scores
     {
-        if (this._highscores == null)
+        if (this.highScores == null)
             return;
 
         HighScore possibleHighScore;
         possibleHighScore.name = _name;
         possibleHighScore.score = _score;
 
-        HighScore[] highscores = _highscores.highScores;
+        HighScore[] highscores = highScores.data;
         HighScore temp1 = possibleHighScore, temp2;
         for (int i = 0; i < highscores.Length; i++)     // Loop to insert the newest high score
         {
@@ -87,7 +87,7 @@ public class ScoreKeeper : MonoBehaviour
 
     public void PrintHighScores()
     {
-        foreach (HighScore score in _highscores.highScores)
+        foreach (HighScore score in highScores.data)
         {
             Debug.Log(score.name + " " +  score.score);
         }
