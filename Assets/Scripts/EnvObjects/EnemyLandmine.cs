@@ -12,9 +12,12 @@ public class EnemyLandmine : MonoBehaviour
     public float fuseTime;
     public float explosionTime;
 
-    [Header("References")]
+    [Header("References")] 
+    public Material normalMaterial;
+    public Material flashMaterial;
     public Material explodedMaterial;
     public MeshRenderer meshRenderer;
+    public SphereCollider sphereCollider;
 
     private float fuseTimer = 0;
     private float explosionTimer = 0;
@@ -40,17 +43,37 @@ public class EnemyLandmine : MonoBehaviour
         {
             explode();
         }
-        // TO DO: Add checks for 0.1 second intervals every 1 second to flash (by changing material).
         else
         {
+            checkFlash();
             fuseTimer += Time.deltaTime;
         }
+    }
+
+    private void checkFlash()
+    {
+        if ((fuseTimer - Mathf.FloorToInt(fuseTimer)) < 0.1)
+            meshRenderer.material = flashMaterial;
+        else 
+            meshRenderer.material = normalMaterial;
     }
 
     private void explode()
     {
         exploded = true;
         meshRenderer.material = explodedMaterial;
+        transform.localScale = new Vector3(5f, 5f, 5f);
+        sphereCollider.radius = 5f;
+
         // TO DO: Create damage radius.
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+
+        }
+        else if (other.tag == "Player" && other.name == "")
     }
 }

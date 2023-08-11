@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2254837167646592439}
   - component: {fileID: 3403650663930713002}
   - component: {fileID: 8624434860598740077}
-  - component: {fileID: 8382299690750163970}
+  - component: {fileID: 3480626656185622924}
   - component: {fileID: -5023836793845225275}
   m_Layer: 8
   m_Name: Enemy Landmine
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.7, z: 0.5}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6768058984271882836}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &3403650663930713002
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8a0ce0a814f2842498c28e45e3b867b5, type: 2}
+  - {fileID: 2100000, guid: c5a631da594dbfd4c835e7137dec7059, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,8 +113,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &8382299690750163970
-CapsuleCollider:
+--- !u!135 &3480626656185622924
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -131,10 +131,8 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
+  serializedVersion: 3
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-5023836793845225275
 MonoBehaviour:
@@ -152,5 +150,7 @@ MonoBehaviour:
   damageRadius: 3
   fuseTime: 3
   explosionTime: 1
+  normalMaterial: {fileID: 2100000, guid: c5a631da594dbfd4c835e7137dec7059, type: 2}
+  flashMaterial: {fileID: 2100000, guid: 263857960d3c1d74c983252b9ff43a18, type: 2}
   explodedMaterial: {fileID: 2100000, guid: 001379b4306e41c4cab43770ae884fc0, type: 2}
   meshRenderer: {fileID: 3403650663930713002}
