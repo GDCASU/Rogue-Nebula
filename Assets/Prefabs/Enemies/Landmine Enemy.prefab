@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 167264318846773883}
   - component: {fileID: 2825301735297649192}
   - component: {fileID: 6692135945122377315}
+  - component: {fileID: -3697632104057338603}
   m_Layer: 7
   m_Name: Landmine Enemy
   m_TagString: Enemy
@@ -93,6 +94,21 @@ MonoBehaviour:
   ammoSpawnPoint: {fileID: 2323789564417041469}
   speed: 5
   timeBetweenFiring: 3
+--- !u!114 &-3697632104057338603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801411955964828666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c03c91dcabd4348b32b74df4f54539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  destroyAfterHitFactor: 1
+  hitFactor: 1
 --- !u!1 &2839670060645248025
 GameObject:
   m_ObjectHideFlags: 0
