@@ -32,7 +32,9 @@ public class Ability : MonoBehaviour
     {
         if (abilityCooldown > 0 && abilityOnCooldown)
             return true;
-        AudioManager.instance.PlaySFX(abilityStartupSound);
+
+        AudioManager.instance?.PlaySFX(abilityStartupSound);
+
         onAbilityCooldown?.Invoke(abilityCooldown);
         StartCoroutine(CooldownCo());
         return false;

@@ -18,7 +18,8 @@ public class LeaderboardUI : MonoBehaviour
     {
         _highScores = ScoreKeeper.instance?.highScores;
 
-        if (_highScores == null)
+        if (_highScores == null || entryContainer == null 
+            || entryTemplate == null)
             return;
 
         for (int i = 0; i < 10; i++)
