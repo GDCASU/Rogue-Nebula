@@ -62,18 +62,19 @@ public class EnemyLandmine : MonoBehaviour
     {
         exploded = true;
         meshRenderer.material = explodedMaterial;
-        transform.localScale = new Vector3(5f, 5f, 5f);
-        sphereCollider.radius = 5f;
+        transform.localScale = new Vector3(damageRadius, damageRadius, damageRadius);
+        //sphereCollider.radius = damageRadius;
 
         // TO DO: Create damage radius.
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        DamageDealer damageDealer = other.GetComponent<DamageDealer>();
+
         if (other.tag == "Player")
         {
-
+            explode();
         }
-        else if (other.tag == "Player" && other.name == "")
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3403650663930713002}
   - component: {fileID: 8624434860598740077}
   - component: {fileID: 3480626656185622924}
+  - component: {fileID: 769593419665659231}
   - component: {fileID: -5023836793845225275}
   m_Layer: 8
   m_Name: Enemy Landmine
@@ -132,8 +133,23 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &769593419665659231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6768058984271882836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c03c91dcabd4348b32b74df4f54539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  destroyAfterHitFactor: 0
+  hitFactor: 0
 --- !u!114 &-5023836793845225275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,10 +163,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageRadius: 3
+  damageRadius: 10
   fuseTime: 3
   explosionTime: 1
   normalMaterial: {fileID: 2100000, guid: c5a631da594dbfd4c835e7137dec7059, type: 2}
-  flashMaterial: {fileID: 2100000, guid: 263857960d3c1d74c983252b9ff43a18, type: 2}
-  explodedMaterial: {fileID: 2100000, guid: 001379b4306e41c4cab43770ae884fc0, type: 2}
+  flashMaterial: {fileID: 2100000, guid: 001379b4306e41c4cab43770ae884fc0, type: 2}
+  explodedMaterial: {fileID: 2100000, guid: 263857960d3c1d74c983252b9ff43a18, type: 2}
   meshRenderer: {fileID: 3403650663930713002}
+  sphereCollider: {fileID: 3480626656185622924}
