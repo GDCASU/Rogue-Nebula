@@ -35,7 +35,9 @@ public class EntityHealth : MonoBehaviour
     {
         MakeInvulnerable(hitInvulnerabilityTime);
         health -= damage;
-        AudioManager.instance.PlaySFX(takeDamageSound);
+        
+        AudioManager.instance?.PlaySFX(takeDamageSound);
+        
         if (health <= 0)
         {
             Death();
@@ -68,7 +70,7 @@ public class EntityHealth : MonoBehaviour
 
     protected virtual void Death()
     {
-        AudioManager.instance.PlaySFX(deathSound);
+        AudioManager.instance?.PlaySFX(deathSound);
         Destroy(gameObject);
     }
 }

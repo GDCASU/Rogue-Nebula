@@ -25,6 +25,7 @@ public class Weapon : MonoBehaviour
 
     public virtual void Fire() 
     {
-        AudioManager.instance.PlaySFX(fireSound);
+        if (fireSound != null)
+            AudioManager.instance?.PlaySFX(fireSound);
     }
 }

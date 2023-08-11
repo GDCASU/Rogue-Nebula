@@ -654,6 +654,63 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &1934148796
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2294615119013890596, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
+      propertyPath: m_Name
+      value: Input Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088960794918831747, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088960794918831747, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088960794918831747, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088960794918831747, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088960794918831747, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088960794918831747, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088960794918831747, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088960794918831747, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088960794918831747, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088960794918831747, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
 --- !u!1 &2068256611
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,21 +925,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 332edeccc4ebe9c488c0628b74aacbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onScoreUpdated:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1724950427}
-        m_TargetAssemblyTypeName: PrintScore, Assembly-CSharp
-        m_MethodName: PrintFunc
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  highScores: {fileID: 0}
+  _name: Anonymous
+  _score: 0
 --- !u!4 &2100799759
 Transform:
   m_ObjectHideFlags: 0
@@ -988,6 +1033,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2068256614}
+  - {fileID: 1934148796}
   - {fileID: 1317565429}
   - {fileID: 1811662114}
   - {fileID: 1217859070}
