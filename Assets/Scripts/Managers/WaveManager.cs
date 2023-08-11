@@ -35,7 +35,7 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
-        currentWavePool = wavePools[0]; // Start at first wave in list
+        //currentWavePool = wavePools[0]; // Start at first wave in list
     }
 
     public void RaiseDifficulty()

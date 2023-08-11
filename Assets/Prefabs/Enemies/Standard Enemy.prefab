@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4241723833597045381
 Transform:
   m_ObjectHideFlags: 0
@@ -91,6 +91,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   hitInvulnerabilityTime: 0
+  takeDamageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   score: 100
 --- !u!1 &2839670060645248025
 GameObject:
