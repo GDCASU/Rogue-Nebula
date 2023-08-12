@@ -36,15 +36,13 @@ public class ScenesManager : MonoBehaviour
 
     public void LoadMainMenu()      // Loads the MainMenu Scene
     {
-        //if (SceneManager.GetSceneAt(((int)Scene.MainMenu)) != null)
-            SceneManager.LoadScene(Scenes.MainMenu.ToString());
-        //ScoreKeeper.instance.PrintHighScores();         // FOR DEBUGGING 
+        SceneManager.LoadScene(Scenes.MainMenu.ToString());
+        //ScoreKeeper.instance.PrintHighScores();         // FOR DEBUGGING
         playSceneMusic();
     }
 
     public void LoadGame()           // Loads the game scene
     {
-        //if (SceneManager.GetSceneAt(((int)Scene.Main)) != null)
         SceneManager.LoadScene(Scenes.Main.ToString());
         ScoreKeeper.instance?.ResetScore();         // Reset the current score to 0
         playSceneMusic();
@@ -52,7 +50,6 @@ public class ScenesManager : MonoBehaviour
 
     public void LoadGameOver()      // Loads the MainMenu Scene
     {
-        //if (SceneManager.GetSceneAt(((int)Scene.MainMenu)) != null)
         SceneManager.LoadScene(Scenes.GameOver.ToString());
         ScoreKeeper.instance?.AddHighScore();       // Add the highscore to the highscore's array if applicable
         playSceneMusic();
@@ -60,7 +57,6 @@ public class ScenesManager : MonoBehaviour
 
     public void LoadNextScene()     // Loads the next scene by the projects buildIndex
     {
-        //if (SceneManager.GetSceneAt(SceneManager.GetActiveScene().buildIndex + 1) != null)
         playSceneMusic();
         SceneManager.LoadScene(GetActiveSceneIndex() + 1);
     }

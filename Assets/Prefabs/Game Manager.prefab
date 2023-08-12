@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 7808544197142589044}
   - component: {fileID: 6726488582111495571}
   - component: {fileID: 5873662373283482740}
+  - component: {fileID: 3636223113131257778}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -57,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8124235330829089465}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.0000000059517333, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -77,22 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 332edeccc4ebe9c488c0628b74aacbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onScoreUpdated:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ScoreUI, Assembly-CSharp
-        m_MethodName: UpdateScore
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  HighScores: {fileID: 11400000, guid: 2ef19a0d758c00846b7d770339115d94, type: 2}
+  highScores: {fileID: 0}
+  _name: Anonymous
+  _score: 0
 --- !u!114 &5873662373283482740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,3 +93,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f8bb8ade9fb30449a9b6bdf0b58a6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3636223113131257778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8124235330829089465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589651c10b10df24489596b75b65ccc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changePoolAfterWaves: 2
+  wavePools:
+  - {fileID: 11400000, guid: e81307543ade203498aa867c76386085, type: 2}
+  - {fileID: 11400000, guid: 3f75855ef6ef5d14e93a1c24d0a58f73, type: 2}
+  currentDifficulty: 0

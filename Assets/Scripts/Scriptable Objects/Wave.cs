@@ -47,6 +47,6 @@ public class Wave : MonoBehaviour
     {
         WaveManager.instance.UpdateWaveCounter();
         WaveManager.instance.SpawnWave();
-        //Destroy(gameObject);
+        //Destroy(gameObject);                  // MAY USE TO CLEAN UP CLUTTER IN GAME
     }
 }

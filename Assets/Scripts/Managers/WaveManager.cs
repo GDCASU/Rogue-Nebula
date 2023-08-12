@@ -41,7 +41,7 @@ public class WaveManager : MonoBehaviour
 
     public void RaiseDifficulty()
     {
-        if (wavePools[((int)currentDifficulty) + 1] != null) // Check if we are not at the end of wavePools; otherwise, stay on last WavePool
+        if (((int)currentDifficulty + 1) < wavePools.Count) // Check if we are not at the end of wavePools; otherwise, stay on last WavePool
         {
             currentDifficulty++;                
             currentWavePool = wavePools[((int)currentDifficulty)];

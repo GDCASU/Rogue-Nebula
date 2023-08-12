@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a95abbf9a4682348bb97c21a382827e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 1
   hitInvulnerabilityTime: 0
   takeDamageSound: {fileID: 0}
   deathSound: {fileID: 0}

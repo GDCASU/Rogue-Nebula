@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: WavePool_Med
   m_EditorClassIdentifier: 
   waveDifficulty: 1
-  waves: []
+  waves:
+  - {fileID: 2066540579321377522, guid: 9c00dcbe871aecd4fa83081a0de80ece, type: 3}
   varientMedChance: 0
+  varientMedMaxSpawn: 0
   varientHardChance: 0
+  varientHardMaxSpawn: 0
