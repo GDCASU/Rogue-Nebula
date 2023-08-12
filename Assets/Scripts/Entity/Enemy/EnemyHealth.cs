@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,9 @@ public class EnemyHealth : EntityHealth
 
     private ScoreKeeper scoreKeeper;
 
+    // Events
+    public static event Action<GameObject> onEnemyDeath;
+
     private void Start()
     {
         scoreKeeper = ScoreKeeper.instance;
@@ -16,7 +20,7 @@ public class EnemyHealth : EntityHealth
     protected override void Death()
     {
         scoreKeeper.AddScore(score);
-
+        onEnemyDeath?.Invoke(gameObject);
         base.Death();
     }
 }
