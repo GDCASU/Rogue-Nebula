@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d09250ba7b36f414fba90b11c855ab28
+guid: f32834bdf0ddbda40b0c745ccedb6d8e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: UI Sprites
+  - name: UI Slider Knob
     originalName: 
-    pivot: {x: 0.48704663, y: -1.8545454}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 386
-      height: 165
-    spriteID: 724aa2791d86a0a489daac4a0a2a7001
+      width: 36
+      height: 36
+    spriteID: cd55610a2b058ae4793db0f55450e514
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,23 +142,23 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 2027897926
-    name: UI Sprites
+    guid: -1747527915
+    name: UI Slider Knob
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: UI Sprites
+    - name: UI Slider Knob
       frameIndex: 0
       cellRect:
-        x: 62
-        y: 306
-        width: 386
-        height: 165
-      spriteId: 724aa2791d86a0a489daac4a0a2a7001
+        x: 0
+        y: 0
+        width: 36
+        height: 36
+      spriteId: cd55610a2b058ae4793db0f55450e514
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 500, y: 500}
+  canvasSize: {x: 36, y: 36}
