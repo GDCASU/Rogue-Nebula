@@ -14,10 +14,10 @@ public class WavePool : ScriptableObject
     [SerializeField] private List<GameObject> waves = new List<GameObject>();
 
     [Header("Varient Enemies")]
-    [SerializeField] private float varientMedChance = 0f;     // Default if chances not hit will just be the base enemy (easy)
-    [SerializeField] private int varientMedMaxSpawn = 0;
-    [SerializeField] private float varientHardChance = 0f;
-    [SerializeField] private int varientHardMaxSpawn = 0;
+    [SerializeField] public int varientMedChance = 0;     // Default if chances not hit will just be the base enemy (easy)
+    [SerializeField] public int varientMedMaxSpawn = 0;
+    [SerializeField] public int varientHardChance = 0;
+    [SerializeField] public int varientHardMaxSpawn = 0;
 
     public GameObject RandomWaveSelect()      // Select a Random Wave if it doesn't exist then use recursion to select again (highly unlikely)
     {

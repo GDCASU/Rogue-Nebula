@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -74,5 +75,29 @@ public class WaveManager : MonoBehaviour
         }
     }
 
+    public bool rollVarientMedChance()
+    {
+        int roll = Random.Range(0, 101);
+        if (roll >= (100 - currentWavePool.varientMedChance))
+            return true;
+        return false;
+    }
 
+    public bool rollVarientHardChance()
+    {
+        int roll = Random.Range(0, 101);
+        if (roll >= (100 - currentWavePool.varientHardChance))
+            return true;
+        return false;
+    }
+
+    public int GetVarientMedMaxSpawn()
+    {
+        return currentWavePool.varientHardMaxSpawn;
+    }
+
+    public int GetVarientHardMaxSpawn()
+    {
+        return currentWavePool.varientHardMaxSpawn;
+    }
 }

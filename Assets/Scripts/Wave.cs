@@ -9,7 +9,8 @@ public class Wave : MonoBehaviour
     
     private List<GameObject> enemyList;
     private int numberOfEnemies = 0;
-    
+    private int varientCounter = 0;
+
     private void Start()
     {
         EnemyHealth.onEnemyDeath += HandleEnemyDeath;
@@ -17,6 +18,7 @@ public class Wave : MonoBehaviour
         enemyList = new List<GameObject>();
         AddEnemiesToList();
         numberOfEnemies = enemyList.Count;
+        RollVarients();
     }
 
     private void AddEnemiesToList()
@@ -43,10 +45,38 @@ public class Wave : MonoBehaviour
         }
     }
 
+    private void RollVarients()
+    {
+        foreach(GameObject enemy in enemyList) 
+        {
+            IEnemy enemyScript = enemy.GetComponent<IEnemy>();
+            if (WaveManager.instance.rollVarientHardChance())
+            {
+                // MAKE THAT ENEMY HAVE HARD DIFFICULTY
+                //enemyScript.damage *= hardVarientDamageMult;
+                //enemyScript.health *= hardVarientHealthMult;
+                //enemyScript.enemyModelList[2].SetActive(true);
+            }
+            else if (WaveManager.instance.rollVarientHardChance())
+            {
+                // MAKE THAT ENEMY HAVE MEDIUM DIFFICULTY
+                //enemyScript.damage *= medVarientDamageMult;
+                //enemyScript.health *= medVarientHealthMult;
+                //enemyScript.enemyModelList[1].SetActive(true);
+            }
+            else    // ELSE LEAVE AS DEFAULT
+            {
+                //enemyScript.enemyModelList[0].SetActive(true);
+            }
+        }
+    }
+
     private void EndOfWave()
     {
         WaveManager.instance.UpdateWaveCounter();
         WaveManager.instance.SpawnWave();
         //Destroy(gameObject);                  // MAY USE TO CLEAN UP CLUTTER IN GAME
     }
+
+
 }
