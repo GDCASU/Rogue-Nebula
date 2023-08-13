@@ -44,7 +44,7 @@ public abstract class IEnemy : MonoBehaviour
     protected virtual void EnterPlayfield()
     {
         transform.Translate(Vector3.down * Time.deltaTime * speed);                 // Move Down.
-        moveDown = Camera.main.WorldToViewportPoint(transform.position).y > percentDownScreen;    // Check if should move down again.
+        moveDown = Camera.main.WorldToViewportPoint(transform.position).y > percentUpScreen;    // Check if should move down again.
     }
 
     protected abstract void Move();
