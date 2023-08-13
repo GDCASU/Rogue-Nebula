@@ -13,6 +13,7 @@ public abstract class IEnemy : MonoBehaviour
 
     public int health = -1;
     public int damage = -1;
+    [SerializeField] protected float enterSpeed = 5f;
     [SerializeField] protected float speed = 1f;
 
     // STATE CONTROL
@@ -26,6 +27,8 @@ public abstract class IEnemy : MonoBehaviour
         if (enemyRenderer == null) enemyRenderer = GetComponent<Renderer>();
         moveDown = !enemyRenderer.isVisible;
 
+        GetComponent<EnemyHealth>().ToggleInvulnerable(true);
+
         // HEALTH
         if (health == -1) health = GetComponent<EnemyHealth>().health;    // Not set, making sure things don't go awry.
         else GetComponent<EnemyHealth>().health = (int)health;              // Set, override original health
@@ -38,12 +41,13 @@ public abstract class IEnemy : MonoBehaviour
     protected virtual void FixedUpdate()
     {
         if (moveDown) EnterPlayfield();
+        else GetComponent<EnemyHealth>().ToggleInvulnerable(false);
     }
 
     // Places enemies into playfield
     protected virtual void EnterPlayfield()
     {
-        transform.Translate(Vector3.down * Time.deltaTime * speed);                 // Move Down.
+        transform.Translate(Vector3.down * Time.deltaTime * enterSpeed);                 // Move Down.
         moveDown = Camera.main.WorldToViewportPoint(transform.position).y > percentUpScreen;    // Check if should move down again.
     }
 
