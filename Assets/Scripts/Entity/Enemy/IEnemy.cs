@@ -16,6 +16,7 @@ public abstract class IEnemy : MonoBehaviour
     [SerializeField] protected float speed = 1f;
 
     // STATE CONTROL
+    [SerializeField] float percentDownScreen = 0.9f;
     protected bool moveDown = false;
 
     protected virtual void Start()
@@ -43,7 +44,7 @@ public abstract class IEnemy : MonoBehaviour
     protected virtual void EnterPlayfield()
     {
         transform.Translate(Vector3.down * Time.deltaTime * speed);                 // Move Down.
-        moveDown = Camera.main.WorldToViewportPoint(transform.position).y > .9f;    // Check if should move down again.
+        moveDown = Camera.main.WorldToViewportPoint(transform.position).y > percentDownScreen;    // Check if should move down again.
     }
 
     protected abstract void Move();
