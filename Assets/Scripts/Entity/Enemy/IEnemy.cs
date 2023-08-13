@@ -16,7 +16,7 @@ public abstract class IEnemy : MonoBehaviour
     [SerializeField] protected float speed = 1f;
 
     // STATE CONTROL
-    [SerializeField] float percentDownScreen = 0.9f;
+    [SerializeField] float percentUpScreen = 0.9f;
     protected bool moveDown = false;
 
     protected virtual void Start()
