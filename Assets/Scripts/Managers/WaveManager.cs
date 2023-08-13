@@ -12,6 +12,8 @@ public enum WaveDifficulty
 
 public class WaveManager : MonoBehaviour
 {
+    private const string WAVE_PARENT_NAME = "Waves";
+
     public static WaveManager instance;
 
     [Header("Wave Pools")]
@@ -50,7 +52,15 @@ public class WaveManager : MonoBehaviour
 
     public void SpawnWave()
     {
-        currentWavePool?.SpawnWave();
+        // CHECK IF WAVE SELECTED IS NULL TO PREVENT NULL REF EXC
+        GameObject waveParent = GameObject.Find(WAVE_PARENT_NAME);
+        // Spawn wave using RandomWaveSelect()
+        GameObject wave = Instantiate(currentWavePool.RandomWaveSelect(), waveParent.transform);
+
+        if (!wave)
+        {
+            // handle errors with no waves existing in a wavepool
+        }
     }
 
     public void UpdateWaveCounter()         // Update waveCounter and check if we need to raise the difficulty

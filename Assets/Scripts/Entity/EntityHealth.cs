@@ -8,6 +8,9 @@ public class EntityHealth : MonoBehaviour
     [SerializeField] public int health = 5;
     [SerializeField] private float hitInvulnerabilityTime = 0f;
 
+    [Header("Effects")]
+    [SerializeField] public GameObject deathPS;
+
     [Header("Sounds")]
     [SerializeField] protected AudioClip takeDamageSound;
     [SerializeField] protected AudioClip deathSound;
@@ -70,6 +73,11 @@ public class EntityHealth : MonoBehaviour
 
     protected virtual void Death()
     {
+        if (deathPS != null)
+        {
+            GameObject instance = Instantiate(deathPS, gameObject.transform.position, Quaternion.identity);
+            Destroy(instance, 2f);
+        }
         AudioManager.instance?.PlaySFX(deathSound);
         Destroy(gameObject);
     }
