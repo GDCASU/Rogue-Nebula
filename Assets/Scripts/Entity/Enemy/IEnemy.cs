@@ -11,8 +11,8 @@ public abstract class IEnemy : MonoBehaviour
     [SerializeField] protected GameObject ammoPrefab;
     [SerializeField] protected Transform ammoSpawnPoint;
 
-    public int? health;
-    public int? damage;
+    public int health = -1;
+    public int damage = -1;
     [SerializeField] protected float speed = 1f;
 
     // STATE CONTROL
@@ -26,11 +26,11 @@ public abstract class IEnemy : MonoBehaviour
         moveDown = !enemyRenderer.isVisible;
 
         // HEALTH
-        if (health == null) health = GetComponent<EnemyHealth>().health;    // Not set, making sure things don't go awry.
+        if (health == -1) health = GetComponent<EnemyHealth>().health;    // Not set, making sure things don't go awry.
         else GetComponent<EnemyHealth>().health = (int)health;              // Set, override original health
 
         // DAMAGE (sub comments from health apply here, but im lazy)
-        if (damage == null) damage = ammoPrefab.GetComponent<DamageDealer>().damage;
+        if (damage == -1) damage = ammoPrefab.GetComponent<DamageDealer>().damage;
         else ammoPrefab.GetComponent<DamageDealer>().damage = (int)damage;
     }
 
