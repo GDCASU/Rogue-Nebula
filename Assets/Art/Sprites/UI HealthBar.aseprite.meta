@@ -7,7 +7,7 @@ ScriptedImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  script: {instanceID: 0}
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -130,7 +130,7 @@ ScriptedImporter:
       y: 4
       width: 205
       height: 68
-    spriteID: ffb00d8807c8a774a88d7079683313c8
+    spriteID: 2edd9fde81bdb2f4eb83ec6a72d9f016
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -155,7 +155,7 @@ ScriptedImporter:
         y: 1
         width: 205
         height: 68
-      spriteId: ffb00d8807c8a774a88d7079683313c8
+      spriteId: 2edd9fde81bdb2f4eb83ec6a72d9f016
     linkedCells: []
     parentIndex: -1
   platformSettings: []

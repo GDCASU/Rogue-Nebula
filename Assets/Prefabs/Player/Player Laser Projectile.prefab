@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6768058984271882836}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.7, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -98,6 +98,7 @@ MonoBehaviour:
   damage: 1
   destroyAfterHitFactor: 1
   hitFactor: 0
+  hitPS: {fileID: 3264322824323885750, guid: c571a2ae9a075a24e9b9d29233995218, type: 3}
 --- !u!1 &8549404389181513686
 GameObject:
   m_ObjectHideFlags: 0

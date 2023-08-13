@@ -73,8 +73,9 @@ public class EntityHealth : MonoBehaviour
 
     protected virtual void Death()
     {
-        if (deathPS != null)
+        if (deathPS != null)        // Handle PS
         {
+            Vector3 offset = new Vector3(0, -4.5f, 0);
             GameObject instance = Instantiate(deathPS, gameObject.transform.position, Quaternion.identity);
             Destroy(instance, 2f);
         }
