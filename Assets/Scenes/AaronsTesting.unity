@@ -970,7 +970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2072454560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,8 +983,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e054db40e55b2548a2b287f704e8d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prAsteroid: {fileID: 1217859065}
-  timeBetweenSpawns: 5
+  prAsteroid: {fileID: 6516590741793506316, guid: a21d6e017f2264f4687e201661ac1418, type: 3}
+  timeBetweenSpawns: 1
   minNumToSpawn: 1
   maxNumToSpawn: 2
 --- !u!4 &2072454561

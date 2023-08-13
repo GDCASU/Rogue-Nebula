@@ -15,6 +15,8 @@ public class AsteroidSpawner : MonoBehaviour
 
     private void Update()
     {
+        if (!spawning) return;
+
         stopwatch += Time.deltaTime;
 
         if(stopwatch >= timeBetweenSpawns)
