@@ -105,4 +105,9 @@ public class MenuUI : MonoBehaviour
     {
         ScoreKeeper.instance.PrintHighScores();
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
