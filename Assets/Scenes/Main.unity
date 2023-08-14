@@ -4114,6 +4114,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
+      propertyPath: changePoolAfterWaves
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
+      propertyPath: wavePools.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
+      propertyPath: wavePools.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a7022d4a60e6a243a399177a7d36d7a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
