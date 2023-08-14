@@ -64,5 +64,6 @@ public class StandardEnemy : IEnemy
     void ResetReload()
     {
         reloadTime = Random.Range(minReloadTime, maxReloadTime);
+        reloadTime += fireDelay;
     }
 }

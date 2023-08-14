@@ -48,14 +48,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5234bb56b39f07b499fb743f55e8aac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRenderer: {fileID: 5631423305523418687}
   ammoPrefab: {fileID: 6768058984271882836, guid: e872876477bbaa14e9487bbc6c4bf569, type: 3}
   ammoSpawnPoint: {fileID: 0}
-  health: -1
+  health: 7
   damage: -1
+  fireDelay: 2
   enterSpeed: 20
   speed: 1
   percentUpScreen: 0.9
+  curType: 0
+  medHealthInc: 1
+  medSpeedInc: 1
+  medFrInc: 1
+  hardHealthInc: 1
+  hardSpeedInc: 1
+  hardFrInc: 1
+  easyMat: {fileID: 2100000, guid: 146be3ee4c9a6814fbd1e3be7156d5c7, type: 2}
+  medMat: {fileID: 2100000, guid: 05ee3e2cd4e40c1479953f0395a5c1b3, type: 2}
+  hardMat: {fileID: 2100000, guid: 44205456a72af6742b3505bf4092f330, type: 2}
+  gunRenderer: {fileID: 0}
+  gunVarMatInd: -1
+  shipRenderer: {fileID: 0}
+  shipVarMatInd: -1
   ammoSpawnPoints:
   - {fileID: 5019256894586052231}
   - {fileID: 8191222169256190380}
@@ -65,7 +79,6 @@ MonoBehaviour:
   - {fileID: 5846491256195834303}
   - {fileID: 6784019813103872858}
   - {fileID: 3345164027650372572}
-  timeBetweenFiring: 2
 --- !u!114 &8838060836855892254
 MonoBehaviour:
   m_ObjectHideFlags: 0

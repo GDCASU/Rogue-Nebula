@@ -5,8 +5,6 @@ using UnityEngine;
 public class StationaryEnemy : IEnemy
 {
     [SerializeField]  Transform[] ammoSpawnPoints;
-
-    [SerializeField] float timeBetweenFiring = 1f;
     float stopwatch = 0f;
 
     protected override void Start()
@@ -20,10 +18,10 @@ public class StationaryEnemy : IEnemy
 
         stopwatch += Time.deltaTime;
 
-        if (stopwatch >= timeBetweenFiring)
+        if (stopwatch >= fireDelay)
         {
             Fire();
-            stopwatch -= timeBetweenFiring;
+            stopwatch -= fireDelay;
         }
     }
 

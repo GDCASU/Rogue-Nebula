@@ -13,7 +13,7 @@ public abstract class IEnemy : MonoBehaviour
     [Header("Base Stats")]
     public int health = -1;
     public int damage = -1;
-    public float fireRate = -1;
+    public float fireDelay = 0;
 
     [SerializeField] protected float enterSpeed = 5f;
     [SerializeField] protected float speed = 1f;
@@ -142,7 +142,7 @@ public abstract class IEnemy : MonoBehaviour
         // From med to ez stat changes
         SetHealth(health - medHealthInc);
         speed -= medSpeedInc;
-        fireRate -= medFrInc;
+        fireDelay += medFrInc;
 
         // ez renderer changes
         List<Material> newMats = new List<Material>();
@@ -166,13 +166,13 @@ public abstract class IEnemy : MonoBehaviour
             case 0:
                 SetHealth(health + medHealthInc);
                 speed += medSpeedInc;
-                fireRate += medFrInc;
+                fireDelay -= medFrInc;
                 break;
 
             case 2:
                 SetHealth(health - hardHealthInc);
                 speed -= hardSpeedInc;
-                fireRate -= hardFrInc;
+                fireDelay += hardFrInc;
                 break;
 
             default:
@@ -211,7 +211,7 @@ public abstract class IEnemy : MonoBehaviour
 
         SetHealth(health + hardHealthInc);
         speed += hardSpeedInc;
-        fireRate += hardFrInc;
+        fireDelay -= hardFrInc;
 
         // hard renderer changes
         List<Material> newMats = new List<Material>();

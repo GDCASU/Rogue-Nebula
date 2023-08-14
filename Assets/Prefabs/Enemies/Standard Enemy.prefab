@@ -73,9 +73,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoPrefab: {fileID: 6768058984271882836, guid: d027adb302899bc4087e2c1fa5f6c4d8, type: 3}
   ammoSpawnPoint: {fileID: 2323789564417041469}
-  health: -1
+  health: 5
   damage: -1
-  fireRate: -1
+  fireDelay: 0
   enterSpeed: 20
   speed: 10
   percentUpScreen: 0.9

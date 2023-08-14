@@ -5,8 +5,6 @@ using UnityEngine;
 public class HomingEnemy : IEnemy
 {
     float direction = 0;
-
-    [SerializeField] float timeBetweenFiring = 1f;
     float stopwatch = 0f;
     float stopwatchMove = 0f;
     float stopwatchRotate = 0f;
@@ -44,9 +42,9 @@ public class HomingEnemy : IEnemy
         stopwatch += Time.deltaTime;
 
         // Shoot
-        if(stopwatch >= timeBetweenFiring)
+        if(stopwatch >= fireDelay)
         {
-            stopwatch -= timeBetweenFiring;
+            stopwatch -= fireDelay;
 
             Fire();
         }
