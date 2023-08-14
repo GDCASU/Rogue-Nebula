@@ -16,6 +16,7 @@ public class PauseGame : MonoBehaviour
 
     private void Pause()
     {
+        Debug.Log("Pause");
         gamePaused = true;
         Time.timeScale = 0f;
     }

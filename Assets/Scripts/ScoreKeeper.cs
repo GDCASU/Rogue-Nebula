@@ -27,7 +27,10 @@ public class ScoreKeeper : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         else
+        {
             Destroy(gameObject);
+            return;
+        }
     }
 
     private void Start()        // Handle HighScores null ref error

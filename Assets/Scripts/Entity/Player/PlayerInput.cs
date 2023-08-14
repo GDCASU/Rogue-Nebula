@@ -34,7 +34,9 @@ public class PlayerInput : MonoBehaviour
 
     private void Start()
     {
-        instance.enabled = true; 
+        instance.enabled = true;
+
+        onPause.AddListener(GameObject.Find("Game Manager").GetComponent<PauseGame>().TogglePauseGame);
     }
 
     public void ToggleControls(bool toggle)     // Toggle the player controls with this method
