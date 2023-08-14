@@ -39,7 +39,7 @@ public class AsteroidSpawner : MonoBehaviour
             float endXFromView = Random.Range(-.15f, 1.15f);
 
             Vector3 startPoint = Camera.main.ViewportToWorldPoint(new Vector3(startXFromView, 1.1f, zValForView));
-            Vector3 endPoint = Camera.main.ViewportToWorldPoint(new Vector3(endXFromView, -10f, zValForView));
+            Vector3 endPoint = Camera.main.ViewportToWorldPoint(new Vector3(startXFromView, -10f, zValForView));
 
             Instantiate(prAsteroid, startPoint, Quaternion.FromToRotation(startPoint, endPoint));
         }
@@ -48,5 +48,20 @@ public class AsteroidSpawner : MonoBehaviour
     public void SetSpawning(bool spawn)
     {
         spawning = spawn;
+    }
+
+    public void ChangeTimeBetween(float t)
+    {
+        timeBetweenSpawns = t;
+    }
+
+    public void SetMinSpawn(int num)
+    {
+        minNumToSpawn = num;
+    }
+
+    public void SetMaxSpawn(int num)
+    {
+        maxNumToSpawn = num;
     }
 }
