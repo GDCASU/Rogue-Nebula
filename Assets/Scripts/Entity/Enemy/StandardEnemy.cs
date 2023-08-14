@@ -55,6 +55,7 @@ public class StandardEnemy : IEnemy
     {
         if (playerTransform.position.y < transform.position.y && transform.rotation.eulerAngles.z == 180) transform.Rotate(Vector3.forward, -180);
         else if (playerTransform.position.y > transform.position.y && transform.rotation.eulerAngles.z == 0) transform.Rotate(Vector3.forward, 180);
+        moveLeft = !moveLeft;
     }
 
     // Sets reloadTime between minReloadTime and maxReloadTime
