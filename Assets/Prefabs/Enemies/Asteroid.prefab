@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4338024552096684012}
   - component: {fileID: 7473608852332354795}
   - component: {fileID: 4870884792632418637}
+  - component: {fileID: 6720337884451892780}
   m_Layer: 7
   m_Name: Asteroid
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6516590741793506316}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 11.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -58,7 +59,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -114,10 +115,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   hitInvulnerabilityTime: 0
-  deathPS: {fileID: 0}
+  deathPS: {fileID: 3264322824323885750, guid: 948d9f81170858743a8b9f17c2a513f8, type: 3}
   takeDamageSound: {fileID: 0}
   deathSound: {fileID: 0}
   score: 100
+--- !u!114 &6720337884451892780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6516590741793506316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c099046d49a948c4288d33746b91bfaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1 &7307779623152139609
 GameObject:
   m_ObjectHideFlags: 0
