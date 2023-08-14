@@ -36,12 +36,14 @@ public class AsteroidSpawner : MonoBehaviour
             float zValForView = Camera.main.WorldToViewportPoint(transform.position).z; // Keeps the z val of an obj that's at the right z val in viewport perspective
 
             float startXFromView = Random.Range(0.15f, 0.85f);
-            float endXFromView = Random.Range(-.15f, 1.15f);
-
             Vector3 startPoint = Camera.main.ViewportToWorldPoint(new Vector3(startXFromView, 1.1f, zValForView));
-            Vector3 endPoint = Camera.main.ViewportToWorldPoint(new Vector3(startXFromView, -10f, zValForView));
 
-            Instantiate(prAsteroid, startPoint, Quaternion.FromToRotation(startPoint, endPoint));
+            /*
+            float endXFromView = Random.Range(-.15f, 1.15f);
+            Vector3 endPoint = Camera.main.ViewportToWorldPoint(new Vector3(startXFromView, -10f, zValForView));
+            */
+
+            Instantiate(prAsteroid, startPoint, Quaternion.identity);
         }
     }
 
