@@ -117,9 +117,6 @@ public abstract class IEnemy : MonoBehaviour
     [SerializeField] Material easyMat;
     [SerializeField] Material medMat;
     [SerializeField] Material hardMat;
-
-    [SerializeField] MeshRenderer gunRenderer;
-    [SerializeField] int gunVarMatInd = -1;
     [SerializeField] MeshRenderer shipRenderer;
     [SerializeField] int shipVarMatInd = -1;
 
@@ -146,11 +143,6 @@ public abstract class IEnemy : MonoBehaviour
 
         // ez renderer changes
         List<Material> newMats = new List<Material>();
-        foreach(Material mat in gunRenderer.materials) newMats.Add(mat);
-        newMats[gunVarMatInd] = easyMat;
-        gunRenderer.SetMaterials(newMats);
-
-        newMats.Clear();
         foreach (Material mat in shipRenderer.materials) newMats.Add(mat);
         newMats[shipVarMatInd] = easyMat;
         shipRenderer.SetMaterials(newMats);
@@ -182,11 +174,6 @@ public abstract class IEnemy : MonoBehaviour
 
         // med renderer changes
         List<Material> newMats = new List<Material>();
-        foreach (Material mat in gunRenderer.materials) newMats.Add(mat);
-        newMats[gunVarMatInd] = medMat;
-        gunRenderer.SetMaterials(newMats);
-
-        newMats.Clear();
         foreach (Material mat in shipRenderer.materials) newMats.Add(mat);
         newMats[shipVarMatInd] = medMat;
         shipRenderer.SetMaterials(newMats);
@@ -215,11 +202,6 @@ public abstract class IEnemy : MonoBehaviour
 
         // hard renderer changes
         List<Material> newMats = new List<Material>();
-        foreach (Material mat in gunRenderer.materials) newMats.Add(mat);
-        newMats[gunVarMatInd] = hardMat;
-        gunRenderer.SetMaterials(newMats);
-
-        newMats.Clear();
         foreach (Material mat in shipRenderer.materials) newMats.Add(mat);
         newMats[shipVarMatInd] = hardMat;
         shipRenderer.SetMaterials(newMats);
