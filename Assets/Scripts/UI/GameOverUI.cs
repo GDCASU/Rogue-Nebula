@@ -45,4 +45,9 @@ public class GameOverUI : MonoBehaviour
         if (selectionSound != null)
             AudioManager.instance.PlaySFX(selectionSound);
     }
+
+    public void EndGame()
+    {
+        Application.Quit();
+    }
 }
