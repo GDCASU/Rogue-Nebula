@@ -38,31 +38,40 @@ public abstract class IEnemy : MonoBehaviour
         else ammoPrefab.GetComponent<DamageDealer>().damage = (int)damage;
     }
 
-    protected virtual void FixedUpdate()
-    {
-        if (moveDown) EnterPlayfield();
-        else GetComponent<EnemyHealth>().ToggleInvulnerable(false);
-    }
-
-    // Places enemies into playfield
-    protected virtual void EnterPlayfield()
-    {
-        transform.Translate(Vector3.down * Time.deltaTime * enterSpeed);                 // Move Down.
-        moveDown = Camera.main.WorldToViewportPoint(transform.position).y > percentUpScreen;    // Check if should move down again.
-    }
-
-    protected abstract void Move();
-
     protected virtual void Fire()
     {
         if(ammoPrefab == null)
         {
             Debug.LogError("No ammo prefab set.");
             return;
+        }else if(ammoSpawnPoint == null)
+        {
+            Debug.LogError("No ammo spawn point set.");
+            return;
         }
 
         Instantiate(ammoPrefab, ammoSpawnPoint.position, ammoSpawnPoint.rotation);
     }
+
+    #region Universal Movement
+
+    protected virtual void FixedUpdate()
+    {
+        if (moveDown) EnterPlayfield();
+    }
+
+    // Places enemies into playfield
+    protected virtual void EnterPlayfield()
+    {
+        transform.Translate(Vector3.down * Time.deltaTime * enterSpeed);                        // Move Down.
+        moveDown = Camera.main.WorldToViewportPoint(transform.position).y > percentUpScreen;    // Check if should move down again.
+
+        if(!moveDown) GetComponent<EnemyHealth>().ToggleInvulnerable(false);                    // toggle invulnerable off
+    }
+
+    #endregion
+
+    #region Stats
 
     public void SetHealth(int newHealth)
     {
@@ -81,4 +90,12 @@ public abstract class IEnemy : MonoBehaviour
         SetHealth(h);
         SetDamage(d);
     }
+
+    #endregion
+
+    #region Inherit Required
+
+    protected abstract void Move();
+
+    #endregion
 }
