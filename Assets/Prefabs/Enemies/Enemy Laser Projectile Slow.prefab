@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1231750653526621842}
   - component: {fileID: 2152960477984733383}
   m_Layer: 8
-  m_Name: Enemy Laser Projectile
+  m_Name: Enemy Laser Projectile Slow
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b2d343fd9fcd74dbf4daaa9f620097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 10
 --- !u!1001 &1605139418473877574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -205,6 +205,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f2dc3f7c9e66fc04e893528ee45cdecc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa039232b1c36fa4ca61ee5c7186ada5, type: 2}
     - target: {fileID: 919132149155446097, guid: f2dc3f7c9e66fc04e893528ee45cdecc, type: 3}
       propertyPath: m_Name
       value: LaserBulletEnemy

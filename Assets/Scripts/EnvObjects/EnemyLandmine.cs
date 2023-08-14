@@ -70,8 +70,6 @@ public class EnemyLandmine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        DamageDealer damageDealer = other.GetComponent<DamageDealer>();
-
         if (other.tag == "Player")
         {
             explode();

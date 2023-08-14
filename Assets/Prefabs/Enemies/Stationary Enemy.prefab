@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 35558022096464070}
   m_Layer: 0
   m_Name: Stationary Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 2727353674262219965}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,10 +338,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyRenderer: {fileID: 5631423305523418687}
-  ammoPrefab: {fileID: 6768058984271882836, guid: d027adb302899bc4087e2c1fa5f6c4d8, type: 3}
-  ammoSpawnPoint: {fileID: 0}
+  ammoPrefab: {fileID: 6768058984271882836, guid: e872876477bbaa14e9487bbc6c4bf569, type: 3}
+  ammoSpawnPoint: {fileID: 3472869998119799842}
+  health: -1
+  damage: -1
+  enterSpeed: 100
   speed: 1
-  dest: {fileID: 4212377114603283122}
+  percentUpScreen: 0.9
   ammoSpawnPoints:
   - {fileID: 5019256894586052231}
   - {fileID: 8191222169256190380}
@@ -351,7 +354,7 @@ MonoBehaviour:
   - {fileID: 5846491256195834303}
   - {fileID: 6784019813103872858}
   - {fileID: 3345164027650372572}
-  timeBetweenFiring: 1
+  timeBetweenFiring: 2
 --- !u!114 &9008681844547644470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,11 +367,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a95abbf9a4682348bb97c21a382827e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 7
   hitInvulnerabilityTime: 0
-  takeDamageSound: {fileID: 0}
-  deathSound: {fileID: 0}
-  score: 100
+  deathPS: {fileID: 3264322824323885750, guid: 948d9f81170858743a8b9f17c2a513f8, type: 3}
+  takeDamageSound: {fileID: 8300000, guid: 3c2dce86822e5b44cb8567b1d6c47929, type: 3}
+  deathSound: {fileID: 8300000, guid: 2dc89d86512680840a1fa6425113e449, type: 3}
+  score: 150
 --- !u!135 &2727353674262219965
 SphereCollider:
   m_ObjectHideFlags: 0
