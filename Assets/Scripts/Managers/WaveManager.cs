@@ -18,7 +18,7 @@ public class WaveManager : MonoBehaviour
     public static WaveManager instance;
 
     [Header("Wave Pools")]
-    [SerializeField] private int changePoolAfterWaves = 10;
+    [SerializeField] private int changePoolAfterWaves = 20;
     [SerializeField] private List<WavePool> wavePools = new List<WavePool>();
 
     [Header("Difficulty")]
@@ -67,37 +67,29 @@ public class WaveManager : MonoBehaviour
     public void UpdateWaveCounter()         // Update waveCounter and check if we need to raise the difficulty
     {
         waveCounter++;
-        if (waveCounter >= changePoolAfterWaves)
+        // changeWavePoolAfter * i = nextWavePoolChange; Ex: 10 * 2 = 20 next WavePool after Wave 20
+        if (waveCounter >= changePoolAfterWaves * waveCountMult)
         {
+            Debug.Log("here");
             RaiseDifficulty();
             waveCountMult++;
-            changePoolAfterWaves *= waveCountMult; // changeWavePoolAfter * i = nextWavePoolChange; Ex: 10 * 2 = 20 next WavePool after Wave 20
         }
     }
 
     public bool rollVarientMedChance()
     {
         int roll = Random.Range(0, 101);
-        if (roll >= (100 - currentWavePool.varientMedChance))
-            return true;
-        return false;
+        return (roll > (100 - currentWavePool.varientMedChance));
     }
 
     public bool rollVarientHardChance()
     {
         int roll = Random.Range(0, 101);
-        if (roll >= (100 - currentWavePool.varientHardChance))
-            return true;
-        return false;
+        return (roll > (100 - currentWavePool.varientHardChance));
     }
 
-    public int GetVarientMedMaxSpawn()
+    public int GetVarientMaxSpawn()
     {
-        return currentWavePool.varientHardMaxSpawn;
-    }
-
-    public int GetVarientHardMaxSpawn()
-    {
-        return currentWavePool.varientHardMaxSpawn;
+        return currentWavePool.varientMaxSpawn;
     }
 }

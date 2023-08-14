@@ -49,24 +49,21 @@ public class Wave : MonoBehaviour
     {
         foreach(GameObject enemy in enemyList) 
         {
-            IEnemy enemyScript = enemy.GetComponent<IEnemy>();
-            if (WaveManager.instance.rollVarientHardChance())
+            if (varientCounter < WaveManager.instance.GetVarientMaxSpawn())
             {
-                // MAKE THAT ENEMY HAVE HARD DIFFICULTY
-                //enemyScript.damage *= hardVarientDamageMult;
-                //enemyScript.health *= hardVarientHealthMult;
-                //enemyScript.enemyModelList[2].SetActive(true);
-            }
-            else if (WaveManager.instance.rollVarientHardChance())
-            {
-                // MAKE THAT ENEMY HAVE MEDIUM DIFFICULTY
-                //enemyScript.damage *= medVarientDamageMult;
-                //enemyScript.health *= medVarientHealthMult;
-                //enemyScript.enemyModelList[1].SetActive(true);
-            }
-            else    // ELSE LEAVE AS DEFAULT
-            {
-                //enemyScript.enemyModelList[0].SetActive(true);
+                IEnemy enemyScript = enemy.GetComponent<IEnemy>();
+                if (WaveManager.instance.rollVarientHardChance())
+                {
+                    // MAKE THAT ENEMY HAVE HARD DIFFICULTY
+                    enemyScript.SetHard();
+                    varientCounter++;
+}
+                else if (WaveManager.instance.rollVarientMedChance())
+                {
+                    // MAKE THAT ENEMY HAVE MEDIUM DIFFICULTY
+                    enemyScript.SetMedium();
+                    varientCounter++;
+                }
             }
         }
     }
