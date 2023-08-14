@@ -53,6 +53,12 @@ public class StandardEnemy : IEnemy
 
     void TurnAround()
     {
+        if (playerTransform == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         if (playerTransform.position.y < transform.position.y && transform.rotation.eulerAngles.z == 180) transform.Rotate(Vector3.forward, -180);
         else if (playerTransform.position.y > transform.position.y && transform.rotation.eulerAngles.z == 0) transform.Rotate(Vector3.forward, 180);
         else return;

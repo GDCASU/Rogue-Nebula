@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.00077550794, g: 0.0041317306, b: 0.019963915, a: 1}
+  m_IndirectSpecularColor: {r: 0.0007755076, g: 0.0041316804, b: 0.019963792, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -547,17 +547,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6042474492475297426, guid: 131807c113851f349be28467bdea4ad8, type: 3}
   m_PrefabInstance: {fileID: 1809404751}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &269415163 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5873662373283482740, guid: e74c0149bd51c45428c82cc6c11d4e6e, type: 3}
-  m_PrefabInstance: {fileID: 8230876667760359610}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87f8bb8ade9fb30449a9b6bdf0b58a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &325550271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,7 +1303,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269415163}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: TogglePauseGame
         m_Mode: 1
@@ -2536,7 +2525,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269415163}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: TogglePauseGame
         m_Mode: 1
@@ -3729,7 +3718,7 @@ PrefabInstance:
     - target: {fileID: 569915075659862271, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
       propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 269415163}
+      objectReference: {fileID: 0}
     - target: {fileID: 569915075659862271, guid: 7ee853bb4226df94a8c732458da625a0, type: 3}
       propertyPath: onPause.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -4149,63 +4138,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1001 &8230876667760359610
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7808544197142589044, guid: e74c0149bd51c45428c82cc6c11d4e6e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7808544197142589044, guid: e74c0149bd51c45428c82cc6c11d4e6e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7808544197142589044, guid: e74c0149bd51c45428c82cc6c11d4e6e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7808544197142589044, guid: e74c0149bd51c45428c82cc6c11d4e6e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7808544197142589044, guid: e74c0149bd51c45428c82cc6c11d4e6e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7808544197142589044, guid: e74c0149bd51c45428c82cc6c11d4e6e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7808544197142589044, guid: e74c0149bd51c45428c82cc6c11d4e6e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.0000000059517333
-      objectReference: {fileID: 0}
-    - target: {fileID: 7808544197142589044, guid: e74c0149bd51c45428c82cc6c11d4e6e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7808544197142589044, guid: e74c0149bd51c45428c82cc6c11d4e6e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7808544197142589044, guid: e74c0149bd51c45428c82cc6c11d4e6e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8124235330829089465, guid: e74c0149bd51c45428c82cc6c11d4e6e, type: 3}
-      propertyPath: m_Name
-      value: Game Manager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e74c0149bd51c45428c82cc6c11d4e6e, type: 3}
 --- !u!223 &8627531899185557618
 Canvas:
   m_ObjectHideFlags: 0
@@ -4236,7 +4168,6 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 33043354}
-  - {fileID: 8230876667760359610}
   - {fileID: 1037790862}
   - {fileID: 7209137184814573856}
   - {fileID: 2346799210861922714}
