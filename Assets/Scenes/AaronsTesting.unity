@@ -593,11 +593,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
---- !u!4 &1653607116 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4212377114603283122, guid: 4147b430ac36e254791be060b6f2b3e0, type: 3}
-  m_PrefabInstance: {fileID: 2096735629}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1724950426
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,7 +965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2072454560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1053,7 +1048,7 @@ PrefabInstance:
     - target: {fileID: 311050202275984940, guid: 4147b430ac36e254791be060b6f2b3e0, type: 3}
       propertyPath: dest
       value: 
-      objectReference: {fileID: 1653607116}
+      objectReference: {fileID: 0}
     - target: {fileID: 311050202275984940, guid: 4147b430ac36e254791be060b6f2b3e0, type: 3}
       propertyPath: pos.y
       value: 0
