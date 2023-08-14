@@ -76,7 +76,7 @@ MonoBehaviour:
   ammoSpawnPoint: {fileID: 2323789564417041469}
   health: -1
   damage: -1
-  enterSpeed: 25
+  enterSpeed: 20
   speed: 10
   percentUpScreen: 0.9
   minReloadTime: 1

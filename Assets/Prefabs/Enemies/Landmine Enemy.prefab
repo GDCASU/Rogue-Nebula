@@ -95,7 +95,7 @@ MonoBehaviour:
   ammoSpawnPoint: {fileID: 2323789564417041469}
   health: -1
   damage: -1
-  enterSpeed: 100
+  enterSpeed: 20
   speed: 5
   percentUpScreen: 0.9
   timeBetweenFiring: 3
