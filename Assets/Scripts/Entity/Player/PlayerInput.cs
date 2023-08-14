@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using System;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class PlayerInput : MonoBehaviour
     [Header("Player Shooting Input")]
     [SerializeField] public bool shootInput;
 
-    [Header("Events")]
-    [SerializeField] public UnityEvent onPause;
+    // Events
+    [SerializeField] public static event Action onPause;
 
     private PlayerControls playerControls;
     private Player player;
@@ -35,8 +36,6 @@ public class PlayerInput : MonoBehaviour
     private void Start()
     {
         instance.enabled = true;
-
-        onPause.AddListener(GameObject.Find("Game Manager").GetComponent<PauseGame>().TogglePauseGame);
     }
 
     public void ToggleControls(bool toggle)     // Toggle the player controls with this method
