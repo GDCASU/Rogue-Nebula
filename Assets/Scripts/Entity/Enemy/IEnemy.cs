@@ -6,36 +6,35 @@ public abstract class IEnemy : MonoBehaviour
 {
     protected Transform playerTransform;
 
-    [SerializeField] protected Renderer enemyRenderer;
-
+    [Header("References")]
     [SerializeField] protected GameObject ammoPrefab;
     [SerializeField] protected Transform ammoSpawnPoint;
 
+    [Header("Base Stats")]
     public int health = -1;
     public int damage = -1;
+    public float fireRate = -1;
+
     [SerializeField] protected float enterSpeed = 5f;
     [SerializeField] protected float speed = 1f;
 
     // STATE CONTROL
     [SerializeField] float percentUpScreen = 0.9f;
-    protected bool moveDown = false;
+    protected bool moveDown = true;
 
     protected virtual void Start()
     {
         playerTransform = GameObject.Find("Player").transform;
 
-        if (enemyRenderer == null) enemyRenderer = GetComponent<Renderer>();
-        moveDown = !enemyRenderer.isVisible;
-
         GetComponent<EnemyHealth>().ToggleInvulnerable(true);
 
         // HEALTH
         if (health == -1) health = GetComponent<EnemyHealth>().health;    // Not set, making sure things don't go awry.
-        else GetComponent<EnemyHealth>().health = (int)health;              // Set, override original health
+        else GetComponent<EnemyHealth>().health = health;              // Set, override original health
 
         // DAMAGE (sub comments from health apply here, but im lazy)
         if (damage == -1) damage = ammoPrefab.GetComponent<DamageDealer>().damage;
-        else ammoPrefab.GetComponent<DamageDealer>().damage = (int)damage;
+        else ammoPrefab.GetComponent<DamageDealer>().damage = damage;
     }
 
     protected virtual void Fire()
@@ -96,6 +95,137 @@ public abstract class IEnemy : MonoBehaviour
     #region Inherit Required
 
     protected abstract void Move();
+
+    #endregion
+
+    #region Variance Handling
+
+    [Header("Varient Stats")]
+    [SerializeField] int curType = 0;   // 0, 1, 2 :: easy, med, hard
+
+    // From easy to medium difficulty
+    [SerializeField] int medHealthInc = 1;
+    [SerializeField] float medSpeedInc = 1;
+    [SerializeField] float medFrInc = 1;
+
+    // From medium to hard difficulty
+    [SerializeField] int hardHealthInc = 1;
+    [SerializeField] float hardSpeedInc = 1;
+    [SerializeField] float hardFrInc = 1;
+
+    [Header("Varient Materials")]
+    [SerializeField] Material easyMat;
+    [SerializeField] Material medMat;
+    [SerializeField] Material hardMat;
+
+    [SerializeField] MeshRenderer gunRenderer;
+    [SerializeField] int gunVarMatInd = -1;
+    [SerializeField] MeshRenderer shipRenderer;
+    [SerializeField] int shipVarMatInd = -1;
+
+    public void SetEasy()
+    {
+        // If stuff needed, make medium then move along
+        switch (curType)
+        {
+            case 0: return; // Already ez, get outta here
+            case 1: break;  // Already Medium, move along
+            case 2:         // Now we cookin w/ gas, make it med
+                SetMedium();
+                break;
+
+            default:        // what kinda place is this???
+                Debug.LogError("curType set to something dumb. Why u do this?");
+                return;
+        }
+
+        // From med to ez stat changes
+        SetHealth(health - medHealthInc);
+        speed -= medSpeedInc;
+        fireRate -= medFrInc;
+
+        // ez renderer changes
+        List<Material> newMats = new List<Material>();
+        foreach(Material mat in gunRenderer.materials) newMats.Add(mat);
+        newMats[gunVarMatInd] = easyMat;
+        gunRenderer.SetMaterials(newMats);
+
+        newMats.Clear();
+        foreach (Material mat in shipRenderer.materials) newMats.Add(mat);
+        newMats[shipVarMatInd] = easyMat;
+        shipRenderer.SetMaterials(newMats);
+
+        curType = 0;
+    }
+
+    public void SetMedium()
+    {
+        switch (curType)
+        {
+            case 1: return; // Already med
+            case 0:
+                SetHealth(health + medHealthInc);
+                speed += medSpeedInc;
+                fireRate += medFrInc;
+                break;
+
+            case 2:
+                SetHealth(health - hardHealthInc);
+                speed -= hardSpeedInc;
+                fireRate -= hardFrInc;
+                break;
+
+            default:
+                Debug.LogError("curType set to something dumb. Why u do this?");
+                return;
+        }
+
+        // med renderer changes
+        List<Material> newMats = new List<Material>();
+        foreach (Material mat in gunRenderer.materials) newMats.Add(mat);
+        newMats[gunVarMatInd] = medMat;
+        gunRenderer.SetMaterials(newMats);
+
+        newMats.Clear();
+        foreach (Material mat in shipRenderer.materials) newMats.Add(mat);
+        newMats[shipVarMatInd] = medMat;
+        shipRenderer.SetMaterials(newMats);
+
+        curType = 1;
+    }
+
+    public void SetHard()
+    {
+        // ensure medium and move along
+        switch (curType)
+        {
+            case 2: return; // Nothing needed
+            case 1: break;  // Already med, move along
+            case 0:         // Make med, move along
+                SetMedium();
+                break;
+            default:
+                Debug.LogError("curType set to something dumb. Why u do this?");
+                return;
+        }
+
+        SetHealth(health + hardHealthInc);
+        speed += hardSpeedInc;
+        fireRate += hardFrInc;
+
+        // hard renderer changes
+        List<Material> newMats = new List<Material>();
+        foreach (Material mat in gunRenderer.materials) newMats.Add(mat);
+        newMats[gunVarMatInd] = hardMat;
+        gunRenderer.SetMaterials(newMats);
+
+        newMats.Clear();
+        foreach (Material mat in shipRenderer.materials) newMats.Add(mat);
+        newMats[shipVarMatInd] = hardMat;
+        shipRenderer.SetMaterials(newMats);
+
+        curType = 2;
+    }
 
     #endregion
 }

@@ -23,7 +23,7 @@ public class StandardEnemy : IEnemy
     private void Update()
     {
         if (moveDown) return;
-            
+
         Move();  // move
         TurnAround();   // Check turn around and do so
 
@@ -39,8 +39,6 @@ public class StandardEnemy : IEnemy
     // Moves enemy
     protected override void Move()
     {
-        Debug.Log("Move Left: " + moveLeft);
-
         if (moveLeft)
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed);

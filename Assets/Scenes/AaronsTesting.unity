@@ -1120,6 +1120,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stationary Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2005107682878775194, guid: 4147b430ac36e254791be060b6f2b3e0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4212377114603283122, guid: 4147b430ac36e254791be060b6f2b3e0, type: 3}
       propertyPath: m_LocalPosition.y
       value: -7.81

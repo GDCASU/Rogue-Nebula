@@ -71,14 +71,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48885a958366bd42a95f0182fd234a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRenderer: {fileID: 8634386155021164473}
   ammoPrefab: {fileID: 6768058984271882836, guid: d027adb302899bc4087e2c1fa5f6c4d8, type: 3}
   ammoSpawnPoint: {fileID: 2323789564417041469}
   health: -1
   damage: -1
+  fireRate: -1
   enterSpeed: 20
   speed: 10
   percentUpScreen: 0.9
+  curType: 0
+  medHealthInc: 1
+  medSpeedInc: 1
+  medFrInc: 1
+  hardHealthInc: 1
+  hardSpeedInc: 1
+  hardFrInc: 1
+  easyMat: {fileID: 2100000, guid: 146be3ee4c9a6814fbd1e3be7156d5c7, type: 2}
+  medMat: {fileID: 2100000, guid: 05ee3e2cd4e40c1479953f0395a5c1b3, type: 2}
+  hardMat: {fileID: 2100000, guid: 44205456a72af6742b3505bf4092f330, type: 2}
+  gunRenderer: {fileID: 353907912290998764}
+  gunVarMatInd: 0
+  shipRenderer: {fileID: 8634386155021164473}
+  shipVarMatInd: 2
   minReloadTime: 1
   maxReloadTime: 2
 --- !u!114 &2825301735297649192
@@ -226,11 +240,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Standard
       objectReference: {fileID: 0}
+    - target: {fileID: 6703957281922639038, guid: e697b57a676c9ed4e82ca796f3ccccc9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -7172155112123806973, guid: e697b57a676c9ed4e82ca796f3ccccc9, type: 3}
+    - target: {fileID: 6703957281922639038, guid: e697b57a676c9ed4e82ca796f3ccccc9, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: -7184292951177722594, guid: e697b57a676c9ed4e82ca796f3ccccc9, type: 3}
+    - target: {fileID: 6703957281922639038, guid: e697b57a676c9ed4e82ca796f3ccccc9, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: -1370527703593093958, guid: e697b57a676c9ed4e82ca796f3ccccc9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e697b57a676c9ed4e82ca796f3ccccc9, type: 3}
+--- !u!23 &353907912290998764 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5894111807915941141, guid: e697b57a676c9ed4e82ca796f3ccccc9, type: 3}
+  m_PrefabInstance: {fileID: 3087989225597057799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3265114864532544748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e697b57a676c9ed4e82ca796f3ccccc9, type: 3}
