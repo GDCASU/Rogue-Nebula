@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System;
 
 public enum WaveDifficulty
 {
@@ -25,8 +26,10 @@ public class WaveManager : MonoBehaviour
     [SerializeField] public WaveDifficulty currentDifficulty = 0;       // Should not be tampered with; just for testing
 
     private WavePool currentWavePool = null;
-    private int waveCounter = 0;
-    private int waveCountMult = 1; // Used to keep track of when to change WavePools 
+    private int waveCounter = 1;
+    private int waveCountMult = 1; // Used to keep track of when to change WavePools
+
+    public static event Action<int> onWaveStart;
 
     private void Awake()        // Handle Singleton
     {
@@ -55,6 +58,8 @@ public class WaveManager : MonoBehaviour
     {
         // CHECK IF WAVE SELECTED IS NULL TO PREVENT NULL REF EXC
         GameObject waveParent = GameObject.Find(WAVE_PARENT_NAME);
+        // Event for UI
+        onWaveStart.Invoke(waveCounter);
         // Spawn wave using RandomWaveSelect()
         GameObject wave = Instantiate(currentWavePool.RandomWaveSelect(), waveParent.transform);
 
@@ -70,7 +75,7 @@ public class WaveManager : MonoBehaviour
         // changeWavePoolAfter * i = nextWavePoolChange; Ex: 10 * 2 = 20 next WavePool after Wave 20
         if (waveCounter >= changePoolAfterWaves * waveCountMult)
         {
-            Debug.Log("here");
+
             RaiseDifficulty();
             waveCountMult++;
         }
@@ -78,13 +83,13 @@ public class WaveManager : MonoBehaviour
 
     public bool rollVarientMedChance()
     {
-        int roll = Random.Range(0, 101);
+        int roll = UnityEngine.Random.Range(0, 101);
         return (roll > (100 - currentWavePool.varientMedChance));
     }
 
     public bool rollVarientHardChance()
     {
-        int roll = Random.Range(0, 101);
+        int roll = UnityEngine.Random.Range(0, 101);
         return (roll > (100 - currentWavePool.varientHardChance));
     }
 

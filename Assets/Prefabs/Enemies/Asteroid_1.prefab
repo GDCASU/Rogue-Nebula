@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4870884792632418637}
   - component: {fileID: 6720337884451892780}
   m_Layer: 7
-  m_Name: Asteroid
+  m_Name: Asteroid_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
   deathPS: {fileID: 3264322824323885750, guid: 948d9f81170858743a8b9f17c2a513f8, type: 3}
   takeDamageSound: {fileID: 8300000, guid: 3c2dce86822e5b44cb8567b1d6c47929, type: 3}
   deathSound: {fileID: 8300000, guid: 2dc89d86512680840a1fa6425113e449, type: 3}
-  score: 100
+  score: 50
 --- !u!114 &6720337884451892780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,8 +242,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aroundXSpeed: 100
-  aroundYSpeed: 0
-  aroundZSpeed: 0
+  aroundYSpeed: -35
+  aroundZSpeed: 50
   delay: 0
 --- !u!4 &4444954448996540134 stripped
 Transform:

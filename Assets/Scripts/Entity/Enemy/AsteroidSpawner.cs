@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AsteroidSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject prAsteroid;
+    [SerializeField] GameObject[] prAsteroid;
 
     [SerializeField] float timeBetweenSpawns = 1f;
     [SerializeField] int minNumToSpawn = 1;
@@ -44,8 +44,8 @@ public class AsteroidSpawner : MonoBehaviour
             float endXFromView = Random.Range(-.15f, 1.15f);
             Vector3 endPoint = Camera.main.ViewportToWorldPoint(new Vector3(startXFromView, -10f, zValForView));
             */
-
-            Instantiate(prAsteroid, startPoint, Quaternion.identity).GetComponent<FlyBackward>().SetSpeed(Random.Range(minSpeed, maxSpeed));
+            int roll = Random.Range(0, prAsteroid.Length);
+            Instantiate(prAsteroid[roll], startPoint, Quaternion.identity).GetComponent<FlyBackward>().SetSpeed(Random.Range(minSpeed, maxSpeed));
         }
     }
 
