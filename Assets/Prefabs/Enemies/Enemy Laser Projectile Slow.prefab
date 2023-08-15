@@ -132,7 +132,7 @@ MonoBehaviour:
   damage: 1
   destroyAfterHitFactor: 1
   hitFactor: 0
-  hitPS: {fileID: 3264322824323885750, guid: 53ff09d1d979dff4fbd1e2433bfaab06, type: 3}
+  hitPS: {fileID: 3264322824323885750, guid: 152afbdeb14afd5419f0259ebe271fe1, type: 3}
 --- !u!114 &2152960477984733383
 MonoBehaviour:
   m_ObjectHideFlags: 0
