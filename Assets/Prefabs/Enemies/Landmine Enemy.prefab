@@ -71,12 +71,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a95abbf9a4682348bb97c21a382827e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 10
   hitInvulnerabilityTime: 0
   deathPS: {fileID: 3264322824323885750, guid: 948d9f81170858743a8b9f17c2a513f8, type: 3}
   takeDamageSound: {fileID: 8300000, guid: 3c2dce86822e5b44cb8567b1d6c47929, type: 3}
   deathSound: {fileID: 8300000, guid: 2dc89d86512680840a1fa6425113e449, type: 3}
-  score: 150
+  score: 200
 --- !u!114 &6692135945122377315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,19 +91,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoPrefab: {fileID: 6768058984271882836, guid: 7fa0589aca8d3dd45919426453507d33, type: 3}
   ammoSpawnPoint: {fileID: 2323789564417041469}
-  health: 5
+  health: 10
   damage: -1
   fireDelay: 2
+  score: 200
   enterSpeed: 20
-  speed: 15
+  speed: 5
   percentUpScreen: 0.9
   curType: 0
-  medHealthInc: 0
+  medHealthInc: 4
   medSpeedInc: 1
   medFrInc: 0.5
-  hardHealthInc: 0
+  medScoreInc: 100
+  hardHealthInc: 4
   hardSpeedInc: 1
   hardFrInc: 0.5
+  hardScoreInc: 100
   easyMat: {fileID: 2100000, guid: 146be3ee4c9a6814fbd1e3be7156d5c7, type: 2}
   medMat: {fileID: 2100000, guid: 05ee3e2cd4e40c1479953f0395a5c1b3, type: 2}
   hardMat: {fileID: 2100000, guid: 44205456a72af6742b3505bf4092f330, type: 2}

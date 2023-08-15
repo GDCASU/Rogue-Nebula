@@ -54,16 +54,19 @@ MonoBehaviour:
   health: 8
   damage: -1
   fireDelay: 2
+  score: 150
   enterSpeed: 20
   speed: 1
   percentUpScreen: 0.9
   curType: 0
-  medHealthInc: 2
+  medHealthInc: 4
   medSpeedInc: 0
   medFrInc: 0.6
-  hardHealthInc: 2
+  medScoreInc: 50
+  hardHealthInc: 3
   hardSpeedInc: 0
   hardFrInc: 0.4
+  hardScoreInc: 50
   easyMat: {fileID: 2100000, guid: 146be3ee4c9a6814fbd1e3be7156d5c7, type: 2}
   medMat: {fileID: 2100000, guid: 05ee3e2cd4e40c1479953f0395a5c1b3, type: 2}
   hardMat: {fileID: 2100000, guid: 44205456a72af6742b3505bf4092f330, type: 2}
@@ -90,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a95abbf9a4682348bb97c21a382827e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 7
+  health: 8
   hitInvulnerabilityTime: 0
   deathPS: {fileID: 3264322824323885750, guid: 948d9f81170858743a8b9f17c2a513f8, type: 3}
   takeDamageSound: {fileID: 8300000, guid: 3c2dce86822e5b44cb8567b1d6c47929, type: 3}

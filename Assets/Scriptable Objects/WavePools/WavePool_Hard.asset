@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveDifficulty: 2
   waves:
-  - {fileID: 2066540579321377522, guid: 2f9ea2f3781923643b2d53f75c8ae72b, type: 3}
-  - {fileID: 2066540579321377522, guid: 05ba4c09adb917744ae96d22fc302b56, type: 3}
-  - {fileID: 2066540579321377522, guid: 3276c3fed80be9543bea772bd95aa064, type: 3}
-  - {fileID: 2066540579321377522, guid: e585d726d40a85341a14c720fa3321d0, type: 3}
-  - {fileID: 2066540579321377522, guid: 75c40694d452ac04c981e0633eec5f03, type: 3}
-  - {fileID: 2066540579321377522, guid: 3829d6568e659024bbcfee31221bea45, type: 3}
+  - {fileID: 2066540579321377522, guid: aacd450edaf57634a9d7b65645f1c8dc, type: 3}
+  - {fileID: 2066540579321377522, guid: 59a79ffc7b6140a4c9a4e28b1046dfdc, type: 3}
+  - {fileID: 2066540579321377522, guid: dc00c8f6c96adf64791e727dd4b30f81, type: 3}
+  - {fileID: 2066540579321377522, guid: bc735f977abe98445ba9ecdab20ca58f, type: 3}
+  - {fileID: 2066540579321377522, guid: cd7ed6db18f103f4499ad803851f86a2, type: 3}
   varientMedChance: 70
   varientHardChance: 30
   varientMaxSpawn: 3

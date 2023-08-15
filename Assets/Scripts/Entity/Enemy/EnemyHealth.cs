@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyHealth : EntityHealth
 {
-    [SerializeField] int score = 100;
+    [SerializeField] public int score = 100;
 
     private ScoreKeeper scoreKeeper;
 
