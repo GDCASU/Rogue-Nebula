@@ -374,7 +374,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_TargetAssemblyTypeName: HealthBarUI, Assembly-CSharp
         m_MethodName: DecrementHealth
         m_Mode: 0
         m_Arguments:
@@ -389,7 +389,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_TargetAssemblyTypeName: HealthBarUI, Assembly-CSharp
         m_MethodName: IncrementHealth
         m_Mode: 0
         m_Arguments:
@@ -506,7 +506,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  abilityCooldown: 15
+  abilityCooldown: 12
   abilityStartupSound: {fileID: 8300000, guid: dede83e9fd6494643a250397d124eaf6, type: 3}
   abilityEndSound: {fileID: 0}
   bubbleShield: {fileID: 3414054529342862319}
