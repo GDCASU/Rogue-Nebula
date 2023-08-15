@@ -3039,7 +3039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4333146535378505663, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: abilityCooldown
-      value: 1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4333146535378505663, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: onAbilityCooldown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4254,6 +4254,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wave Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
+      propertyPath: wavePools.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e81307543ade203498aa867c76386085, type: 2}
+    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
+      propertyPath: wavePools.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3f75855ef6ef5d14e93a1c24d0a58f73, type: 2}
+    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
+      propertyPath: wavePools.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a7022d4a60e6a243a399177a7d36d7a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
