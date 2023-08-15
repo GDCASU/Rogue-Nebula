@@ -9,6 +9,8 @@ public class AsteroidSpawner : MonoBehaviour
     [SerializeField] float timeBetweenSpawns = 1f;
     [SerializeField] int minNumToSpawn = 1;
     [SerializeField] int maxNumToSpawn = 2;
+    [SerializeField] float minSpeed = 6f;
+    [SerializeField] float maxSpeed = 8f;
     bool spawning = true;
 
     float stopwatch = 0f;
@@ -43,7 +45,7 @@ public class AsteroidSpawner : MonoBehaviour
             Vector3 endPoint = Camera.main.ViewportToWorldPoint(new Vector3(startXFromView, -10f, zValForView));
             */
 
-            Instantiate(prAsteroid, startPoint, Quaternion.identity);
+            Instantiate(prAsteroid, startPoint, Quaternion.identity).GetComponent<FlyBackward>().SetSpeed(Random.Range(minSpeed, maxSpeed));
         }
     }
 

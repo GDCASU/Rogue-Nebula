@@ -7,7 +7,6 @@ public class LandmineEnemy : IEnemy
 {
     float direction = 0;
 
-    [SerializeField] float timeBetweenFiring = 1f;
     float stopwatch = 0f;
     float stopwatchMove = 0f;
 
@@ -36,9 +35,9 @@ public class LandmineEnemy : IEnemy
         stopwatch += Time.deltaTime;
 
         // Shoot
-        if(stopwatch >= timeBetweenFiring)
+        if(stopwatch >= fireDelay)
         {
-            stopwatch -= timeBetweenFiring;
+            stopwatch -= fireDelay;
 
             Fire();
         }
