@@ -107,9 +107,7 @@ MonoBehaviour:
   easyMat: {fileID: 2100000, guid: 146be3ee4c9a6814fbd1e3be7156d5c7, type: 2}
   medMat: {fileID: 2100000, guid: 05ee3e2cd4e40c1479953f0395a5c1b3, type: 2}
   hardMat: {fileID: 2100000, guid: 44205456a72af6742b3505bf4092f330, type: 2}
-  gunRenderer: {fileID: 0}
-  gunVarMatInd: -1
-  shipRenderer: {fileID: 0}
+  shipRenderer: {fileID: 7800500985072161194}
   shipVarMatInd: -1
 --- !u!1 &2839670060645248025
 GameObject:
@@ -239,6 +237,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb502f5f7337e724b9f49aff9175ed1a, type: 3}
+--- !u!23 &7800500985072161194 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: eb502f5f7337e724b9f49aff9175ed1a, type: 3}
+  m_PrefabInstance: {fileID: 8899508623444348206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8938482584788167365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eb502f5f7337e724b9f49aff9175ed1a, type: 3}
