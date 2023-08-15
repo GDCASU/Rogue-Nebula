@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RemoveNotVisible : MonoBehaviour
 {
-    float stopwatch = 1f;
+    float stopwatch = .25f;
 
     // Update is called once per frame
     void Update()
@@ -19,7 +19,7 @@ public class RemoveNotVisible : MonoBehaviour
                 return;
             }
 
-            stopwatch = 1f;
+            stopwatch = .25f;
         }
     }
 }
