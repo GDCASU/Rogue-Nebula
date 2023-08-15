@@ -17,7 +17,7 @@ public class ScenesManager : MonoBehaviour
 {
     public static ScenesManager instance;
 
-    private Scenes currentScene;
+    [SerializeField] public Scenes currentScene;
 
     private void Awake()            // Handle Singleton
     {
@@ -32,11 +32,30 @@ public class ScenesManager : MonoBehaviour
         instance.enabled = true;
         AudioManager.instance.PauseMenuResonance(false);
         playSceneMusic();
+
+        HandlePlayerControls();
+    }
+
+    private void HandlePlayerControls()
+    {
+        switch (currentScene)
+        {
+            case Scenes.MainMenu:
+                PlayerInput.instance.ToggleControls(false); break;
+            case Scenes.GameOver:
+                PlayerInput.instance.ToggleControls(false); break;
+            case Scenes.Main:
+                PlayerInput.instance.ToggleControls(true); break;
+            default:
+                PlayerInput.instance.ToggleControls(true); break;
+        }
     }
 
     public void LoadMainMenu()      // Loads the MainMenu Scene
     {
         SceneManager.LoadScene(Scenes.MainMenu.ToString());
+        currentScene = Scenes.MainMenu;
+        HandlePlayerControls();
         //ScoreKeeper.instance.PrintHighScores();         // FOR DEBUGGING
         playSceneMusic();
     }
@@ -44,6 +63,8 @@ public class ScenesManager : MonoBehaviour
     public void LoadGame()           // Loads the game scene
     {
         SceneManager.LoadScene(Scenes.Main.ToString());
+        currentScene = Scenes.Main;
+        HandlePlayerControls();
         ScoreKeeper.instance?.ResetScore();         // Reset the current score to 0
         playSceneMusic();
     }
@@ -51,24 +72,15 @@ public class ScenesManager : MonoBehaviour
     public void LoadGameOver()      // Loads the MainMenu Scene
     {
         SceneManager.LoadScene(Scenes.GameOver.ToString());
+        currentScene = Scenes.GameOver;
+        HandlePlayerControls();
         ScoreKeeper.instance?.AddHighScore();       // Add the highscore to the highscore's array if applicable
         playSceneMusic();
-    }
-
-    public void LoadNextScene()     // Loads the next scene by the projects buildIndex
-    {
-        playSceneMusic();
-        SceneManager.LoadScene(GetActiveSceneIndex() + 1);
     }
 
     public void EndGame()
     {
         Application.Quit();
-    }
-
-    private int GetActiveSceneIndex()
-    {
-        return SceneManager.GetActiveScene().buildIndex;
     }
 
     public void playSceneMusic()

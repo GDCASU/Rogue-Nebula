@@ -26,29 +26,28 @@ public class PlayerInput : MonoBehaviour
     private void Awake()    // Handle Singleton
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         else
             Destroy(gameObject);
-
-        player = FindObjectOfType<Player>();
-    }
-
-    private void Start()
-    {
-        instance.enabled = true;
     }
 
     public void ToggleControls(bool toggle)     // Toggle the player controls with this method
     {
         if (toggle)
-            instance.enabled = true;
+        {
+            playerControls.Enable();
+            player = FindObjectOfType<Player>();
+        }
         else
-            instance.enabled = false;
+            playerControls.Disable();
     }
 
-    private void OnEnable()
+    private void Start()
     {
-        if (playerControls == null) 
+        if (playerControls == null)
         {
             playerControls = new PlayerControls();
 
