@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageRadius: 2
+  damageRadius: 6
   fuseTime: 3
   explosionTime: 1
   normalMaterial: {fileID: 2100000, guid: c5a631da594dbfd4c835e7137dec7059, type: 2}
