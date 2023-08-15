@@ -32,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -150,6 +150,7 @@ MonoBehaviour:
   damage: 1
   destroyAfterHitFactor: 0
   hitFactor: 0
+  hitPS: {fileID: 0}
 --- !u!114 &-5023836793845225275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,11 +164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageRadius: 10
+  damageRadius: 2
   fuseTime: 3
   explosionTime: 1
   normalMaterial: {fileID: 2100000, guid: c5a631da594dbfd4c835e7137dec7059, type: 2}
   flashMaterial: {fileID: 2100000, guid: 001379b4306e41c4cab43770ae884fc0, type: 2}
-  explodedMaterial: {fileID: 2100000, guid: 263857960d3c1d74c983252b9ff43a18, type: 2}
+  explodedMaterial: {fileID: 3264322824323885750, guid: 948d9f81170858743a8b9f17c2a513f8, type: 3}
   meshRenderer: {fileID: 3403650663930713002}
   sphereCollider: {fileID: 3480626656185622924}

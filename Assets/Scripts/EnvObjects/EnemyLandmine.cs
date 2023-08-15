@@ -15,7 +15,7 @@ public class EnemyLandmine : MonoBehaviour
     [Header("References")] 
     public Material normalMaterial;
     public Material flashMaterial;
-    public Material explodedMaterial;
+    public GameObject explodedMaterial;
     public MeshRenderer meshRenderer;
     public SphereCollider sphereCollider;
 
@@ -61,8 +61,9 @@ public class EnemyLandmine : MonoBehaviour
     private void explode()
     {
         exploded = true;
-        meshRenderer.material = explodedMaterial;
+        Instantiate(explodedMaterial, transform).transform.localScale *= .75f;
         transform.localScale = new Vector3(damageRadius, damageRadius, damageRadius);
+        GetComponent<Renderer>().enabled = false;
         //sphereCollider.radius = damageRadius;
 
         // TO DO: Create damage radius.
