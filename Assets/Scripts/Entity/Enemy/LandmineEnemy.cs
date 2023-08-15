@@ -44,25 +44,6 @@ public class LandmineEnemy : IEnemy
         }
     }
 
-    // Find angle that'll make the ship look at the player
-    void RotateShip(Vector3 goal)
-    {
-        Vector3 orientation = -transform.up.normalized;
-        Vector3 goalOrientation = (goal - transform.position).normalized;
-
-        Vector2 orientation2d = new Vector2(orientation.x, orientation.y);
-        Vector2 goalOrientation2d = new Vector2(goalOrientation.x, goalOrientation.y);
-
-        float dotProduct = Vector2.Dot(goalOrientation2d, orientation2d);
-        float magsMultiplied = orientation2d.magnitude * goalOrientation2d.magnitude;
-
-        direction = (Mathf.Acos(dotProduct / magsMultiplied) * 180 / Mathf.PI);
-        transform.Rotate(Vector3.back, direction);
-
-        RaycastHit hit;
-        if (!Physics.Raycast(transform.position, -transform.up, out hit)) transform.Rotate(Vector3.back, 180);
-    }
-
     protected override void Move()
     {
         if (totalDistance == -1f) SetDestination();
@@ -84,7 +65,5 @@ public class LandmineEnemy : IEnemy
         destination = Camera.main.ViewportToWorldPoint(new Vector3(randX, randY, camZPos));
         stopwatchMove = 0f;
         totalDistance = (lastDestination - destination).magnitude;
-
-        RotateShip(destination); // Rotate ship in the direction of it's goal (sometimes doesn't work)
     }
 }
