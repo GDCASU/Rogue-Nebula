@@ -14,6 +14,7 @@ public abstract class IEnemy : MonoBehaviour
     public int health = -1;
     public int damage = -1;
     public float fireDelay = 0;
+    public int score = 1;
 
     [SerializeField] protected float enterSpeed = 5f;
     [SerializeField] protected float speed = 1f;
@@ -31,6 +32,10 @@ public abstract class IEnemy : MonoBehaviour
         // HEALTH
         if (health == -1) health = GetComponent<EnemyHealth>().health;    // Not set, making sure things don't go awry.
         else GetComponent<EnemyHealth>().health = health;              // Set, override original health
+
+        // SCORE
+        if (score == -1) score = GetComponent<EnemyHealth>().score;    // Not set, making sure things don't go awry.
+        else GetComponent<EnemyHealth>().score = score;              // Set, override original health
 
         // DAMAGE (sub comments from health apply here, but im lazy)
         if (damage == -1) damage = ammoPrefab.GetComponent<DamageDealer>().damage;
@@ -78,15 +83,22 @@ public abstract class IEnemy : MonoBehaviour
         GetComponent<EnemyHealth>().health = newHealth;
     }
 
+    public void SetScore(int newScore)
+    {
+        score = newScore;
+        GetComponent<EnemyHealth>().score = newScore;
+    }
+
     public void SetDamage(int newDmg)
     {
         damage = newDmg;
         ammoPrefab.GetComponent<DamageDealer>().damage = newDmg;
     }
     
-    public void SetStats(int h, int d)
+    public void SetStats(int h, int s, int d)
     {
         SetHealth(h);
+        SetScore(s);
         SetDamage(d);
     }
 
@@ -107,11 +119,13 @@ public abstract class IEnemy : MonoBehaviour
     [SerializeField] int medHealthInc = 1;
     [SerializeField] float medSpeedInc = 1;
     [SerializeField] float medFrInc = 1;
+    [SerializeField] int medScoreInc = 1;
 
     // From medium to hard difficulty
     [SerializeField] int hardHealthInc = 1;
     [SerializeField] float hardSpeedInc = 1;
     [SerializeField] float hardFrInc = 1;
+    [SerializeField] int hardScoreInc = 1;
 
     [Header("Varient Materials")]
     [SerializeField] Material easyMat;
@@ -138,8 +152,10 @@ public abstract class IEnemy : MonoBehaviour
 
         // From med to ez stat changes
         SetHealth(health - medHealthInc);
+        SetScore(score - medScoreInc);
         speed -= medSpeedInc;
         fireDelay += medFrInc;
+        
 
         // ez renderer changes
         List<Material> newMats = new List<Material>();
@@ -157,12 +173,14 @@ public abstract class IEnemy : MonoBehaviour
             case 1: return; // Already med
             case 0:
                 SetHealth(health + medHealthInc);
+                SetScore(score + medScoreInc);
                 speed += medSpeedInc;
                 fireDelay -= medFrInc;
                 break;
 
             case 2:
                 SetHealth(health - hardHealthInc);
+                SetScore(score - hardScoreInc);
                 speed -= hardSpeedInc;
                 fireDelay += hardFrInc;
                 break;
@@ -197,6 +215,7 @@ public abstract class IEnemy : MonoBehaviour
         }
 
         SetHealth(health + hardHealthInc);
+        SetScore(score + hardScoreInc);
         speed += hardSpeedInc;
         fireDelay -= hardFrInc;
 

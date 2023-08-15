@@ -54,6 +54,7 @@ MonoBehaviour:
   health: 8
   damage: -1
   fireDelay: 2
+  score: 150
   enterSpeed: 20
   speed: 1
   percentUpScreen: 0.9
@@ -61,9 +62,11 @@ MonoBehaviour:
   medHealthInc: 4
   medSpeedInc: 0
   medFrInc: 0.6
+  medScoreInc: 50
   hardHealthInc: 3
   hardSpeedInc: 0
   hardFrInc: 0.4
+  hardScoreInc: 50
   easyMat: {fileID: 2100000, guid: 146be3ee4c9a6814fbd1e3be7156d5c7, type: 2}
   medMat: {fileID: 2100000, guid: 05ee3e2cd4e40c1479953f0395a5c1b3, type: 2}
   hardMat: {fileID: 2100000, guid: 44205456a72af6742b3505bf4092f330, type: 2}
