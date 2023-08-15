@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2825301735297649192}
   - component: {fileID: 6692135945122377315}
   - component: {fileID: -3697632104057338603}
+  - component: {fileID: -7614975221575601079}
   m_Layer: 7
   m_Name: Landmine Enemy
   m_TagString: Enemy
@@ -92,23 +93,22 @@ MonoBehaviour:
   ammoSpawnPoint: {fileID: 2323789564417041469}
   health: 5
   damage: -1
-  fireDelay: 0
+  fireDelay: 2
   enterSpeed: 20
-  speed: 5
+  speed: 15
   percentUpScreen: 0.9
   curType: 0
-  medHealthInc: 1
+  medHealthInc: 0
   medSpeedInc: 1
-  medFrInc: 0.1
-  hardHealthInc: 1
+  medFrInc: 0.5
+  hardHealthInc: 0
   hardSpeedInc: 1
-  hardFrInc: 0.1
+  hardFrInc: 0.5
   easyMat: {fileID: 2100000, guid: 146be3ee4c9a6814fbd1e3be7156d5c7, type: 2}
   medMat: {fileID: 2100000, guid: 05ee3e2cd4e40c1479953f0395a5c1b3, type: 2}
   hardMat: {fileID: 2100000, guid: 44205456a72af6742b3505bf4092f330, type: 2}
   shipRenderer: {fileID: 3341159320908899988}
   shipVarMatInd: 1
-  timeBetweenFiring: 3
 --- !u!114 &-3697632104057338603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +125,22 @@ MonoBehaviour:
   destroyAfterHitFactor: 1
   hitFactor: 1
   hitPS: {fileID: 0}
+--- !u!114 &-7614975221575601079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801411955964828666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61740d3b9390ef43a6d8b56653cb906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aroundXSpeed: 0
+  aroundYSpeed: 0
+  aroundZSpeed: 100
+  delay: 3
 --- !u!1 &2839670060645248025
 GameObject:
   m_ObjectHideFlags: 0

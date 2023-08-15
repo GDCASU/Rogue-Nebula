@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5992014944872119746}
   - component: {fileID: 8838060836855892254}
   - component: {fileID: 3569309339675524935}
+  - component: {fileID: 7147171207944190759}
   m_Layer: 0
   m_Name: Stationary Enemy
   m_TagString: Enemy
@@ -50,14 +51,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoPrefab: {fileID: 6768058984271882836, guid: e872876477bbaa14e9487bbc6c4bf569, type: 3}
   ammoSpawnPoint: {fileID: 0}
-  health: 7
+  health: 8
   damage: -1
   fireDelay: 2
   enterSpeed: 20
   speed: 1
   percentUpScreen: 0.9
   curType: 0
-  medHealthInc: 3
+  medHealthInc: 2
   medSpeedInc: 0
   medFrInc: 0.6
   hardHealthInc: 2
@@ -116,6 +117,22 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1.1633244
   m_Center: {x: 0.020100594, y: 0, z: 0}
+--- !u!114 &7147171207944190759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005107682878775194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61740d3b9390ef43a6d8b56653cb906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aroundXSpeed: 0
+  aroundYSpeed: 0
+  aroundZSpeed: 10
+  delay: 3
 --- !u!1 &2799644903715039155
 GameObject:
   m_ObjectHideFlags: 0
