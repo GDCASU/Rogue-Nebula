@@ -98,10 +98,10 @@ MonoBehaviour:
   curType: 0
   medHealthInc: 1
   medSpeedInc: 1
-  medFrInc: 1
+  medFrInc: 0.1
   hardHealthInc: 1
   hardSpeedInc: 1
-  hardFrInc: 1
+  hardFrInc: 0.1
   easyMat: {fileID: 2100000, guid: 146be3ee4c9a6814fbd1e3be7156d5c7, type: 2}
   medMat: {fileID: 2100000, guid: 05ee3e2cd4e40c1479953f0395a5c1b3, type: 2}
   hardMat: {fileID: 2100000, guid: 44205456a72af6742b3505bf4092f330, type: 2}
