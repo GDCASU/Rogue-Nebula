@@ -113,15 +113,4 @@ public class PlayerInput : MonoBehaviour
     {
         onPause?.Invoke();      // STOP GAME | OPEN PAUSE MENU
     }
-
-    private void OnApplicationFocus(bool focus)
-    {
-        if (enabled)
-        {
-            if (focus)  // enable player controller if application has focus
-                playerControls.Enable();
-            else        // disable player controller if application loses focus
-                playerControls.Disable();
-        }
-    }
 }
