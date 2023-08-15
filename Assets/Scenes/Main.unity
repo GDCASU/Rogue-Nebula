@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0007755076, g: 0.0041316804, b: 0.019963792, a: 1}
+  m_IndirectSpecularColor: {r: 0.00077550794, g: 0.0041317306, b: 0.019963915, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3039,7 +3039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4333146535378505663, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: abilityCooldown
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4333146535378505663, guid: 46d0f19f16433a74385609914d90c95c, type: 3}
       propertyPath: onAbilityCooldown.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4254,22 +4254,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wave Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 2629038607580264589, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
-      propertyPath: changePoolAfterWaves
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
-      propertyPath: wavePools.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
-      propertyPath: wavePools.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0a7022d4a60e6a243a399177a7d36d7a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

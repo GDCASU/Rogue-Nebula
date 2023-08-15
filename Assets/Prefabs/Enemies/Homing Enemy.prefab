@@ -106,7 +106,7 @@ MonoBehaviour:
   medMat: {fileID: 2100000, guid: 05ee3e2cd4e40c1479953f0395a5c1b3, type: 2}
   hardMat: {fileID: 2100000, guid: 44205456a72af6742b3505bf4092f330, type: 2}
   shipRenderer: {fileID: 1218568088591489675}
-  shipVarMatInd: 0
+  shipVarMatInd: 2
 --- !u!1 &2839670060645248025
 GameObject:
   m_ObjectHideFlags: 0
