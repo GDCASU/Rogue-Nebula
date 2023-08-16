@@ -424,6 +424,7 @@ MonoBehaviour:
   leaderboardUI: {fileID: 1327911242}
   optionsUI: {fileID: 2871624325213676407}
   controlsUI: {fileID: 1821568958}
+  maxCharactersForInput: 9
   selectionSound: {fileID: 8300000, guid: 5fa9ecbb524393344a9c60307df5483a, type: 3}
 --- !u!4 &49130157
 Transform:

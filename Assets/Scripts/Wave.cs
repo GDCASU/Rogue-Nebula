@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Wave : MonoBehaviour
@@ -11,6 +12,8 @@ public class Wave : MonoBehaviour
     private int numberOfEnemies = 0;
     private int varientCounter = 0;
 
+    private float timerTime = 5f;
+
     private void Start()
     {
         EnemyHealth.onEnemyDeath += HandleEnemyDeath;
@@ -19,6 +22,11 @@ public class Wave : MonoBehaviour
         AddEnemiesToList();
         numberOfEnemies = enemyList.Count;
         RollVarients();
+    }
+
+    private void Update()
+    {
+        CheckTimer();
     }
 
     private void AddEnemiesToList()
@@ -43,6 +51,32 @@ public class Wave : MonoBehaviour
             if (numberOfEnemies <= 0)           // Invoke the event to move to the next wave and end the current wa
                 EndOfWave();
         }
+    }
+
+    private void CheckTimer()
+    {
+        bool isEmpty = false;
+
+        if (timerTime > 0)
+            timerTime -= Time.deltaTime;
+        else
+        {
+            isEmpty = CheckListEmpty();
+            timerTime = 5f;
+        }
+
+        if (isEmpty)
+            EndOfWave();
+    }
+
+    private bool CheckListEmpty()
+    {
+        if (enemyList.Count == 1)
+        {
+            if (enemyList[0] == null)
+                return true;
+        }
+        return false;
     }
 
     private void RollVarients()
@@ -73,7 +107,7 @@ public class Wave : MonoBehaviour
         Debug.Log("Wave Defeated");
         WaveManager.instance.UpdateWaveCounter();
         WaveManager.instance.SpawnWave();
-        //Destroy(gameObject);                  // MAY USE TO CLEAN UP CLUTTER IN GAME
+        Destroy(gameObject);                  // MAY USE TO CLEAN UP CLUTTER IN GAME
     }
 
 

@@ -13,6 +13,9 @@ public class MenuUI : MonoBehaviour
     [SerializeField] private GameObject optionsUI;
     [SerializeField] private GameObject controlsUI;
 
+    [Header("Settings")]
+    [SerializeField] private int maxCharactersForInput = 10;
+
     [Header("Sounds")]
     [SerializeField] private AudioClip selectionSound;
 
@@ -121,6 +124,9 @@ public class MenuUI : MonoBehaviour
 
     public void GrabNameFromInputField(string name)
     {
+        if (name.Length > maxCharactersForInput)
+            name = name.Substring(0, maxCharactersForInput);
+
         ScoreKeeper.instance.SetName(name);
     }
 
