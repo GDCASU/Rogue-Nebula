@@ -68,6 +68,7 @@ public class WaveManager : MonoBehaviour
         if (!wave)
         {
             // handle errors with no waves existing in a wavepool
+            Debug.Log("Error: Could not spawn wave");
         }
     }
 

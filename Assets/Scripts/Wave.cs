@@ -36,7 +36,7 @@ public class Wave : MonoBehaviour
 
     private void HandleEnemyDeath(GameObject enemy)
     {
-        if (enemyList.Remove(enemy))    // Checks if the enemy exists in the first place than removes it
+        if (enemyList.Remove(enemy) || enemy == null)    // Checks if the enemy exists in the first place than removes it
         {
             numberOfEnemies--;
 
@@ -70,6 +70,7 @@ public class Wave : MonoBehaviour
 
     private void EndOfWave()
     {
+        Debug.Log("Wave Defeated");
         WaveManager.instance.UpdateWaveCounter();
         WaveManager.instance.SpawnWave();
         //Destroy(gameObject);                  // MAY USE TO CLEAN UP CLUTTER IN GAME
