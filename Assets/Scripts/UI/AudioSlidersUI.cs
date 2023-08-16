@@ -9,6 +9,9 @@ public class AudioSlidersUI : MonoBehaviour
 
     private void Start()
     {
+        _sfxSlider.value = AudioManager.instance.GetSoundVolume();
+        _musicSlider.value = AudioManager.instance.GetMusicVolume();
+
         _sfxSlider.onValueChanged.AddListener(val => AudioManager.instance.ChangeSFXVolume(val));
         _musicSlider.onValueChanged.AddListener(val => AudioManager.instance.ChangeMusicVolume(val));
     }

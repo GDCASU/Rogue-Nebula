@@ -80,6 +80,16 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public float GetMusicVolume()
+    {
+        return _musicSource.volume;
+    }
+
+    public float GetSoundVolume()
+    {
+        return _sfxSource.volume;
+    }
+
     public void ChangeMusicVolume(float value)
     {
         _musicSource.volume = value;
