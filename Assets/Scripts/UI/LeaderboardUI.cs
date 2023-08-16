@@ -11,12 +11,12 @@ public class LeaderboardUI : MonoBehaviour
     [Header("Padding")]
     [SerializeField] private float templateHeight = 20f;
 
-    // Data Container
+    // Game Data
     private HighScores _highScores;
 
     public void OnEnable()
     {
-        _highScores = ScoreKeeper.instance?.highScores;
+        _highScores = SaveSystem.instance?.highScores;
 
         if (_highScores == null || entryContainer == null 
             || entryTemplate == null)

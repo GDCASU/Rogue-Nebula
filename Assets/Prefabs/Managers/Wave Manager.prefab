@@ -45,12 +45,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 589651c10b10df24489596b75b65ccc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changePoolAfterWaves: 10
+  waveDelay: 0.3
+  changePoolAfterWaves: 5
   wavePools:
   - {fileID: 11400000, guid: e81307543ade203498aa867c76386085, type: 2}
   - {fileID: 11400000, guid: 3f75855ef6ef5d14e93a1c24d0a58f73, type: 2}
   - {fileID: 11400000, guid: 0a7022d4a60e6a243a399177a7d36d7a, type: 2}
   currentDifficulty: 0
+  onWaveStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AnnouncementUI, Assembly-CSharp
+        m_MethodName: AnnouceWave
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3016080104614125267
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,6 @@ MonoBehaviour:
   - {fileID: 2066540579321377522, guid: dc00c8f6c96adf64791e727dd4b30f81, type: 3}
   - {fileID: 2066540579321377522, guid: bc735f977abe98445ba9ecdab20ca58f, type: 3}
   - {fileID: 2066540579321377522, guid: cd7ed6db18f103f4499ad803851f86a2, type: 3}
-  varientMedChance: 70
-  varientHardChance: 30
-  varientMaxSpawn: 3
+  varientMedChance: 35
+  varientHardChance: 10
+  varientMaxSpawn: 2

@@ -19,11 +19,10 @@ public class AnnouncementUI : MonoBehaviour
     private void Start()
     {
         announcementText.enabled = false;
-        WaveManager.onWaveStart += AnnouceWave;
         currentColor = easyTextColor;
     }
 
-    private void AnnouceWave(int waveNum)
+    public void AnnouceWave(int waveNum)
     {
         WaveDifficulty currentWaveDifficulty = WaveManager.instance.currentDifficulty;
 
