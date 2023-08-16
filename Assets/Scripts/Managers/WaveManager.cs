@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public enum WaveDifficulty
 {
@@ -25,11 +26,12 @@ public class WaveManager : MonoBehaviour
     [Header("Difficulty")]
     [SerializeField] public WaveDifficulty currentDifficulty = 0;       // Should not be tampered with; just for testing
 
+    [Header("Events")]
+    [SerializeField] public UnityEvent<int> onWaveStart;
+
     private WavePool currentWavePool = null;
     private int waveCounter = 1;
     private int waveCountMult = 1; // Used to keep track of when to change WavePools
-
-    public static event Action<int> onWaveStart;
 
     private void Awake()        // Handle Singleton
     {
@@ -59,7 +61,7 @@ public class WaveManager : MonoBehaviour
         // CHECK IF WAVE SELECTED IS NULL TO PREVENT NULL REF EXC
         GameObject waveParent = GameObject.Find(WAVE_PARENT_NAME);
         // Event for UI
-        onWaveStart.Invoke(waveCounter);
+        onWaveStart?.Invoke(waveCounter);
         // Spawn wave using RandomWaveSelect()
         GameObject wave = Instantiate(currentWavePool.RandomWaveSelect(), waveParent.transform);
 

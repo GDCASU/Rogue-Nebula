@@ -19155,6 +19155,30 @@ PrefabInstance:
       propertyPath: wavePools.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 0a7022d4a60e6a243a399177a7d36d7a, type: 2}
+    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
+      propertyPath: onWaveStart.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
+      propertyPath: onWaveStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 210713723}
+    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
+      propertyPath: onWaveStart.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
+      propertyPath: onWaveStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AnnouceWave
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
+      propertyPath: onWaveStart.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AnnouncementUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
+      propertyPath: onWaveStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
