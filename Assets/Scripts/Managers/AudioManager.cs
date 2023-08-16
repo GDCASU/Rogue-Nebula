@@ -92,6 +92,7 @@ public class AudioManager : MonoBehaviour
 
     public void PauseMenuResonance(bool toggle)
     {
+        if (_musicHighPassFilter == null) return;
         _musicHighPassFilter.enabled = toggle;
     }
 }
