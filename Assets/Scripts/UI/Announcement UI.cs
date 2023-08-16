@@ -43,8 +43,8 @@ public class AnnouncementUI : MonoBehaviour
 
         if (waveNum < 10)
             announcementText.text = ANNOUNCEMENT_HEADER + '0' + waveNum;
-        else if (waveNum >= 99)
-            announcementText.text = ANNOUNCEMENT_HEADER + "99";
+        else if (waveNum > 99)
+            announcementText.text = ANNOUNCEMENT_HEADER + "99+";
         else
             announcementText.text = ANNOUNCEMENT_HEADER + waveNum;
 
