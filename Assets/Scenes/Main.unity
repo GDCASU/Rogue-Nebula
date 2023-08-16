@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0007755076, g: 0.0041316804, b: 0.019963792, a: 1}
+  m_IndirectSpecularColor: {r: 0.00077550794, g: 0.0041317306, b: 0.019963915, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19210,7 +19210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
       propertyPath: changePoolAfterWaves
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
       propertyPath: wavePools.Array.data[0]

@@ -762,7 +762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -172.5, y: 59.891}
+  m_AnchoredPosition: {x: -170.4, y: 59.89}
   m_SizeDelta: {x: 99.1906, y: 20.1297}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &117850983
@@ -1010,7 +1010,7 @@ GameObject:
   - component: {fileID: 259144179}
   - component: {fileID: 259144178}
   m_Layer: 5
-  m_Name: Start Panel
+  m_Name: Controls Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4879,7 +4879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.4268, y: -0.0000021458}
+  m_AnchoredPosition: {x: 2.4268, y: -0}
   m_SizeDelta: {x: 388.2871, y: 311.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040276347
