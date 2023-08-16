@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.Rendering.Universal;
 
 public class PlayerHealth : EntityHealth
 {
@@ -20,7 +20,7 @@ public class PlayerHealth : EntityHealth
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        onPlayerHurt?.Invoke(damage);       // Update UI
+        onPlayerHurt?.Invoke(damage);       // Update UI;
     }
 
     public override void Heal(int amount)

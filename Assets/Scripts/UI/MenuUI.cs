@@ -11,19 +11,17 @@ public class MenuUI : MonoBehaviour
     [SerializeField] private GameObject startUI;
     [SerializeField] private GameObject leaderboardUI;
     [SerializeField] private GameObject optionsUI;
+    [SerializeField] private GameObject controlsUI;
 
     [Header("Sounds")]
     [SerializeField] private AudioClip selectionSound;
 
     private void Start()
     {
-        // Making sure the leaderboard menu is not accidently set active when we load the scene
-        if (startUI.activeSelf)
-            startUI.SetActive(false);
-        if (leaderboardUI.activeSelf)
-            leaderboardUI.SetActive(false);
-        if (optionsUI.activeSelf)
-            optionsUI.SetActive(false);
+        startUI.SetActive(false);
+        leaderboardUI.SetActive(false);
+        optionsUI.SetActive(false);
+        controlsUI.SetActive(false);
     }
 
     public void ToggleStartUI()
@@ -31,6 +29,8 @@ public class MenuUI : MonoBehaviour
         if (leaderboardUI.activeSelf)
             return;
         if (optionsUI.activeSelf)
+            return;
+        if (controlsUI.activeSelf)
             return;
 
         if (startUI != null)
@@ -52,6 +52,9 @@ public class MenuUI : MonoBehaviour
             return;
         if (startUI.activeSelf)
             return;
+        if (controlsUI.activeSelf)
+            return;
+
 
         if (leaderboardUI != null)
         {
@@ -74,6 +77,8 @@ public class MenuUI : MonoBehaviour
             return;
         if (startUI.activeSelf)
             return;
+        if (controlsUI.activeSelf)
+            return;
 
         if (optionsUI != null)
         {
@@ -85,6 +90,30 @@ public class MenuUI : MonoBehaviour
             else                            // Open Options
             {
                 optionsUI.SetActive(true);
+                AudioManager.instance.PauseMenuResonance(true);
+            }
+        }
+    }
+
+    public void ToggleControlsUI()
+    {
+        if (leaderboardUI.activeSelf)
+            return;
+        if (startUI.activeSelf)
+            return;
+        if (optionsUI.activeSelf)
+            return;
+
+        if (controlsUI != null)
+        {
+            if (controlsUI.activeSelf)       // Close Options
+            {
+                controlsUI.SetActive(false);
+                AudioManager.instance.PauseMenuResonance(false);
+            }
+            else                            // Open Options
+            {
+                controlsUI.SetActive(true);
                 AudioManager.instance.PauseMenuResonance(true);
             }
         }

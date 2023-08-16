@@ -15,6 +15,11 @@ public class EntityHealth : MonoBehaviour
     [SerializeField] protected AudioClip takeDamageSound;
     [SerializeField] protected AudioClip deathSound;
 
+    [Header("HurtShader")]
+    [SerializeField] MeshRenderer meshRenderer;
+    [SerializeField] Shader hurtShader;
+    [SerializeField] Shader normalShader;
+
     private bool invulnerable = false;      // Used anytime the Entity is invunerable to attacks (hits, shield, evade, etc.)
 
     private void OnTriggerEnter(Collider hitCollider)
@@ -67,8 +72,31 @@ public class EntityHealth : MonoBehaviour
     private IEnumerator InvulnerableCo(float invTime)
     {
         invulnerable = true;
+        ToggleShader(true);
         yield return new WaitForSeconds(invTime);
+        ToggleShader(false);
         invulnerable = false;
+    }
+
+    private void ToggleShader(bool toggle)
+    {
+        if (meshRenderer == null || hurtShader == null || normalShader == null)
+            return;
+
+        if (toggle)
+        {
+            foreach (Material material in meshRenderer.materials)
+            {
+                material.shader = hurtShader;
+            }
+        }
+        else
+        {
+            foreach (Material material in meshRenderer.materials)
+            {
+                material.shader = normalShader;
+            }
+        }
     }
 
     protected virtual void Death()
