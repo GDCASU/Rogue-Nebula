@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
 
     public void FlipPlayerOrientation()
     {
-        gameObject.transform.Rotate(Vector3.forward, 180f);
+        transform.Rotate(Vector3.forward, 180f);
         playerFlipped = playerFlipped ? false : true;
     }
 }

@@ -16,9 +16,11 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
+    [Header("AudioSources")]
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _sfxSource;
 
+    [Header("Music Clips")]
     [SerializeField] private AudioClip _menuMusic, _gameMusic, _gameOverMusic;
 
     //Components

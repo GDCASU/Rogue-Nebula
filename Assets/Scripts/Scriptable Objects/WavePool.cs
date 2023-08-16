@@ -7,21 +7,26 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WavePool", menuName = "Wave Pool")]
 public class WavePool : ScriptableObject
 {
+    private const string WAVE_PARENT_NAME = "Waves";
+
+    [Header("Wave Settings")]
     [SerializeField] private WaveDifficulty waveDifficulty = 0;        // Just for classification (SHOULD NOT BE USED)
-    [SerializeField] private List<Wave> waves = new List<Wave>();
-    [SerializeField] private float varientMedChance = 0f;        // Default if chances not hit will just be the base enemy (easy)
-    [SerializeField] private float varientHardChance = 0f;
+    [SerializeField] private List<GameObject> waves = new List<GameObject>();
 
-    public void SpawnNextWave()
-    {
-        // CHECK IF WAVE SELECTED IS NULL TO PREVENT NULL REF EXC
-        // SPAWN WAVE AT INDEX
-        // spawn wave using RandomWaveSelect()
-    }
+    [Header("Varient Enemies")]
+    [SerializeField] public int varientMedChance = 0;     // Default if chances not hit will just be the base enemy (easy)
+    [SerializeField] public int varientHardChance = 0;
+    [SerializeField] public int varientMaxSpawn = 0;
 
-    public Wave RandomWaveSelect()      // Select a Random Wave
+    public GameObject RandomWaveSelect()      // Select a Random Wave if it doesn't exist then use recursion to select again (highly unlikely)
     {
+        if (waves.Count <= 0)       // If no waves currently selected then return null
+            return null;
+
         int roll = Random.Range(0, waves.Count);
-        return waves[roll];
+        if (waves[roll])
+            return waves[roll];
+        else
+            return RandomWaveSelect();
     }
 }

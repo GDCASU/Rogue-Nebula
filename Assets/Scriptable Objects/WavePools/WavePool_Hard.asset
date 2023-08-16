@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: WavePool_Hard
   m_EditorClassIdentifier: 
   waveDifficulty: 2
-  waves: []
-  varientMedChance: 0
-  varientHardChance: 0
+  waves:
+  - {fileID: 2066540579321377522, guid: aacd450edaf57634a9d7b65645f1c8dc, type: 3}
+  - {fileID: 2066540579321377522, guid: 59a79ffc7b6140a4c9a4e28b1046dfdc, type: 3}
+  - {fileID: 2066540579321377522, guid: dc00c8f6c96adf64791e727dd4b30f81, type: 3}
+  - {fileID: 2066540579321377522, guid: bc735f977abe98445ba9ecdab20ca58f, type: 3}
+  - {fileID: 2066540579321377522, guid: cd7ed6db18f103f4499ad803851f86a2, type: 3}
+  varientMedChance: 70
+  varientHardChance: 30
+  varientMaxSpawn: 3

@@ -23,7 +23,7 @@ public class StandardEnemy : IEnemy
     private void Update()
     {
         if (moveDown) return;
-            
+
         Move();  // move
         TurnAround();   // Check turn around and do so
 
@@ -53,13 +53,23 @@ public class StandardEnemy : IEnemy
 
     void TurnAround()
     {
+        if (playerTransform == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         if (playerTransform.position.y < transform.position.y && transform.rotation.eulerAngles.z == 180) transform.Rotate(Vector3.forward, -180);
         else if (playerTransform.position.y > transform.position.y && transform.rotation.eulerAngles.z == 0) transform.Rotate(Vector3.forward, 180);
+        else return;
+
+        moveLeft = !moveLeft;
     }
 
     // Sets reloadTime between minReloadTime and maxReloadTime
     void ResetReload()
     {
         reloadTime = Random.Range(minReloadTime, maxReloadTime);
+        reloadTime += fireDelay;
     }
 }

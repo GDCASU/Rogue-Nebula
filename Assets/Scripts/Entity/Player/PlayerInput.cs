@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using System;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class PlayerInput : MonoBehaviour
     [Header("Player Shooting Input")]
     [SerializeField] public bool shootInput;
 
-    [Header("Events")]
-    [SerializeField] public UnityEvent onPause;
+    // Events
+    [SerializeField] public static event Action onPause;
 
     private PlayerControls playerControls;
     private Player player;
@@ -25,29 +26,28 @@ public class PlayerInput : MonoBehaviour
     private void Awake()    // Handle Singleton
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         else
             Destroy(gameObject);
-
-        player = FindObjectOfType<Player>();
-    }
-
-    private void Start()
-    {
-        instance.enabled = true; 
     }
 
     public void ToggleControls(bool toggle)     // Toggle the player controls with this method
     {
         if (toggle)
-            instance.enabled = true;
+        {
+            playerControls.Enable();
+            player = FindObjectOfType<Player>();
+        }
         else
-            instance.enabled = false;
+            playerControls.Disable();
     }
 
-    private void OnEnable()
+    private void Start()
     {
-        if (playerControls == null) 
+        if (playerControls == null)
         {
             playerControls = new PlayerControls();
 
@@ -112,16 +112,5 @@ public class PlayerInput : MonoBehaviour
     private void HandlePauseInput()
     {
         onPause?.Invoke();      // STOP GAME | OPEN PAUSE MENU
-    }
-
-    private void OnApplicationFocus(bool focus)
-    {
-        if (enabled)
-        {
-            if (focus)  // enable player controller if application has focus
-                playerControls.Enable();
-            else        // disable player controller if application loses focus
-                playerControls.Disable();
-        }
     }
 }

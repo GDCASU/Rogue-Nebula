@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameOverUI : MonoBehaviour
 {
+    [Header("Score")]
+    [SerializeField] private TMP_Text highScoreText;
+
     [Header("UI Popouts")]
     [SerializeField] private GameObject leaderboardUI;
 
@@ -15,6 +19,8 @@ public class GameOverUI : MonoBehaviour
         // Making sure the leaderboard menu is not accidently set active when we load the scene
         if (leaderboardUI.activeSelf)
             leaderboardUI.SetActive(false);
+
+        highScoreText.text = ScoreKeeper.instance.GetScore().ToString();
     }
 
     public void ToggleLeaderboardUI()
@@ -38,5 +44,10 @@ public class GameOverUI : MonoBehaviour
     {
         if (selectionSound != null)
             AudioManager.instance.PlaySFX(selectionSound);
+    }
+
+    public void EndGame()
+    {
+        Application.Quit();
     }
 }

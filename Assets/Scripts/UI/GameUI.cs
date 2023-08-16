@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -13,8 +14,13 @@ public class GameUI : MonoBehaviour
     [Header("Sounds")]
     [SerializeField] private AudioClip selectionSound;
 
+    private PauseGame pauseGameScript;
+
     private void Start()
     {
+        pauseGameScript = GetComponent<PauseGame>();
+
+        PlayerInput.onPause += TogglePauseUI; 
         // Making sure the pause menu is not accidently set active when we load the scene
         if (pauseUI.activeSelf)
             pauseUI.SetActive(false);
@@ -27,6 +33,7 @@ public class GameUI : MonoBehaviour
             if (pauseUI.activeSelf)     // If pause menu is opened then close
             {
                 pauseUI.SetActive(false);
+                pauseGameScript.TogglePauseGame(false);
                 AudioManager.instance.PauseMenuResonance(false);
                 if (optionsUI.activeSelf)       // Disable options menu if pause menu is closed
                     ToggleOptionseUI();
@@ -36,6 +43,7 @@ public class GameUI : MonoBehaviour
             else                        // If pause menu is closed then open
             {
                 pauseUI.SetActive(true);
+                pauseGameScript.TogglePauseGame(true);
                 AudioManager.instance.PauseMenuResonance(true);
             }
         }
