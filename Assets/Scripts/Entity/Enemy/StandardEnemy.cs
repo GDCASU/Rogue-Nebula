@@ -41,12 +41,14 @@ public class StandardEnemy : IEnemy
     {
         if (moveLeft)
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            //transform.Translate(Vector3.left * Time.deltaTime * speed);
+            transform.position = transform.position + new Vector3(-speed * Time.deltaTime, 0f, 0f);
             moveLeft = Camera.main.WorldToViewportPoint(transform.position).x > 0f;
         }
         else
         {   // Move right
-            transform.Translate(Vector3.right * Time.deltaTime * speed);
+            //transform.Translate(Vector3.right * Time.deltaTime * speed);
+            transform.position = transform.position + new Vector3(speed * Time.deltaTime, 0f, 0f);
             moveLeft = Camera.main.WorldToViewportPoint(transform.position).x > 1f;
         }
     }
