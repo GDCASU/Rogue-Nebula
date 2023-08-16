@@ -36,6 +36,8 @@ public class PlayerInput : MonoBehaviour
 
     public void ToggleControls(bool toggle)     // Toggle the player controls with this method
     {
+        if (playerControls == null) return;
+
         if (toggle)
         {
             playerControls.Enable();
