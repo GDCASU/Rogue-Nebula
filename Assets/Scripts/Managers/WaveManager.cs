@@ -22,6 +22,7 @@ public class WaveManager : MonoBehaviour
     [Header("Wave Pools")]
     [SerializeField] private int changePoolAfterWaves = 20;
     [SerializeField] private List<WavePool> wavePools = new List<WavePool>();
+    [SerializeField] private float waveDelay = 0.2f;
 
     [Header("Difficulty")]
     [SerializeField] public WaveDifficulty currentDifficulty = 0;       // Should not be tampered with; just for testing
@@ -44,32 +45,22 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         currentWavePool = wavePools[0];     // Start currentWavePool at first wave in list
-        SpawnWave();                        // Spawn the first wave
+        SpawnWave();                       // Spawn the first wave after short delay
     }
 
     public void RaiseDifficulty()
     {
         if (((int)currentDifficulty + 1) < wavePools.Count) // Check if we are not at the end of wavePools; otherwise, stay on last WavePool
         {
-            currentDifficulty++;                
+            currentDifficulty++;
             currentWavePool = wavePools[((int)currentDifficulty)];
         }
     }
 
     public void SpawnWave()
     {
-        // CHECK IF WAVE SELECTED IS NULL TO PREVENT NULL REF EXC
-        GameObject waveParent = GameObject.Find(WAVE_PARENT_NAME);
-        // Event for UI
-        onWaveStart?.Invoke(waveCounter);
         // Spawn wave using RandomWaveSelect()
-        GameObject wave = Instantiate(currentWavePool.RandomWaveSelect(), waveParent.transform);
-
-        if (!wave)
-        {
-            // handle errors with no waves existing in a wavepool
-            Debug.Log("Error: Could not spawn wave");
-        }
+        StartCoroutine(SpawnWaveCo());
     }
 
     public void UpdateWaveCounter()         // Update waveCounter and check if we need to raise the difficulty
@@ -99,5 +90,17 @@ public class WaveManager : MonoBehaviour
     public int GetVarientMaxSpawn()
     {
         return currentWavePool.varientMaxSpawn;
+    }
+
+    private IEnumerator SpawnWaveCo()
+    {
+        // CHECK IF WAVE SELECTED IS NULL TO PREVENT NULL REF EXC
+        GameObject waveParent = GameObject.Find(WAVE_PARENT_NAME);
+
+        yield return new WaitForSeconds(waveDelay);
+        // Event for UI
+        onWaveStart?.Invoke(waveCounter);
+
+        GameObject wave = Instantiate(currentWavePool.RandomWaveSelect(), waveParent.transform);
     }
 }

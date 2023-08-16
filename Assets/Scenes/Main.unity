@@ -19210,7 +19210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
       propertyPath: changePoolAfterWaves
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8217443895001841283, guid: a59238beb2de3c14bbea72bb3155c9d5, type: 3}
       propertyPath: wavePools.Array.data[0]
