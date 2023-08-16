@@ -56,7 +56,14 @@ public class SaveSystem : MonoBehaviour
                 BinaryFormatter formatter = new BinaryFormatter();
                 FileStream stream = new FileStream(fullPath, FileMode.Open);
 
-                loadData = formatter.Deserialize(stream) as HighScores;
+                loadData = new HighScores();
+
+                for (int i = 0; i < stream.Length; i++)
+                {
+                    loadData.data[i].name = formatter.Deserialize(stream) as string;
+                    int[] score = formatter.Deserialize(stream) as int[];
+                    loadData.data[i].score = score[0];
+                }
                 stream.Close();
             }
             catch (Exception e)
@@ -76,7 +83,13 @@ public class SaveSystem : MonoBehaviour
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(fullPath, FileMode.Create);
 
-            formatter.Serialize(stream, highScores);
+            foreach (HighScore highScore in highScores.data)
+            {
+                formatter.Serialize(stream, highScore.name);
+
+                int[] score = { highScore.score };
+                formatter.Serialize(stream, score);
+            }
             stream.Close();
         }
         catch (Exception e) 
