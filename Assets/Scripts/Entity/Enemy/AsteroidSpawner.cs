@@ -45,7 +45,8 @@ public class AsteroidSpawner : MonoBehaviour
             Vector3 endPoint = Camera.main.ViewportToWorldPoint(new Vector3(startXFromView, -10f, zValForView));
             */
             int roll = Random.Range(0, prAsteroid.Length);
-            Instantiate(prAsteroid[roll], startPoint, Quaternion.identity).GetComponent<FlyBackward>().SetSpeed(Random.Range(minSpeed, maxSpeed));
+            GameObject newAsteriod = Instantiate(prAsteroid[roll], startPoint, Quaternion.identity, gameObject.transform);
+            newAsteriod.GetComponent<FlyBackward>().SetSpeed(Random.Range(minSpeed, maxSpeed));
         }
     }
 

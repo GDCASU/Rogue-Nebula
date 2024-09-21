@@ -103,7 +103,7 @@ public class EntityHealth : MonoBehaviour
     {
         if (deathPS != null)        // Handle PS
         {
-            GameObject instance = Instantiate(deathPS, gameObject.transform.position, Quaternion.identity);
+            GameObject instance = Instantiate(deathPS, gameObject.transform.position, Quaternion.identity, ParticleContainer.instance.transform);
             Destroy(instance, 2f);
         }
         AudioManager.instance?.PlaySFX(deathSound);

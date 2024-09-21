@@ -54,7 +54,7 @@ public abstract class IEnemy : MonoBehaviour
             return;
         }
 
-        Instantiate(ammoPrefab, ammoSpawnPoint.position, ammoSpawnPoint.rotation);
+        Instantiate(ammoPrefab, ammoSpawnPoint.position, ammoSpawnPoint.rotation, ProjectileContainer.instance?.transform);
     }
 
     #region Universal Movement

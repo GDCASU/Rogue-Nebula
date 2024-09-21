@@ -32,6 +32,7 @@ public class StationaryEnemy : IEnemy
 
     protected override void Fire()
     {
-        foreach(Transform t in ammoSpawnPoints) Instantiate(ammoPrefab, t.position, t.rotation);
+        foreach(Transform t in ammoSpawnPoints) 
+            Instantiate(ammoPrefab, t.position, t.rotation, ProjectileContainer.instance.transform);
     }
 }

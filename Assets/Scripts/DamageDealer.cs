@@ -18,7 +18,7 @@ public class DamageDealer : MonoBehaviour
         {
             if (hitPS != null)      // Handle PS
             {
-                GameObject instance = Instantiate(hitPS, transform.position, Quaternion.identity);
+                GameObject instance = Instantiate(hitPS, transform.position, Quaternion.identity, ParticleContainer.instance.transform);
                 Destroy(instance, 1f);
             }
             Destroy(gameObject);
