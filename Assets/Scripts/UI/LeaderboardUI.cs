@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class LeaderboardUI : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class LeaderboardUI : MonoBehaviour
     [Header("Padding")]
     [SerializeField] private float templateHeight = 20f;
 
-    // Data Container
+    // High Score Data Container
     private HighScores _highScores;
 
     public void OnEnable()
@@ -46,8 +47,24 @@ public class LeaderboardUI : MonoBehaviour
 
                 entryUI.rankText.text = rankString;
                 entryUI.scoreText.text = _highScores.data[i].score.ToString();
-                entryUI.nameText.text = _highScores.data[i].name;
+
+                string playerName = _highScores.data[i].name;
+                playerName = OmitHashFromString(playerName);
+                entryUI.nameText.text = playerName;
             }
         }
+    }
+
+    // Unity puts a random 4 digit number like #1234 on the back of each player's name, this cuts it out of the submission
+    private string OmitHashFromString(string name)
+    {
+        if (name == null)
+            return name;
+
+        int indexOfHash = name.IndexOf('#');
+        if (indexOfHash != -1)
+            return name.Substring(0, indexOfHash);
+        else
+            return name;
     }
 }

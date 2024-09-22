@@ -20,6 +20,10 @@ public class EntityHealth : MonoBehaviour
     [SerializeField] Shader hurtShader;
     [SerializeField] Shader normalShader;
 
+    [Header("Debug")]
+    [SerializeField] bool debug;
+    [SerializeField] bool makeInvincible;
+
     private bool invulnerable = false;      // Used anytime the Entity is invunerable to attacks (hits, shield, evade, etc.)
 
     private void OnTriggerEnter(Collider hitCollider)
@@ -41,6 +45,9 @@ public class EntityHealth : MonoBehaviour
 
     public virtual void TakeDamage(int damage)         // Change health value with damage passed in; wait for invTime
     {
+        if (makeInvincible)     // For debugging purposes only
+            return;
+
         MakeInvulnerable(hitInvulnerabilityTime);
         health -= damage;
         
