@@ -56,6 +56,7 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene(Scenes.MainMenu.ToString());
         currentScene = Scenes.MainMenu;
         HandlePlayerControls();
+        ScoreKeeper.instance.UpdateHighScoreDataFromNetwork();
         //ScoreKeeper.instance.PrintHighScores();         // FOR DEBUGGING
         playSceneMusic();
     }

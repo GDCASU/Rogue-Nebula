@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7808544197142589044}
   - component: {fileID: 6726488582111495571}
-  - component: {fileID: 5873662373283482740}
   m_Layer: 0
-  m_Name: Game Manager
+  m_Name: Score Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,18 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 332edeccc4ebe9c488c0628b74aacbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highScores: {fileID: 0}
+  highScores: {fileID: 11400000, guid: 2ef19a0d758c00846b7d770339115d94, type: 2}
   _name: Anonymous
   _score: 0
---- !u!114 &5873662373283482740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8124235330829089465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87f8bb8ade9fb30449a9b6bdf0b58a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
